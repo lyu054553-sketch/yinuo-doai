@@ -1,0 +1,342 @@
+{
+  "meta": {
+    "case_id": "c1",
+    "repeat": 1,
+    "at": "2026-11-18T23:41:17"
+  },
+  "session": {
+    "id": "s77f7ab03736d",
+    "title": "案例一：中式正式外套（脖子短、有肚腩）",
+    "mode": "审计已有方案",
+    "source": "mock",
+    "created_at": "2026-11-18T15:41:17+00:00",
+    "input": {
+      "text": "想要一件定制一件外套，整体风格偏中式一点，整体端庄一些，适合正式场合穿着。脖子比较短领子不能太高。我还有肚腩，然后喜欢稍微宽松一点的衣服，不能太紧绷，舒服一点。要显得人气质好。",
+      "existing_spec": {
+        "品类": "外套",
+        "版型结构": "H 型直身结构，无收腰；肩型采用微落平肩，线条简约利落",
+        "领型": "低立领（领高控制在3cm以内），领线条圆润",
+        "面料": "优选垂感适中、手感柔和的醋酸或者薄款提花锦，挺而不硬，穿着舒适不易贴身",
+        "色彩": "无特殊需求",
+        "装饰纹样": "无特殊需求",
+        "长度比例": "衣长至臀中位置",
+        "松弛余量": "前片腹部区域预留充足松量，整体围度宽松"
+      },
+      "sample_id": "c1"
+    },
+    "utterances": [
+      {
+        "id": "u1",
+        "text": "想要一件定制一件外套",
+        "start": 0,
+        "end": 10,
+        "type": "描述",
+        "strength": "描述",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "品类",
+            "garment": null,
+            "status": "已落实",
+            "note": "",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u2",
+        "text": "整体风格偏中式一点",
+        "start": 11,
+        "end": 20,
+        "type": "风格",
+        "strength": "软偏好",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "间接体现",
+            "note": "规格表没有风格字段，中式感由低立领体现",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u3",
+        "text": "整体端庄一些",
+        "start": 21,
+        "end": 27,
+        "type": "风格",
+        "strength": "目标",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "间接体现",
+            "note": "H 型直身、线条简约利落",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u4",
+        "text": "适合正式场合穿着",
+        "start": 28,
+        "end": 36,
+        "type": "场景",
+        "strength": "描述",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "间接体现",
+            "note": "规格表没有场景字段；面料挺而不硬",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u5",
+        "text": "脖子比较短领子不能太高",
+        "start": 37,
+        "end": 48,
+        "type": "身形",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "已落实",
+            "note": "低立领，领高 3cm 以内",
+            "rule_id": "R2"
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u6",
+        "text": "我还有肚腩",
+        "start": 49,
+        "end": 54,
+        "type": "身形",
+        "strength": "描述",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "前片腹部预留充足松量",
+            "rule_id": "R1"
+          },
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "已落实",
+            "note": "无收腰",
+            "rule_id": "R1"
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u7",
+        "text": "喜欢稍微宽松一点的衣服，不能太紧绷，舒服一点",
+        "start": 57,
+        "end": 79,
+        "type": "松量",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "整体围度宽松",
+            "rule_id": null
+          },
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "已落实",
+            "note": "不易贴身",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u8",
+        "text": "要显得人气质好",
+        "start": 80,
+        "end": 87,
+        "type": "风格",
+        "strength": "目标",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "间接体现",
+            "note": "挺而不硬、领线条圆润",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      }
+    ],
+    "spec_versions": [
+      {
+        "version": 1,
+        "created_at": "2026-11-18T15:41:17+00:00",
+        "reason": "导入已有方案",
+        "fields": {
+          "品类": {
+            "value": "外套",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u1"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "版型结构": {
+            "value": "H 型直身结构，无收腰；肩型采用微落平肩，线条简约利落",
+            "resource_ids": [
+              "S1",
+              "SH1"
+            ],
+            "utterance_ids": [
+              "u3",
+              "u6"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "领型": {
+            "value": "低立领（领高控制在3cm以内），领线条圆润",
+            "resource_ids": [
+              "CL1"
+            ],
+            "utterance_ids": [
+              "u2",
+              "u5"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "面料": {
+            "value": "优选垂感适中、手感柔和的醋酸或者薄款提花锦，挺而不硬，穿着舒适不易贴身",
+            "resource_ids": [
+              "F1",
+              "F2"
+            ],
+            "utterance_ids": [
+              "u4",
+              "u7",
+              "u8"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "色彩": {
+            "value": "无特殊需求",
+            "resource_ids": [],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "装饰纹样": {
+            "value": "无特殊需求",
+            "resource_ids": [],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "长度比例": {
+            "value": "衣长至臀中位置",
+            "resource_ids": [
+              "L1"
+            ],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "松弛余量": {
+            "value": "前片腹部区域预留充足松量，整体围度宽松",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u6",
+              "u7"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          }
+        }
+      }
+    ],
+    "questions": [],
+    "designer_items": [],
+    "skipped": [
+      {
+        "field": "色彩",
+        "reason": "客户没有提到颜色，方案写“无特殊需求”，追问也不会改变方案，按不加色彩要求处理。"
+      },
+      {
+        "field": "装饰纹样",
+        "reason": "没有原话单独涉及这一栏，按方案现有取值处理，不追问。"
+      },
+      {
+        "field": "长度比例",
+        "reason": "没有原话涉及衣长；6 个案例的衣长都是“衣长至臀中”，按资源库里最常见的取值沿用，不追问。"
+      }
+    ],
+    "ledger": [
+      {
+        "version": 1,
+        "at": "2026-11-18T15:41:17+00:00",
+        "action": "导入",
+        "summary": "导入案例一：中式正式外套（脖子短、有肚腩）的客户口述和已有方案。",
+        "detail": "拆出 8 句原话，覆盖 5 个设计字段。",
+        "utterance_ids": [
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u5",
+          "u6",
+          "u7",
+          "u8"
+        ],
+        "changed_fields": [
+          "品类",
+          "版型结构",
+          "领型",
+          "面料",
+          "色彩",
+          "装饰纹样",
+          "长度比例",
+          "松弛余量"
+        ]
+      },
+      {
+        "version": 1,
+        "at": "2026-11-18T15:41:17+00:00",
+        "action": "审计",
+        "summary": "审计：逐句核对客户原话与已有方案，没有发现问题。",
+        "detail": "所有原话都能在方案里找到对应处理。",
+        "utterance_ids": [],
+        "changed_fields": []
+      }
+    ],
+    "reference": null,
+    "images": []
+  }
+}

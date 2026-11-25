@@ -1,0 +1,407 @@
+{
+  "unit": {
+    "lane": "yinuo",
+    "subset": "injected",
+    "case_id": "inj14",
+    "repeat": 2,
+    "gold_problem_count": 0
+  },
+  "lane": "yinuo",
+  "subset": "injected",
+  "case_id": "inj14",
+  "repeat": 2,
+  "recorded_at": "2026-11-19T00:51:31",
+  "outcome": "success",
+  "http_status": 200,
+  "elapsed_ms": 22633.8,
+  "error": null,
+  "request": {
+    "text": "想要一件新中式外套，日常穿。整体宽松一点，抬手方便，袖管留够放量。版型H型直身，不要收腰。领子低立领，不要卡脖子。面料用真丝暗纹织花。",
+    "existing_spec": {
+      "品类": "新中式外套",
+      "版型结构": "H型直身，无收腰；微落平肩",
+      "领型": "低立领，3cm以内",
+      "面料": "真丝暗纹织花",
+      "色彩": "无特殊需求",
+      "装饰纹样": "暗花小巧",
+      "长度比例": "衣长至臀中",
+      "松弛余量": "整体围度宽松，袖管放量充足"
+    }
+  },
+  "response": {
+    "id": "sb18b6dc5aacb",
+    "title": "客户口述审计",
+    "mode": "审计已有方案",
+    "source": "llm",
+    "created_at": "2026-11-18T16:51:53+00:00",
+    "input": {
+      "text": "想要一件新中式外套，日常穿。整体宽松一点，抬手方便，袖管留够放量。版型H型直身，不要收腰。领子低立领，不要卡脖子。面料用真丝暗纹织花。",
+      "existing_spec": {
+        "品类": "新中式外套",
+        "版型结构": "H型直身，无收腰；微落平肩",
+        "领型": "低立领，3cm以内",
+        "面料": "真丝暗纹织花",
+        "色彩": "无特殊需求",
+        "装饰纹样": "暗花小巧",
+        "长度比例": "衣长至臀中",
+        "松弛余量": "整体围度宽松，袖管放量充足"
+      },
+      "sample_id": null
+    },
+    "utterances": [
+      {
+        "id": "u1",
+        "text": "想要一件新中式外套",
+        "start": 0,
+        "end": 9,
+        "type": "品类",
+        "strength": "描述",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "品类",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案品类写为新中式外套，已落实。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u2",
+        "text": "日常穿",
+        "start": 10,
+        "end": 13,
+        "type": "场景",
+        "strength": "描述",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "间接体现",
+            "note": "方案无场景字段，整体围度宽松、便于日常活动，可间接对应日常穿着。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u3",
+        "text": "整体宽松一点",
+        "start": 14,
+        "end": 20,
+        "type": "松量",
+        "strength": "软偏好",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案松弛余量写整体围度宽松，已落实。",
+            "rule_id": null
+          },
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案版型为H型直身、无收腰，已落实。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u4",
+        "text": "抬手方便",
+        "start": 21,
+        "end": 25,
+        "type": "活动",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案袖管放量充足，抬手方便已落实。",
+            "rule_id": "R5"
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u5",
+        "text": "袖管留够放量",
+        "start": 26,
+        "end": 32,
+        "type": "松量",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案袖管放量充足，已落实。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u6",
+        "text": "版型H型直身",
+        "start": 33,
+        "end": 39,
+        "type": "版型",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案版型结构写H型直身，已落实。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u7",
+        "text": "不要收腰",
+        "start": 40,
+        "end": 44,
+        "type": "版型",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案写无收腰，已落实。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u8",
+        "text": "领子低立领",
+        "start": 45,
+        "end": 50,
+        "type": "领型",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案领型写低立领且3cm以内，已落实。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u9",
+        "text": "不要卡脖子",
+        "start": 51,
+        "end": 56,
+        "type": "领型",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案低立领3cm以内，不卡脖子已落实。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u10",
+        "text": "面料用真丝暗纹织花",
+        "start": 57,
+        "end": 66,
+        "type": "面料",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案面料为真丝暗纹织花，已落实。",
+            "rule_id": null
+          },
+          {
+            "field": "装饰纹样",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案装饰纹样为暗花小巧，与暗纹织花同类，已落实。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      }
+    ],
+    "spec_versions": [
+      {
+        "version": 1,
+        "created_at": "2026-11-18T16:51:53+00:00",
+        "reason": "导入已有方案",
+        "fields": {
+          "品类": {
+            "value": "新中式外套",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u1"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "版型结构": {
+            "value": "H型直身，无收腰；微落平肩",
+            "resource_ids": [
+              "S1",
+              "SH1"
+            ],
+            "utterance_ids": [
+              "u3",
+              "u6",
+              "u7"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "领型": {
+            "value": "低立领，3cm以内",
+            "resource_ids": [
+              "CL1"
+            ],
+            "utterance_ids": [
+              "u8",
+              "u9"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "面料": {
+            "value": "真丝暗纹织花",
+            "resource_ids": [
+              "F8"
+            ],
+            "utterance_ids": [
+              "u10"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "色彩": {
+            "value": "无特殊需求",
+            "resource_ids": [],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "装饰纹样": {
+            "value": "暗花小巧",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u10"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "长度比例": {
+            "value": "衣长至臀中",
+            "resource_ids": [
+              "L1"
+            ],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "松弛余量": {
+            "value": "整体围度宽松，袖管放量充足",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u2",
+              "u3",
+              "u4",
+              "u5"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          }
+        }
+      }
+    ],
+    "questions": [],
+    "designer_items": [],
+    "skipped": [
+      {
+        "field": "色彩",
+        "reason": "客户没有提到颜色，就不写色彩要求，也不硬套资源库里唯一的色彩参考，追问不会改变方案。"
+      },
+      {
+        "field": "长度比例",
+        "reason": "没有原话涉及衣长；资源库里有出处的案例都是“衣长至臀中”，按资源库里最常见的取值沿用，不追问。"
+      }
+    ],
+    "ledger": [
+      {
+        "version": 1,
+        "at": "2026-11-18T16:51:53+00:00",
+        "action": "导入",
+        "summary": "导入客户口述和已有方案，由大模型拆分原话。",
+        "detail": "拆出 10 句原话，覆盖 6 个设计字段。",
+        "utterance_ids": [
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u5",
+          "u6",
+          "u7",
+          "u8",
+          "u9",
+          "u10"
+        ],
+        "changed_fields": [
+          "品类",
+          "版型结构",
+          "领型",
+          "面料",
+          "色彩",
+          "装饰纹样",
+          "长度比例",
+          "松弛余量"
+        ]
+      },
+      {
+        "version": 1,
+        "at": "2026-11-18T16:51:53+00:00",
+        "action": "审计",
+        "summary": "审计：逐句核对客户原话与已有方案，没有发现问题。",
+        "detail": "所有原话都能在方案里找到对应处理。",
+        "utterance_ids": [],
+        "changed_fields": []
+      }
+    ],
+    "reference": null,
+    "images": []
+  },
+  "model_returned": null,
+  "api_key_present": false,
+  "raw_truncated": false
+}

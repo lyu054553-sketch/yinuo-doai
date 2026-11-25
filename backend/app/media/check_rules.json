@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-11-18",
+  "note": "C2 核对数据表：先让视觉模型独立看图，再由程序与 C0 的 build_check_specs 逐项比对。只使用冻结策略允许的四个字段（领型/前襟闭合/纽扣/纹样）；衣长/廓形/颜色只列清单，一律“需人工确认、看不出”。核对时不把方案规格发给视觉模型。",
+  "verdict_labels": {
+    "match": "符合",
+    "mismatch": "不符合",
+    "unknown": "看不出"
+  },
+  "manual_confirm_observed": "需人工确认",
+  "unseen_observed": "看不出",
+  "buttons_observed": {
+    "true": "有外露纽扣",
+    "false": "无外露纽扣"
+  },
+  "pattern_observed": {
+    "present": "可见纹样",
+    "none": "无可见纹样"
+  },
+  "pattern_observation": {
+    "none_markers": [
+      "无可见花纹", "无明显花纹", "无可见图案", "无明显图案", "无可见纹样",
+      "无明显纹样", "无图案", "无花纹", "无纹样", "无装饰",
+      "素色", "纯色", "素面"
+    ],
+    "present_markers": [
+      "暗纹", "暗花", "提花", "织花", "纹样", "花纹", "图案",
+      "印花", "刺绣", "格纹", "条纹", "花型", "花卉"
+    ],
+    "negation_prefixes": [
+      "无", "未", "非", "勿", "免", "没有", "不要", "未见",
+      "看不到", "看不见", "看不出", "不是"
+    ],
+    "negation_window": 6
+  },
+  "redraw_on_verdict": "不符合",
+  "manual_targets": ["length", "silhouette", "colors"]
+}

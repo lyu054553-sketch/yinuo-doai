@@ -1,0 +1,495 @@
+{
+  "unit": {
+    "lane": "yinuo",
+    "subset": "dev",
+    "case_id": "c6",
+    "repeat": 3,
+    "gold_problem_count": 1
+  },
+  "lane": "yinuo",
+  "subset": "dev",
+  "case_id": "c6",
+  "repeat": 3,
+  "recorded_at": "2026-11-19T00:46:31",
+  "outcome": "success",
+  "http_status": 200,
+  "elapsed_ms": 56776.1,
+  "error": null,
+  "request": {
+    "text": "想要定制一件外套，想要简约大气的新中式风格，正式一些。我身形偏高，肩背比较宽厚，希望版型不要压肩、不卡手臂，整体宽松一些，不要束缚感，质感要好一些，显得人有气质一点。",
+    "existing_spec": {
+      "品类": "外套",
+      "版型结构": "H 型直身结构，无收腰；肩型采用微落平肩，线条简约利落",
+      "领型": "交领开襟款式，无立领，领型线条柔和舒展",
+      "面料": "优选真丝暗纹织花面料，垂感适中，手感柔和，挺而不硬，穿着舒适不易贴身",
+      "色彩": "无特殊需求",
+      "装饰纹样": "暗花小巧，低调含蓄，无外露纽扣装饰",
+      "长度比例": "衣长至臀中位置",
+      "松弛余量": "整体围度宽松，肩背、袖管放量充足，抬手、站立活动自在无紧绷"
+    },
+    "sample_id": "c6",
+    "title": "案例六：简约新中式交领外套（身高、肩背宽厚）"
+  },
+  "response": {
+    "id": "s18e1729f709d",
+    "title": "案例六：简约新中式交领外套（身高、肩背宽厚）",
+    "mode": "审计已有方案",
+    "source": "llm",
+    "created_at": "2026-11-18T16:47:28+00:00",
+    "input": {
+      "text": "想要定制一件外套，想要简约大气的新中式风格，正式一些。我身形偏高，肩背比较宽厚，希望版型不要压肩、不卡手臂，整体宽松一些，不要束缚感，质感要好一些，显得人有气质一点。",
+      "existing_spec": {
+        "品类": "外套",
+        "版型结构": "H 型直身结构，无收腰；肩型采用微落平肩，线条简约利落",
+        "领型": "交领开襟款式，无立领，领型线条柔和舒展",
+        "面料": "优选真丝暗纹织花面料，垂感适中，手感柔和，挺而不硬，穿着舒适不易贴身",
+        "色彩": "无特殊需求",
+        "装饰纹样": "暗花小巧，低调含蓄，无外露纽扣装饰",
+        "长度比例": "衣长至臀中位置",
+        "松弛余量": "整体围度宽松，肩背、袖管放量充足，抬手、站立活动自在无紧绷"
+      },
+      "sample_id": "c6"
+    },
+    "utterances": [
+      {
+        "id": "u1",
+        "text": "想要定制一件外套",
+        "start": 0,
+        "end": 8,
+        "type": "品类",
+        "strength": "描述",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "品类",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案品类明确为外套",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u2",
+        "text": "想要简约大气的新中式风格",
+        "start": 9,
+        "end": 21,
+        "type": "风格",
+        "strength": "目标",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "间接体现",
+            "note": "H 型直身、线条简约利落，对应简约大气",
+            "rule_id": null
+          },
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "间接体现",
+            "note": "交领开襟体现新中式",
+            "rule_id": null
+          },
+          {
+            "field": "装饰纹样",
+            "garment": null,
+            "status": "间接体现",
+            "note": "暗花小巧、无外露纽扣，整体低调",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u3",
+        "text": "正式一些",
+        "start": 22,
+        "end": 26,
+        "type": "风格",
+        "strength": "软偏好",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "间接体现",
+            "note": "真丝暗纹织花、挺而不硬，体现正式感",
+            "rule_id": null
+          },
+          {
+            "field": "装饰纹样",
+            "garment": null,
+            "status": "间接体现",
+            "note": "暗花低调含蓄、无外露纽扣装饰，不张扬",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u4",
+        "text": "我身形偏高",
+        "start": 27,
+        "end": 32,
+        "type": "身形",
+        "strength": "描述",
+        "status": "需设计师判断",
+        "mappings": [
+          {
+            "field": "长度比例",
+            "garment": null,
+            "status": "需设计师判断",
+            "note": "方案仅定衣长至臀中，未针对偏高身形说明比例是否合适",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u5",
+        "text": "肩背比较宽厚",
+        "start": 33,
+        "end": 39,
+        "type": "身形",
+        "strength": "描述",
+        "status": "需设计师判断",
+        "mappings": [
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "需设计师判断",
+            "note": "微落平肩有肩型处理，但未明确宽肩适配程度",
+            "rule_id": null
+          },
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "肩背、袖管放量充足",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u6",
+        "text": "希望版型不要压肩、不卡手臂",
+        "start": 40,
+        "end": 53,
+        "type": "版型",
+        "strength": "硬约束",
+        "status": "需设计师判断",
+        "mappings": [
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "需设计师判断",
+            "note": "微落平肩可缓解压肩，但肩宽与落肩量是否到位需设计师判断",
+            "rule_id": null
+          },
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "肩背、袖管放量充足，抬手活动自在无紧绷",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u7",
+        "text": "整体宽松一些",
+        "start": 54,
+        "end": 60,
+        "type": "松量",
+        "strength": "软偏好",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "间接体现",
+            "note": "H 型直身、无收腰，整体不收束",
+            "rule_id": null
+          },
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "整体围度宽松",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u8",
+        "text": "不要束缚感",
+        "start": 61,
+        "end": 66,
+        "type": "松量",
+        "strength": "硬约束",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "间接体现",
+            "note": "穿着舒适不易贴身",
+            "rule_id": null
+          },
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "抬手、站立活动自在无紧绷",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u9",
+        "text": "质感要好一些",
+        "start": 67,
+        "end": 73,
+        "type": "面料",
+        "strength": "软偏好",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "已落实",
+            "note": "真丝暗纹织花，垂感适中、手感柔和、挺而不硬",
+            "rule_id": null
+          },
+          {
+            "field": "装饰纹样",
+            "garment": null,
+            "status": "间接体现",
+            "note": "暗花小巧、低调含蓄，提升细节质感",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u10",
+        "text": "显得人有气质一点",
+        "start": 74,
+        "end": 82,
+        "type": "风格",
+        "strength": "目标",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "间接体现",
+            "note": "H 型直身、线条简约利落，显利落大气",
+            "rule_id": null
+          },
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "间接体现",
+            "note": "交领开襟线条柔和舒展",
+            "rule_id": null
+          },
+          {
+            "field": "装饰纹样",
+            "garment": null,
+            "status": "间接体现",
+            "note": "暗花低调含蓄、无外露纽扣",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      }
+    ],
+    "spec_versions": [
+      {
+        "version": 1,
+        "created_at": "2026-11-18T16:47:28+00:00",
+        "reason": "导入已有方案",
+        "fields": {
+          "品类": {
+            "value": "外套",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u1"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "版型结构": {
+            "value": "H 型直身结构，无收腰；肩型采用微落平肩，线条简约利落",
+            "resource_ids": [
+              "S1",
+              "SH1"
+            ],
+            "utterance_ids": [
+              "u2",
+              "u5",
+              "u6",
+              "u7",
+              "u10"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "领型": {
+            "value": "交领开襟款式，无立领，领型线条柔和舒展",
+            "resource_ids": [
+              "CL5"
+            ],
+            "utterance_ids": [
+              "u2",
+              "u10"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "面料": {
+            "value": "优选真丝暗纹织花面料，垂感适中，手感柔和，挺而不硬，穿着舒适不易贴身",
+            "resource_ids": [
+              "F8"
+            ],
+            "utterance_ids": [
+              "u3",
+              "u8",
+              "u9"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "色彩": {
+            "value": "无特殊需求",
+            "resource_ids": [],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "装饰纹样": {
+            "value": "暗花小巧，低调含蓄，无外露纽扣装饰",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u2",
+              "u3",
+              "u9",
+              "u10"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "长度比例": {
+            "value": "衣长至臀中位置",
+            "resource_ids": [
+              "L1"
+            ],
+            "utterance_ids": [
+              "u4"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "松弛余量": {
+            "value": "整体围度宽松，肩背、袖管放量充足，抬手、站立活动自在无紧绷",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u5",
+              "u6",
+              "u7",
+              "u8"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          }
+        }
+      }
+    ],
+    "questions": [],
+    "designer_items": [
+      {
+        "id": "d1",
+        "utterance_ids": [
+          "u4"
+        ],
+        "field": "长度比例",
+        "text": "客户原话「我身形偏高」，方案在【长度比例】上的处理是「衣长至臀中位置」，是否到位需要设计师判断。"
+      },
+      {
+        "id": "d2",
+        "utterance_ids": [
+          "u5"
+        ],
+        "field": "版型结构",
+        "text": "客户原话「肩背比较宽厚」，方案在【版型结构】上的处理是「H 型直身结构，无收腰；肩型采用微落平肩，线条简约利落」，是否到位需要设计师判断。"
+      },
+      {
+        "id": "d3",
+        "utterance_ids": [
+          "u6"
+        ],
+        "field": "版型结构",
+        "text": "客户原话「希望版型不要压肩、不卡手臂」，方案在【版型结构】上的处理是「H 型直身结构，无收腰；肩型采用微落平肩，线条简约利落」，是否到位需要设计师判断。"
+      }
+    ],
+    "skipped": [
+      {
+        "field": "色彩",
+        "reason": "客户没有提到颜色，就不写色彩要求，也不硬套资源库里唯一的色彩参考，追问不会改变方案。"
+      }
+    ],
+    "ledger": [
+      {
+        "version": 1,
+        "at": "2026-11-18T16:47:28+00:00",
+        "action": "导入",
+        "summary": "导入客户口述和已有方案，由大模型拆分原话。",
+        "detail": "拆出 10 句原话，覆盖 7 个设计字段。",
+        "utterance_ids": [
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u5",
+          "u6",
+          "u7",
+          "u8",
+          "u9",
+          "u10"
+        ],
+        "changed_fields": [
+          "品类",
+          "版型结构",
+          "领型",
+          "面料",
+          "色彩",
+          "装饰纹样",
+          "长度比例",
+          "松弛余量"
+        ]
+      },
+      {
+        "version": 1,
+        "at": "2026-11-18T16:47:28+00:00",
+        "action": "审计",
+        "summary": "审计：逐句核对客户原话与已有方案，3 处需设计师判断。",
+        "detail": "所有原话都能在方案里找到对应处理。",
+        "utterance_ids": [],
+        "changed_fields": []
+      }
+    ],
+    "reference": null,
+    "images": []
+  },
+  "model_returned": null,
+  "api_key_present": false,
+  "raw_truncated": false
+}

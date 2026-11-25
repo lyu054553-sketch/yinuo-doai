@@ -1,0 +1,11 @@
+{
+  "scope": "d1_dataset_only",
+  "decision": "approved",
+  "user_message": "通过，继续正式评测",
+  "recorded_at": "2026-11-18T16:03:23.383685+00:00",
+  "dataset_path": "eval/datasets/injected.json",
+  "dataset_sha256": "d737d46e288eee907a27ba04ed5a4b23cdb3e65b1277dc487b02acbb9e0ebc4f",
+  "review_sha256": "8c68f1b2c851a3514d3e193dc25bc4a919d7403040d0589f78fc0c1c80935cba",
+  "scheme_frozen": false,
+  "holdout_authorized": false
+}

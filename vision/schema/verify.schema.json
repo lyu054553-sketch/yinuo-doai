@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local/vision/verify.schema.json",
+  "title": "上服效果图核对结果",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "items"
+  ],
+  "properties": {
+    "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "collar_family",
+        "front_closure",
+        "buttons_visible",
+        "length",
+        "silhouette",
+        "pattern",
+        "colors"
+      ],
+      "properties": {
+        "collar_family": {
+          "$ref": "#/$defs/item_result"
+        },
+        "front_closure": {
+          "$ref": "#/$defs/item_result"
+        },
+        "buttons_visible": {
+          "$ref": "#/$defs/item_result"
+        },
+        "length": {
+          "$ref": "#/$defs/item_result"
+        },
+        "silhouette": {
+          "$ref": "#/$defs/item_result"
+        },
+        "pattern": {
+          "$ref": "#/$defs/item_result"
+        },
+        "colors": {
+          "$ref": "#/$defs/item_result"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "item_result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "result",
+        "reason"
+      ],
+      "properties": {
+        "result": {
+          "type": "string",
+          "enum": [
+            "符合",
+            "不符合",
+            "看不出"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        }
+      }
+    }
+  }
+}

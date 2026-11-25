@@ -1,0 +1,215 @@
+{
+  "case_id": "c2",
+  "seg": {
+    "gold": 10,
+    "pred": 10,
+    "paired": 10,
+    "recall_num": 10,
+    "recall_den": 10,
+    "precision_num": 10,
+    "precision_den": 10
+  },
+  "field": {
+    "gold_fields": 12,
+    "pred_fields": 12,
+    "match": 12,
+    "recall_num": 12,
+    "recall_den": 12,
+    "precision_num": 12,
+    "precision_den": 12
+  },
+  "status": {
+    "paired": 10,
+    "agree": 10,
+    "loose_agree": 10,
+    "confusion": {
+      "已落实 → 已落实": 3,
+      "有冲突 → 有冲突": 1,
+      "被改写 → 被改写": 1,
+      "间接体现 → 间接体现": 4,
+      "需设计师判断 → 需设计师判断": 1
+    }
+  },
+  "problem": {
+    "gold_problem_count": 3,
+    "detected": 3,
+    "fp_count": 0,
+    "rows": [
+      {
+        "gold_index": 4,
+        "gold_utterance_id": "c2-u5",
+        "gold_text": "要窄一点，显得脖子细一些",
+        "gold_status": "需设计师判断",
+        "gold_fields": [
+          "领型"
+        ],
+        "paired": true,
+        "match_ratio": 1.0,
+        "pred_utterance_id": "u5",
+        "pred_status": "需设计师判断",
+        "detected": true
+      },
+      {
+        "gold_index": 5,
+        "gold_utterance_id": "c2-u6",
+        "gold_text": "整体宽松舒展一点",
+        "gold_status": "有冲突",
+        "gold_fields": [
+          "松弛余量",
+          "版型结构"
+        ],
+        "paired": true,
+        "match_ratio": 1.0,
+        "pred_utterance_id": "u6",
+        "pred_status": "有冲突",
+        "detected": true
+      },
+      {
+        "gold_index": 8,
+        "gold_utterance_id": "c2-u9",
+        "gold_text": "最好是梅花",
+        "gold_status": "被改写",
+        "gold_fields": [
+          "装饰纹样"
+        ],
+        "paired": true,
+        "match_ratio": 1.0,
+        "pred_utterance_id": "u9",
+        "pred_status": "被改写",
+        "detected": true
+      }
+    ],
+    "false_positives": []
+  },
+  "fabrication": {
+    "violations": [],
+    "ungrounded_fields": [],
+    "latest_version": 1
+  },
+  "pairs": [
+    {
+      "gold_utterance_id": "c2-u1",
+      "pred_utterance_id": "u1",
+      "ratio": 1.0,
+      "gold_fields": [
+        "品类"
+      ],
+      "pred_fields": [
+        "品类"
+      ]
+    },
+    {
+      "gold_utterance_id": "c2-u2",
+      "pred_utterance_id": "u2",
+      "ratio": 1.0,
+      "gold_fields": [
+        "面料"
+      ],
+      "pred_fields": [
+        "面料"
+      ]
+    },
+    {
+      "gold_utterance_id": "c2-u3",
+      "pred_utterance_id": "u3",
+      "ratio": 1.0,
+      "gold_fields": [
+        "面料"
+      ],
+      "pred_fields": [
+        "面料"
+      ]
+    },
+    {
+      "gold_utterance_id": "c2-u4",
+      "pred_utterance_id": "u4",
+      "ratio": 1.0,
+      "gold_fields": [
+        "领型"
+      ],
+      "pred_fields": [
+        "领型"
+      ]
+    },
+    {
+      "gold_utterance_id": "c2-u5",
+      "pred_utterance_id": "u5",
+      "ratio": 1.0,
+      "gold_fields": [
+        "领型"
+      ],
+      "pred_fields": [
+        "领型"
+      ]
+    },
+    {
+      "gold_utterance_id": "c2-u6",
+      "pred_utterance_id": "u6",
+      "ratio": 1.0,
+      "gold_fields": [
+        "松弛余量",
+        "版型结构"
+      ],
+      "pred_fields": [
+        "松弛余量",
+        "版型结构"
+      ]
+    },
+    {
+      "gold_utterance_id": "c2-u7",
+      "pred_utterance_id": "u7",
+      "ratio": 1.0,
+      "gold_fields": [
+        "松弛余量"
+      ],
+      "pred_fields": [
+        "松弛余量"
+      ]
+    },
+    {
+      "gold_utterance_id": "c2-u8",
+      "pred_utterance_id": "u8",
+      "ratio": 1.0,
+      "gold_fields": [
+        "面料",
+        "装饰纹样"
+      ],
+      "pred_fields": [
+        "面料",
+        "装饰纹样"
+      ]
+    },
+    {
+      "gold_utterance_id": "c2-u9",
+      "pred_utterance_id": "u9",
+      "ratio": 1.0,
+      "gold_fields": [
+        "装饰纹样"
+      ],
+      "pred_fields": [
+        "装饰纹样"
+      ]
+    },
+    {
+      "gold_utterance_id": "c2-u10",
+      "pred_utterance_id": "u10",
+      "ratio": 1.0,
+      "gold_fields": [
+        "面料"
+      ],
+      "pred_fields": [
+        "面料"
+      ]
+    }
+  ],
+  "repeat": 1,
+  "post_ms": 2.2,
+  "session_meta": {
+    "session_id": "s04839179801a",
+    "source": "mock",
+    "mode": "审计已有方案",
+    "created_at": "2026-11-18T15:41:17+00:00",
+    "sample_id": "c2",
+    "version": 1
+  }
+}

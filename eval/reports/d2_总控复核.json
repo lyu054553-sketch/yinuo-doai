@@ -1,0 +1,199 @@
+{
+  "run_id": "d2-candidate-2-20261119",
+  "model_requested": "auto/deepseek-v4.1-flash",
+  "model_returned_baseline": [
+    "group/auto-deepseek-v4-1-flash"
+  ],
+  "planned": 150,
+  "success": 150,
+  "failure": 0,
+  "repeats": 3,
+  "dev_unique_cases": 5,
+  "dev_unique_problem_sentences": 6,
+  "injected_unique_groups": 20,
+  "injected_unique_problem_sentences": 18,
+  "injected_clean_groups": 5,
+  "baseline_max_tokens": 8192,
+  "temperature": 0,
+  "snapshot_sha256": "dabd800116d805998a8f767706cf7f2626378b066f104fdced446c878eb6c2eb",
+  "snapshot_unchanged": true,
+  "approved_dataset_unchanged": true,
+  "scheme_frozen": false,
+  "holdout_evaluated": false,
+  "stats": {
+    "yinuo": {
+      "dev": {
+        "success": {
+          "n": 15,
+          "d": 15
+        },
+        "problem_detection": {
+          "n": 18,
+          "d": 18
+        },
+        "fp_implemented": {
+          "n": 11,
+          "d": 69
+        },
+        "fp_indirect": {
+          "n": 5,
+          "d": 45
+        },
+        "stable_detection_and_fp": {
+          "n": 2,
+          "d": 5
+        },
+        "misses": {
+          "total": 0,
+          "unpaired": 0,
+          "paired_nonproblem": 0
+        },
+        "severe_quote_violations": 0,
+        "severe_resource_id_violations": 0,
+        "ungrounded_fields": 0,
+        "latency": {
+          "count": 15,
+          "mean_ms": 25615.1,
+          "min_ms": 5087.2,
+          "max_ms": 56776.1
+        },
+        "unmatched_baseline_claims": 0
+      },
+      "injected": {
+        "success": {
+          "n": 60,
+          "d": 60
+        },
+        "problem_detection": {
+          "n": 32,
+          "d": 54
+        },
+        "fp_implemented": {
+          "n": 6,
+          "d": 261
+        },
+        "fp_indirect": {
+          "n": 6,
+          "d": 51
+        },
+        "stable_detection_and_fp": {
+          "n": 15,
+          "d": 20
+        },
+        "misses": {
+          "total": 22,
+          "unpaired": 16,
+          "paired_nonproblem": 6
+        },
+        "severe_quote_violations": 0,
+        "severe_resource_id_violations": 0,
+        "ungrounded_fields": 0,
+        "latency": {
+          "count": 60,
+          "mean_ms": 23331.7,
+          "min_ms": 7221.3,
+          "max_ms": 49734.0
+        },
+        "unmatched_baseline_claims": 0
+      }
+    },
+    "baseline": {
+      "dev": {
+        "success": {
+          "n": 15,
+          "d": 15
+        },
+        "problem_detection": {
+          "n": 8,
+          "d": 18
+        },
+        "fp_implemented": {
+          "n": 7,
+          "d": 69
+        },
+        "fp_indirect": {
+          "n": 6,
+          "d": 45
+        },
+        "stable_detection_and_fp": {
+          "n": 1,
+          "d": 5
+        },
+        "misses": {
+          "total": 10,
+          "unpaired": 10,
+          "paired_nonproblem": 0
+        },
+        "severe_quote_violations": 0,
+        "severe_resource_id_violations": 0,
+        "ungrounded_fields": 0,
+        "latency": {
+          "count": 15,
+          "mean_ms": 20666.1,
+          "min_ms": 7505.6,
+          "max_ms": 45103.5
+        },
+        "unmatched_baseline_claims": 5
+      },
+      "injected": {
+        "success": {
+          "n": 60,
+          "d": 60
+        },
+        "problem_detection": {
+          "n": 33,
+          "d": 54
+        },
+        "fp_implemented": {
+          "n": 9,
+          "d": 261
+        },
+        "fp_indirect": {
+          "n": 0,
+          "d": 51
+        },
+        "stable_detection_and_fp": {
+          "n": 14,
+          "d": 20
+        },
+        "misses": {
+          "total": 21,
+          "unpaired": 21,
+          "paired_nonproblem": 0
+        },
+        "severe_quote_violations": 0,
+        "severe_resource_id_violations": 0,
+        "ungrounded_fields": 0,
+        "latency": {
+          "count": 60,
+          "mean_ms": 5141.9,
+          "min_ms": 1054.5,
+          "max_ms": 24385.3
+        },
+        "unmatched_baseline_claims": 29
+      }
+    }
+  },
+  "clean_controls": {
+    "yinuo": {
+      "runs": 15,
+      "groups": 5,
+      "false_positives": 3
+    },
+    "baseline": {
+      "runs": 15,
+      "groups": 5,
+      "false_positives": 3
+    }
+  },
+  "interpretation": [
+    "主指标严格保留预设LCS/较长者长度>=0.5、一对一贪心匹配口径，不在看到结果后改分母或加回未配对项。",
+    "未配对不等于语义未识别。inj07竹子、inj11素色、inj16窄领、inj17不收腰的首轮原始输出中，较短分句已经标了问题；这些句子仍按主口径计为未检出，不额外发布人工修正成绩。",
+    "确有材料问题未被识别：inj13、inj20首轮材料要求配上但标已落实；不能把全部漏检归咎于拆句。",
+    "误报分母为该子集全部标准已落实或间接体现句数乘3（计划机会数），不是精确率；未匹配的自由主张单列，不算误报。",
+    "系统得到领域规则/资源与少样本，通用问法只得到口述/方案；这是系统方案比较，不是模型能力排名。",
+    "开发案例已见、注入集自造、重复不是独立新样本；未测留出，不能证明泛化。",
+    "0严重编造违规只涵盖输出原话子串/位置和资源ID存在性，不能解释为零幻觉、所有材料名真实或库存可用。",
+    "视觉C2交领误识别仍为已知限制；不属于本次文字审计D2指标。"
+  ]
+}

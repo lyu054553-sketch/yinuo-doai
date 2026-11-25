@@ -1,0 +1,498 @@
+{
+  "unit": {
+    "lane": "yinuo",
+    "subset": "injected",
+    "case_id": "inj10",
+    "repeat": 1,
+    "gold_problem_count": 0
+  },
+  "lane": "yinuo",
+  "subset": "injected",
+  "case_id": "inj10",
+  "repeat": 1,
+  "recorded_at": "2026-11-19T00:49:48",
+  "outcome": "success",
+  "http_status": 200,
+  "elapsed_ms": 10357.7,
+  "error": null,
+  "request": {
+    "text": "想要一件新中式外套，秋天配旗袍穿。我有一点小肚腩，前片要留松量。版型H型直身，不要收腰。领子低立领，3厘米以内。面料用醋酸，垂感好。颜色无特殊要求。",
+    "existing_spec": {
+      "品类": "新中式外套",
+      "版型结构": "H型直身，无收腰；微落平肩",
+      "领型": "低立领，3cm以内",
+      "面料": "醋酸面料，垂感适中",
+      "色彩": "无特殊需求",
+      "装饰纹样": "无特殊需求",
+      "长度比例": "衣长至臀中",
+      "松弛余量": "前片腹部预留充足松量，整体围度宽松"
+    }
+  },
+  "response": {
+    "id": "s50230ed05719",
+    "title": "客户口述审计",
+    "mode": "审计已有方案",
+    "source": "llm",
+    "created_at": "2026-11-18T16:49:58+00:00",
+    "input": {
+      "text": "想要一件新中式外套，秋天配旗袍穿。我有一点小肚腩，前片要留松量。版型H型直身，不要收腰。领子低立领，3厘米以内。面料用醋酸，垂感好。颜色无特殊要求。",
+      "existing_spec": {
+        "品类": "新中式外套",
+        "版型结构": "H型直身，无收腰；微落平肩",
+        "领型": "低立领，3cm以内",
+        "面料": "醋酸面料，垂感适中",
+        "色彩": "无特殊需求",
+        "装饰纹样": "无特殊需求",
+        "长度比例": "衣长至臀中",
+        "松弛余量": "前片腹部预留充足松量，整体围度宽松"
+      },
+      "sample_id": null
+    },
+    "utterances": [
+      {
+        "id": "u1",
+        "text": "想要一件新中式外套",
+        "start": 0,
+        "end": 9,
+        "type": "品类",
+        "strength": "描述",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "品类",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案品类写的是“新中式外套”，与客户需求一致",
+            "rule_id": null
+          },
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "间接体现",
+            "note": "方案中没有单独的“风格”字段，新中式感觉由“低立领”体现",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u2",
+        "text": "秋天配旗袍穿",
+        "start": 10,
+        "end": 16,
+        "type": "场景",
+        "strength": "描述",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "间接体现",
+            "note": "方案中没有单独的“场景”字段；方案用醋酸面料，适合秋天叠穿",
+            "rule_id": null
+          },
+          {
+            "field": "长度比例",
+            "garment": null,
+            "status": "间接体现",
+            "note": "方案中没有单独的“场景”字段；衣长至臀中，适合内搭旗袍",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u3",
+        "text": "我有一点小肚腩",
+        "start": 17,
+        "end": 24,
+        "type": "身形",
+        "strength": "描述",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案写了“前片腹部预留充足松量”",
+            "rule_id": "R1"
+          },
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案写了“H型直身，无收腰”，没有收腰",
+            "rule_id": "R1"
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u4",
+        "text": "前片要留松量",
+        "start": 25,
+        "end": 31,
+        "type": "松量",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案写了“前片腹部预留充足松量，整体围度宽松”",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u5",
+        "text": "版型H型直身，不要收腰",
+        "start": 32,
+        "end": 43,
+        "type": "版型",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案写了“H型直身，无收腰”，与“不要收腰”的方向一致",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u6",
+        "text": "领子低立领，3厘米以内",
+        "start": 44,
+        "end": 55,
+        "type": "领型",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案写了“低立领，3cm以内”",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u7",
+        "text": "面料用醋酸",
+        "start": 56,
+        "end": 61,
+        "type": "面料",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案面料写的是醋酸面料",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u8",
+        "text": "垂感好",
+        "start": 62,
+        "end": 65,
+        "type": "面料",
+        "strength": "软偏好",
+        "status": "被改写",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "被改写",
+            "note": "客户要求“垂感好”，方案写成了“垂感适中”，需求被落实成了不同的程度",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u9",
+        "text": "颜色无特殊要求",
+        "start": 66,
+        "end": 73,
+        "type": "描述",
+        "strength": "描述",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "色彩",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案色彩写“无特殊需求”，与客户口述一致",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      }
+    ],
+    "spec_versions": [
+      {
+        "version": 1,
+        "created_at": "2026-11-18T16:49:58+00:00",
+        "reason": "导入已有方案",
+        "fields": {
+          "品类": {
+            "value": "新中式外套",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u1"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "版型结构": {
+            "value": "H型直身，无收腰；微落平肩",
+            "resource_ids": [
+              "S1",
+              "SH1"
+            ],
+            "utterance_ids": [
+              "u3",
+              "u5"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "领型": {
+            "value": "低立领，3cm以内",
+            "resource_ids": [
+              "CL1"
+            ],
+            "utterance_ids": [
+              "u1",
+              "u6"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "面料": {
+            "value": "醋酸面料，垂感适中",
+            "resource_ids": [
+              "F1"
+            ],
+            "utterance_ids": [
+              "u2",
+              "u7",
+              "u8"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "色彩": {
+            "value": "无特殊需求",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u9"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "装饰纹样": {
+            "value": "无特殊需求",
+            "resource_ids": [],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "长度比例": {
+            "value": "衣长至臀中",
+            "resource_ids": [
+              "L1"
+            ],
+            "utterance_ids": [
+              "u2"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "松弛余量": {
+            "value": "前片腹部预留充足松量，整体围度宽松",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u3",
+              "u4"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          }
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "utterance_ids": [
+          "u8"
+        ],
+        "field": "面料",
+        "title": "面料换成哪一种？",
+        "context": "客户原话「垂感好」，当前方案这一栏是「醋酸面料，垂感适中」。",
+        "why": "答案会改变【面料】这一栏；选“坚持原话要求”还会留下一条待办。",
+        "options": [
+          {
+            "id": "o1",
+            "label": "薄款提花锦",
+            "detail": "F2 · 来源案例一",
+            "resource_ids": [
+              "F2"
+            ],
+            "patch": {
+              "面料": "优选薄款提花锦，垂感适中、手感柔和、挺而不硬"
+            },
+            "note": "采用资源 F2「薄款提花锦」（参考案例一）。",
+            "todo": null
+          },
+          {
+            "id": "o2",
+            "label": "提花宋锦",
+            "detail": "F3 · 来源案例二、案例三",
+            "resource_ids": [
+              "F3"
+            ],
+            "patch": {
+              "面料": "优选提花宋锦，垂感顺滑、柔和光泽、挺而不硬"
+            },
+            "note": "采用资源 F3「提花宋锦」（参考案例二、案例三）。",
+            "todo": null
+          },
+          {
+            "id": "o3",
+            "label": "真丝里布",
+            "detail": "F4 · 来源案例三",
+            "resource_ids": [
+              "F4"
+            ],
+            "patch": {
+              "面料": "优选真丝里布，里料、穿着舒适"
+            },
+            "note": "采用资源 F4「真丝里布」（参考案例三）。",
+            "todo": null
+          },
+          {
+            "id": "o4",
+            "label": "高垂感亮面缎面",
+            "detail": "F5 · 来源案例三",
+            "resource_ids": [
+              "F5"
+            ],
+            "patch": {
+              "面料": "优选高垂感亮面缎面，顺滑、有光泽、垂坠"
+            },
+            "note": "采用资源 F5「高垂感亮面缎面」（参考案例三）。",
+            "todo": null
+          },
+          {
+            "id": "o5",
+            "label": "香云纱",
+            "detail": "F6 · 来源案例四",
+            "resource_ids": [
+              "F6"
+            ],
+            "patch": {
+              "面料": "优选香云纱，自然肌理、哑光温润、挺而不硬"
+            },
+            "note": "采用资源 F6「香云纱」（参考案例四）。",
+            "todo": null
+          },
+          {
+            "id": "o6",
+            "label": "真丝暗纹织花",
+            "detail": "F8 · 来源案例六",
+            "resource_ids": [
+              "F8"
+            ],
+            "patch": {
+              "面料": "优选真丝暗纹织花，暗纹、垂感适中、适度骨感"
+            },
+            "note": "采用资源 F8「真丝暗纹织花」（参考案例六）。",
+            "todo": null
+          },
+          {
+            "id": "o7",
+            "label": "坚持原话要求：按原话的面料要求",
+            "detail": "无资源出处",
+            "resource_ids": [],
+            "patch": {
+              "面料": "按客户原话执行：垂感好"
+            },
+            "note": "客户对面料有明确要求，案例资源里没有完全对应的面料。",
+            "todo": "按客户原话另找面料，确认是否有真实样布"
+          }
+        ],
+        "answer": null
+      }
+    ],
+    "designer_items": [],
+    "skipped": [
+      {
+        "field": "装饰纹样",
+        "reason": "没有原话单独涉及这一栏，按方案现有取值处理，不追问。"
+      }
+    ],
+    "ledger": [
+      {
+        "version": 1,
+        "at": "2026-11-18T16:49:58+00:00",
+        "action": "导入",
+        "summary": "导入客户口述和已有方案，由大模型拆分原话。",
+        "detail": "拆出 9 句原话，覆盖 7 个设计字段。",
+        "utterance_ids": [
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u5",
+          "u6",
+          "u7",
+          "u8",
+          "u9"
+        ],
+        "changed_fields": [
+          "品类",
+          "版型结构",
+          "领型",
+          "面料",
+          "色彩",
+          "装饰纹样",
+          "长度比例",
+          "松弛余量"
+        ]
+      },
+      {
+        "version": 1,
+        "at": "2026-11-18T16:49:58+00:00",
+        "action": "审计",
+        "summary": "审计：逐句核对客户原话与已有方案，1 处被改写。",
+        "detail": "「垂感好」→【面料】被改写：客户要求“垂感好”，方案写成了“垂感适中”，需求被落实成了不同的程度",
+        "utterance_ids": [
+          "u8"
+        ],
+        "changed_fields": [
+          "面料"
+        ]
+      }
+    ],
+    "reference": null,
+    "images": []
+  },
+  "model_returned": null,
+  "api_key_present": false,
+  "raw_truncated": false
+}

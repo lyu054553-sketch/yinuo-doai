@@ -1,0 +1,399 @@
+{
+  "unit": {
+    "lane": "yinuo",
+    "subset": "injected",
+    "case_id": "inj20",
+    "repeat": 2,
+    "gold_problem_count": 2
+  },
+  "lane": "yinuo",
+  "subset": "injected",
+  "case_id": "inj20",
+  "repeat": 2,
+  "recorded_at": "2026-11-19T00:54:10",
+  "outcome": "success",
+  "http_status": 200,
+  "elapsed_ms": 49734.0,
+  "error": null,
+  "request": {
+    "text": "想要一件新中式外套，参加画展开幕。颜色想要米白，低调一点。领子低立领。整体宽松，H型直身。面料要哑光，有肌理感。",
+    "existing_spec": {
+      "品类": "新中式外套",
+      "版型结构": "H型直身，无收腰；微落平肩",
+      "领型": "低立领，3cm以内",
+      "面料": "雪绒丝面料，哑光有肌理",
+      "色彩": "亮橙色，配金色滚边",
+      "装饰纹样": "无特殊需求",
+      "长度比例": "衣长至臀中",
+      "松弛余量": "整体围度宽松"
+    }
+  },
+  "response": {
+    "id": "sd725ec292e19",
+    "title": "客户口述审计",
+    "mode": "审计已有方案",
+    "source": "llm",
+    "created_at": "2026-11-18T16:54:59+00:00",
+    "input": {
+      "text": "想要一件新中式外套，参加画展开幕。颜色想要米白，低调一点。领子低立领。整体宽松，H型直身。面料要哑光，有肌理感。",
+      "existing_spec": {
+        "品类": "新中式外套",
+        "版型结构": "H型直身，无收腰；微落平肩",
+        "领型": "低立领，3cm以内",
+        "面料": "雪绒丝面料，哑光有肌理",
+        "色彩": "亮橙色，配金色滚边",
+        "装饰纹样": "无特殊需求",
+        "长度比例": "衣长至臀中",
+        "松弛余量": "整体围度宽松"
+      },
+      "sample_id": null
+    },
+    "utterances": [
+      {
+        "id": "u1",
+        "text": "想要一件新中式外套",
+        "start": 0,
+        "end": 9,
+        "type": "品类",
+        "strength": "描述",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "品类",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案品类明确为新中式外套",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u2",
+        "text": "参加画展开幕",
+        "start": 10,
+        "end": 16,
+        "type": "场景",
+        "strength": "描述",
+        "status": "需设计师判断",
+        "mappings": [
+          {
+            "field": "色彩",
+            "garment": null,
+            "status": "需设计师判断",
+            "note": "方案已有亮橙色配金色滚边的配色处理，但这套配色是否适合画展开幕，需要设计师判断",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u3",
+        "text": "颜色想要米白",
+        "start": 17,
+        "end": 23,
+        "type": "色彩",
+        "strength": "硬约束",
+        "status": "有冲突",
+        "mappings": [
+          {
+            "field": "色彩",
+            "garment": null,
+            "status": "有冲突",
+            "note": "方案写的是亮橙色，与米白要求不符",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u4",
+        "text": "低调一点",
+        "start": 24,
+        "end": 28,
+        "type": "风格",
+        "strength": "软偏好",
+        "status": "有冲突",
+        "mappings": [
+          {
+            "field": "色彩",
+            "garment": null,
+            "status": "有冲突",
+            "note": "方案用亮橙色配金色滚边，与低调方向相反",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u5",
+        "text": "领子低立领",
+        "start": 29,
+        "end": 34,
+        "type": "领型",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案为低立领，领高控制在3cm以内",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u6",
+        "text": "整体宽松",
+        "start": 35,
+        "end": 39,
+        "type": "松量",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案写整体围度宽松",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u7",
+        "text": "H型直身",
+        "start": 40,
+        "end": 44,
+        "type": "版型",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案为H型直身，无收腰",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u8",
+        "text": "面料要哑光，有肌理感",
+        "start": 45,
+        "end": 55,
+        "type": "面料",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案为雪绒丝面料，哑光有肌理",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      }
+    ],
+    "spec_versions": [
+      {
+        "version": 1,
+        "created_at": "2026-11-18T16:54:59+00:00",
+        "reason": "导入已有方案",
+        "fields": {
+          "品类": {
+            "value": "新中式外套",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u1"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "版型结构": {
+            "value": "H型直身，无收腰；微落平肩",
+            "resource_ids": [
+              "S1",
+              "SH1"
+            ],
+            "utterance_ids": [
+              "u7"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "领型": {
+            "value": "低立领，3cm以内",
+            "resource_ids": [
+              "CL1"
+            ],
+            "utterance_ids": [
+              "u5"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "面料": {
+            "value": "雪绒丝面料，哑光有肌理",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u8"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "色彩": {
+            "value": "亮橙色，配金色滚边",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u2",
+              "u3",
+              "u4"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "装饰纹样": {
+            "value": "无特殊需求",
+            "resource_ids": [],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "长度比例": {
+            "value": "衣长至臀中",
+            "resource_ids": [
+              "L1"
+            ],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "松弛余量": {
+            "value": "整体围度宽松",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u6"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          }
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "utterance_ids": [
+          "u3"
+        ],
+        "field": "色彩",
+        "title": "颜色怎么定？",
+        "context": "客户原话「颜色想要米白」，当前方案这一栏是「亮橙色，配金色滚边」。",
+        "why": "答案会改变【色彩】这一栏；选“坚持原话要求”还会留下一条待办。",
+        "options": [
+          {
+            "id": "o1",
+            "label": "米白底＋亮粉滚边＋撞色袖口；连衣裙亮粉",
+            "detail": "CO1 · 来源案例三",
+            "resource_ids": [
+              "CO1"
+            ],
+            "patch": {
+              "色彩": "米白底＋亮粉滚边＋撞色袖口；连衣裙亮粉"
+            },
+            "note": "采用资源 CO1「米白底＋亮粉滚边＋撞色袖口；连衣裙亮粉」（参考案例三）。",
+            "todo": null
+          },
+          {
+            "id": "o2",
+            "label": "坚持原话要求：米白",
+            "detail": "无资源出处",
+            "resource_ids": [],
+            "patch": {
+              "色彩": "米白"
+            },
+            "note": "客户原话提到「米白」，资源库里没有对应色彩参考。",
+            "todo": "寻找米白的面料或染色工艺，确认能否实现"
+          }
+        ],
+        "answer": null
+      }
+    ],
+    "designer_items": [
+      {
+        "id": "d1",
+        "utterance_ids": [
+          "u2"
+        ],
+        "field": "色彩",
+        "text": "客户原话「参加画展开幕」，方案在【色彩】上的处理是「亮橙色，配金色滚边」，是否到位需要设计师判断。"
+      }
+    ],
+    "skipped": [
+      {
+        "field": "装饰纹样",
+        "reason": "没有原话单独涉及这一栏，按方案现有取值处理，不追问。"
+      },
+      {
+        "field": "长度比例",
+        "reason": "没有原话涉及衣长；资源库里有出处的案例都是“衣长至臀中”，按资源库里最常见的取值沿用，不追问。"
+      }
+    ],
+    "ledger": [
+      {
+        "version": 1,
+        "at": "2026-11-18T16:54:59+00:00",
+        "action": "导入",
+        "summary": "导入客户口述和已有方案，由大模型拆分原话。",
+        "detail": "拆出 8 句原话，覆盖 6 个设计字段。",
+        "utterance_ids": [
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u5",
+          "u6",
+          "u7",
+          "u8"
+        ],
+        "changed_fields": [
+          "品类",
+          "版型结构",
+          "领型",
+          "面料",
+          "色彩",
+          "装饰纹样",
+          "长度比例",
+          "松弛余量"
+        ]
+      },
+      {
+        "version": 1,
+        "at": "2026-11-18T16:54:59+00:00",
+        "action": "审计",
+        "summary": "审计：逐句核对客户原话与已有方案，2 处有冲突，1 处需设计师判断。",
+        "detail": "「颜色想要米白」→【色彩】有冲突：方案写的是亮橙色，与米白要求不符\n「低调一点」→【色彩】有冲突：方案用亮橙色配金色滚边，与低调方向相反",
+        "utterance_ids": [
+          "u3",
+          "u4"
+        ],
+        "changed_fields": [
+          "色彩"
+        ]
+      }
+    ],
+    "reference": null,
+    "images": []
+  },
+  "model_returned": null,
+  "api_key_present": false,
+  "raw_truncated": false
+}

@@ -1,0 +1,553 @@
+{
+  "unit": {
+    "lane": "yinuo",
+    "subset": "injected",
+    "case_id": "inj07",
+    "repeat": 3,
+    "gold_problem_count": 2
+  },
+  "lane": "yinuo",
+  "subset": "injected",
+  "case_id": "inj07",
+  "repeat": 3,
+  "recorded_at": "2026-11-19T00:49:03",
+  "outcome": "success",
+  "http_status": 200,
+  "elapsed_ms": 13945.3,
+  "error": null,
+  "request": {
+    "text": "想定一件新中式外套，参加公司年会。我喜欢整体宽松一点，坐一天也不勒。领子不要太高。面料要带暗纹，最好是竹子图案，含蓄一些。颜色用深色系。",
+    "existing_spec": {
+      "品类": "新中式外套",
+      "版型结构": "X型收腰，腰部明显收进；自然落肩",
+      "领型": "低立领，3cm以内",
+      "面料": "提花宋锦，带暗纹",
+      "色彩": "藏青",
+      "装饰纹样": "大面积牡丹提花，配金色亮片",
+      "长度比例": "衣长至臀中",
+      "松弛余量": "腰部收束，整体合体"
+    }
+  },
+  "response": {
+    "id": "s8b88b5a7099e",
+    "title": "客户口述审计",
+    "mode": "审计已有方案",
+    "source": "llm",
+    "created_at": "2026-11-18T16:49:17+00:00",
+    "input": {
+      "text": "想定一件新中式外套，参加公司年会。我喜欢整体宽松一点，坐一天也不勒。领子不要太高。面料要带暗纹，最好是竹子图案，含蓄一些。颜色用深色系。",
+      "existing_spec": {
+        "品类": "新中式外套",
+        "版型结构": "X型收腰，腰部明显收进；自然落肩",
+        "领型": "低立领，3cm以内",
+        "面料": "提花宋锦，带暗纹",
+        "色彩": "藏青",
+        "装饰纹样": "大面积牡丹提花，配金色亮片",
+        "长度比例": "衣长至臀中",
+        "松弛余量": "腰部收束，整体合体"
+      },
+      "sample_id": null
+    },
+    "utterances": [
+      {
+        "id": "u1",
+        "text": "想定一件新中式外套",
+        "start": 0,
+        "end": 9,
+        "type": "品类",
+        "strength": "描述",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "品类",
+            "garment": null,
+            "status": "已落实",
+            "note": "品类栏明确写为新中式外套，与客户要求一致。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u2",
+        "text": "参加公司年会",
+        "start": 10,
+        "end": 16,
+        "type": "场景",
+        "strength": "描述",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "间接体现",
+            "note": "规格表没有场景字段，提花宋锦的正式感可对应年会场合。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u3",
+        "text": "我喜欢整体宽松一点",
+        "start": 17,
+        "end": 26,
+        "type": "松量",
+        "strength": "软偏好",
+        "status": "有冲突",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "有冲突",
+            "note": "松弛余量写腰部收束、整体合体，与宽松需求方向相反。",
+            "rule_id": null
+          },
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "有冲突",
+            "note": "版型写X型收腰、腰部明显收进，与宽松需求方向相反。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u4",
+        "text": "坐一天也不勒",
+        "start": 27,
+        "end": 33,
+        "type": "活动",
+        "strength": "硬约束",
+        "status": "有冲突",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "有冲突",
+            "note": "腰部收束，久坐会勒，方向冲突。",
+            "rule_id": null
+          },
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "有冲突",
+            "note": "X型收腰、腰部明显收进，不利于久坐不勒。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u5",
+        "text": "领子不要太高",
+        "start": 34,
+        "end": 40,
+        "type": "领型",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "已落实",
+            "note": "低立领，领高控制在3cm以内，符合不要太高。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u6",
+        "text": "面料要带暗纹",
+        "start": 41,
+        "end": 47,
+        "type": "纹样",
+        "strength": "硬约束",
+        "status": "被改写",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "已落实",
+            "note": "面料写提花宋锦、带暗纹，已落实。",
+            "rule_id": null
+          },
+          {
+            "field": "装饰纹样",
+            "garment": null,
+            "status": "被改写",
+            "note": "客户要求“暗纹”，方案写的是“大面积牡丹提花，配金色亮片”，没有明确保留。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u7",
+        "text": "最好是竹子图案",
+        "start": 48,
+        "end": 55,
+        "type": "纹样",
+        "strength": "软偏好",
+        "status": "被改写",
+        "mappings": [
+          {
+            "field": "装饰纹样",
+            "garment": null,
+            "status": "被改写",
+            "note": "方案装饰纹样写大面积牡丹提花，换成了牡丹而非竹子。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u8",
+        "text": "含蓄一些",
+        "start": 56,
+        "end": 60,
+        "type": "风格",
+        "strength": "软偏好",
+        "status": "有冲突",
+        "mappings": [
+          {
+            "field": "装饰纹样",
+            "garment": null,
+            "status": "有冲突",
+            "note": "大面积牡丹提花配金色亮片，与含蓄方向相反。",
+            "rule_id": null
+          },
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "间接体现",
+            "note": "面料为带暗纹的提花宋锦，暗纹体现含蓄。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u9",
+        "text": "颜色用深色系",
+        "start": 61,
+        "end": 67,
+        "type": "色彩",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "色彩",
+            "garment": null,
+            "status": "已落实",
+            "note": "色彩写藏青，属于深色系，已落实。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      }
+    ],
+    "spec_versions": [
+      {
+        "version": 1,
+        "created_at": "2026-11-18T16:49:17+00:00",
+        "reason": "导入已有方案",
+        "fields": {
+          "品类": {
+            "value": "新中式外套",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u1"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "版型结构": {
+            "value": "X型收腰，腰部明显收进；自然落肩",
+            "resource_ids": [
+              "SH2"
+            ],
+            "utterance_ids": [
+              "u3",
+              "u4"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "领型": {
+            "value": "低立领，3cm以内",
+            "resource_ids": [
+              "CL1"
+            ],
+            "utterance_ids": [
+              "u5"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "面料": {
+            "value": "提花宋锦，带暗纹",
+            "resource_ids": [
+              "F3"
+            ],
+            "utterance_ids": [
+              "u2",
+              "u6",
+              "u8"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "色彩": {
+            "value": "藏青",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u9"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "装饰纹样": {
+            "value": "大面积牡丹提花，配金色亮片",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u6",
+              "u7",
+              "u8"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "长度比例": {
+            "value": "衣长至臀中",
+            "resource_ids": [
+              "L1"
+            ],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "松弛余量": {
+            "value": "腰部收束，整体合体",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u3",
+              "u4"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          }
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "utterance_ids": [
+          "u6"
+        ],
+        "field": "装饰纹样",
+        "title": "暗纹暗纹怎么落实？",
+        "context": "客户原话「面料要带暗纹」，当前方案这一栏是「大面积牡丹提花，配金色亮片」。",
+        "why": "答案会改变【装饰纹样】这一栏；选“坚持原话要求”还会留下一条待办。",
+        "options": [
+          {
+            "id": "o1",
+            "label": "植物暗花＋点状星光",
+            "detail": "P1 · 来源案例二",
+            "resource_ids": [
+              "P1"
+            ],
+            "patch": {
+              "装饰纹样": "衣身植物暗花＋点状星光纹样"
+            },
+            "note": "采用资源 P1「植物暗花＋点状星光」（参考案例二）。",
+            "todo": null
+          },
+          {
+            "id": "o2",
+            "label": "小巧暗花，四瓣花形散点",
+            "detail": "P3 · 来源案例六",
+            "resource_ids": [
+              "P3"
+            ],
+            "patch": {
+              "装饰纹样": "衣身小巧暗花，四瓣花形散点纹样"
+            },
+            "note": "采用资源 P3「小巧暗花，四瓣花形散点」（参考案例六）。",
+            "todo": null
+          },
+          {
+            "id": "o3",
+            "label": "坚持原话要求：暗纹",
+            "detail": "无资源出处",
+            "resource_ids": [],
+            "patch": {
+              "装饰纹样": "衣身暗纹纹样，含蓄点缀"
+            },
+            "note": "客户原话提到「暗纹」，资源库里找不到可辨认的暗纹，坚持原话就要另找面料。",
+            "todo": "寻找暗纹纹样面料，并与客户确认能否做出可辨认的暗纹图案"
+          }
+        ],
+        "answer": null
+      },
+      {
+        "id": "q2",
+        "utterance_ids": [
+          "u3"
+        ],
+        "field": "版型结构",
+        "title": "腰身：微微收腰还是整体宽松？",
+        "context": "客户原话「我喜欢整体宽松一点」，当前方案这一栏是「X型收腰，腰部明显收进；自然落肩」。",
+        "why": "答案会改变【版型结构】这一栏；选“坚持原话要求”还会留下一条待办。",
+        "options": [
+          {
+            "id": "o1",
+            "label": "H 型直身，无收腰",
+            "detail": "S1 · 来源案例一、案例四、案例五、案例六",
+            "resource_ids": [
+              "S1",
+              "SH2"
+            ],
+            "patch": {
+              "版型结构": "H 型直身，无收腰"
+            },
+            "note": "采用资源 S1「H 型直身，无收腰」（参考案例一、案例四、案例五、案例六）。",
+            "todo": null
+          },
+          {
+            "id": "o2",
+            "label": "H 型直身，微微收腰",
+            "detail": "S2 · 来源案例二",
+            "resource_ids": [
+              "S2",
+              "SH2"
+            ],
+            "patch": {
+              "版型结构": "H 型直身，微微收腰"
+            },
+            "note": "采用资源 S2「H 型直身，微微收腰」（参考案例二）。注意：案例二中与客户“整体宽松”的要求有冲突",
+            "todo": null
+          },
+          {
+            "id": "o3",
+            "label": "短款微 H 型",
+            "detail": "S3 · 来源案例三",
+            "resource_ids": [
+              "S3",
+              "SH2"
+            ],
+            "patch": {
+              "版型结构": "短款微 H 型"
+            },
+            "note": "采用资源 S3「短款微 H 型」（参考案例三）。",
+            "todo": null
+          },
+          {
+            "id": "o4",
+            "label": "微落平肩，线条简约利落",
+            "detail": "SH1 · 来源案例一、案例二、案例五、案例六",
+            "resource_ids": [
+              "SH1",
+              "SH2"
+            ],
+            "patch": {
+              "版型结构": "微落平肩，线条简约利落"
+            },
+            "note": "采用资源 SH1「微落平肩，线条简约利落」（参考案例一、案例二、案例五、案例六）。",
+            "todo": null
+          },
+          {
+            "id": "o5",
+            "label": "自然平肩，不压肩",
+            "detail": "SH3 · 来源案例三",
+            "resource_ids": [
+              "SH3",
+              "SH2"
+            ],
+            "patch": {
+              "版型结构": "自然平肩，不压肩"
+            },
+            "note": "采用资源 SH3「自然平肩，不压肩」（参考案例三）。",
+            "todo": null
+          },
+          {
+            "id": "o6",
+            "label": "坚持原话要求：整体宽松、不收紧腰身",
+            "detail": "无资源出处",
+            "resource_ids": [],
+            "patch": {
+              "版型结构": "整体宽松舒展，腰部不收紧"
+            },
+            "note": "按客户原话保持整体宽松，不在腰部收紧；与案例里的微微收腰做法不同。",
+            "todo": "打样时核对腰部松量是否足够，避免版型又回到收腰"
+          }
+        ],
+        "answer": null
+      }
+    ],
+    "designer_items": [],
+    "skipped": [
+      {
+        "field": "长度比例",
+        "reason": "没有原话涉及衣长；资源库里有出处的案例都是“衣长至臀中”，按资源库里最常见的取值沿用，不追问。"
+      }
+    ],
+    "ledger": [
+      {
+        "version": 1,
+        "at": "2026-11-18T16:49:17+00:00",
+        "action": "导入",
+        "summary": "导入客户口述和已有方案，由大模型拆分原话。",
+        "detail": "拆出 9 句原话，覆盖 7 个设计字段。",
+        "utterance_ids": [
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u5",
+          "u6",
+          "u7",
+          "u8",
+          "u9"
+        ],
+        "changed_fields": [
+          "品类",
+          "版型结构",
+          "领型",
+          "面料",
+          "色彩",
+          "装饰纹样",
+          "长度比例",
+          "松弛余量"
+        ]
+      },
+      {
+        "version": 1,
+        "at": "2026-11-18T16:49:17+00:00",
+        "action": "审计",
+        "summary": "审计：逐句核对客户原话与已有方案，5 处有冲突，2 处被改写。",
+        "detail": "「我喜欢整体宽松一点」→【松弛余量】有冲突：松弛余量写腰部收束、整体合体，与宽松需求方向相反。\n「我喜欢整体宽松一点」→【版型结构】有冲突：版型写X型收腰、腰部明显收进，与宽松需求方向相反。\n「坐一天也不勒」→【松弛余量】有冲突：腰部收束，久坐会勒，方向冲突。\n「坐一天也不勒」→【版型结构】有冲突：X型收腰、腰部明显收进，不利于久坐不勒。\n「面料要带暗纹」→【装饰纹样】被改写：客户要求“暗纹”，方案写的是“大面积牡丹提花，配金色亮片”，没有明确保留。\n「最好是竹子图案」→【装饰纹样】被改写：方案装饰纹样写大面积牡丹提花，换成了牡丹而非竹子。\n「含蓄一些」→【装饰纹样】有冲突：大面积牡丹提花配金色亮片，与含蓄方向相反。",
+        "utterance_ids": [
+          "u3",
+          "u4",
+          "u6",
+          "u7",
+          "u8"
+        ],
+        "changed_fields": [
+          "松弛余量",
+          "版型结构",
+          "装饰纹样"
+        ]
+      }
+    ],
+    "reference": null,
+    "images": []
+  },
+  "model_returned": null,
+  "api_key_present": false,
+  "raw_truncated": false
+}

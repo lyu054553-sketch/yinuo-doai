@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-11-18T17:00:43.735462+00:00",
+  "unique_checkpoints": 150,
+  "call_records": 150,
+  "http_successes": 150,
+  "yinuo_source_counts": {
+    "llm": 75
+  },
+  "baseline_finish_reasons": {
+    "stop": 75
+  },
+  "baseline_quotes_checked": 97,
+  "metrics_counts_reconciled": true,
+  "backend_snapshot_unchanged": true,
+  "approved_dataset_and_review_unchanged": true,
+  "holdout_evaluated": false,
+  "baseline_quotes_checked_against_customer_text": 97
+}

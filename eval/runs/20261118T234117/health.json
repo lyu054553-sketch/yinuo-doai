@@ -1,0 +1,7 @@
+{
+  "ok": true,
+  "mock_mode": true,
+  "llm_model": "qwen2.5vl:7b",
+  "image_provider": "none",
+  "vision_ok": true
+}

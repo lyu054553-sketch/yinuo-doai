@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local/vision/deconstruct.schema.json",
+  "title": "上服看图解构结果",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "collar_family",
+    "front_closure",
+    "buttons_visible",
+    "length",
+    "silhouette",
+    "pattern",
+    "colors"
+  ],
+  "properties": {
+    "collar_family": {
+      "$ref": "#/$defs/collar_field",
+      "description": "领型。领型看不出时值为“看不出”。"
+    },
+    "front_closure": {
+      "$ref": "#/$defs/closure_field",
+      "description": "前襟闭合方式。"
+    },
+    "buttons_visible": {
+      "$ref": "#/$defs/buttons_field",
+      "description": "正面是否看到纽扣。"
+    },
+    "length": {
+      "$ref": "#/$defs/length_field",
+      "description": "衣长。"
+    },
+    "silhouette": {
+      "$ref": "#/$defs/silhouette_field",
+      "description": "整体廓形。"
+    },
+    "pattern": {
+      "$ref": "#/$defs/pattern_field",
+      "description": "纹样自由文本描述。"
+    },
+    "colors": {
+      "$ref": "#/$defs/colors_field",
+      "description": "主色，一到三个中文颜色词。"
+    }
+  },
+  "$defs": {
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "确定",
+        "疑似",
+        "看不出"
+      ]
+    },
+    "collar_value": {
+      "type": "string",
+      "enum": [
+        "立领",
+        "交领",
+        "翻领",
+        "斜襟",
+        "圆领",
+        "看不出"
+      ]
+    },
+    "closure_value": {
+      "type": "string",
+      "enum": [
+        "外露扣",
+        "无扣开襟",
+        "交叠闭合",
+        "系带",
+        "看不出"
+      ]
+    },
+    "buttons_value": {
+      "enum": [
+        true,
+        false,
+        "看不出"
+      ]
+    },
+    "length_value": {
+      "type": "string",
+      "enum": [
+        "臀部附近",
+        "过臀",
+        "到腰",
+        "看不出"
+      ]
+    },
+    "silhouette_value": {
+      "type": "string",
+      "enum": [
+        "H 型",
+        "收腰",
+        "A 摆",
+        "看不出"
+      ]
+    },
+    "collar_field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "confidence"
+      ],
+      "properties": {
+        "value": {
+          "$ref": "#/$defs/collar_value"
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        }
+      }
+    },
+    "closure_field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "confidence"
+      ],
+      "properties": {
+        "value": {
+          "$ref": "#/$defs/closure_value"
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        }
+      }
+    },
+    "buttons_field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "confidence"
+      ],
+      "properties": {
+        "value": {
+          "$ref": "#/$defs/buttons_value"
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        }
+      }
+    },
+    "length_field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "confidence"
+      ],
+      "properties": {
+        "value": {
+          "$ref": "#/$defs/length_value"
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        }
+      }
+    },
+    "silhouette_field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "confidence"
+      ],
+      "properties": {
+        "value": {
+          "$ref": "#/$defs/silhouette_value"
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        }
+      }
+    },
+    "pattern_field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "confidence"
+      ],
+      "properties": {
+        "value": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        }
+      }
+    },
+    "colors_field": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "confidence"
+      ],
+      "properties": {
+        "value": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 20
+          }
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        }
+      }
+    }
+  }
+}

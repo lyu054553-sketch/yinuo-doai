@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "title": "模拟资源库与模拟仓库",
+    "source": "sim",
+    "label": "模拟库",
+    "status": "演示用模拟数据，不是上服的真实做法库或库存。",
+    "purpose": "补齐案例资源（只有 6 个案例拆出的 40 条）覆盖不到的常见做法，让方案每一栏尽量有可追溯的参考；仓库数据演示“方案 → 领料”的衔接。",
+    "replace": "落地时用上服真实的做法库、面料库存替换本文件（格式不变），或设置环境变量 YINUO_SIM_LIBRARY=0 关闭；核对流程无需改动。",
+    "rules": [
+      "编号统一以 M 开头（模拟仓库货号以 SIM- 开头），与案例资源（S/SH/CL/F/P/CO/L/CR）区分；",
+      "不引用、不复述留出案例的任何内容；",
+      "库存米数、交期均为虚构的演示数值，界面和交接单都标注“模拟”。"
+    ]
+  },
+  "resources": {
+    "silhouettes": [
+      {"id": "MS1", "name": "X 型修身，腰部收省，前片腹部留量", "garment": "外套", "sources": ["sim"], "traits": ["修身", "收腰", "显腰线", "遮腹部", "有精神"], "style_tags": ["正式", "优雅", "有精神"], "scene_tags": ["正式场合", "节庆"]},
+      {"id": "MS2", "name": "小 A 型，上身合体、下摆微张", "garment": "外套", "sources": ["sim"], "traits": ["显瘦", "遮腹部", "灵动", "活动方便"], "style_tags": ["优雅", "灵动"], "scene_tags": ["日常", "聚会"]},
+      {"id": "MS3", "name": "茧型廓形，整体圆润宽松", "garment": "外套", "sources": ["sim"], "traits": ["宽松", "松弛", "遮腹部", "舒适"], "style_tags": ["松弛", "文艺"], "scene_tags": ["日常", "休闲"]},
+      {"id": "MS4", "name": "合体直身，侧缝微收", "garment": "外套", "sources": ["sim"], "traits": ["合体", "利落", "正式", "显挺拔"], "style_tags": ["简约", "正式"], "scene_tags": ["商务", "正式场合"]},
+      {"id": "MS5", "name": "高腰 A 字裙身，腰线上提", "garment": "连衣裙", "sources": ["sim"], "traits": ["显高", "收腰", "优雅", "遮腹部"], "style_tags": ["优雅", "显高"], "scene_tags": ["晚宴", "演出"]}
+    ],
+    "shoulders": [
+      {"id": "MSH1", "name": "窄肩线，肩点略内收", "sources": ["sim"], "traits": ["显肩窄", "适合肩宽", "利落"], "style_tags": ["利落"], "scene_tags": []},
+      {"id": "MSH2", "name": "插肩袖，肩线圆顺", "sources": ["sim"], "traits": ["显肩窄", "不压肩", "活动方便", "柔和"], "style_tags": ["柔和", "舒适"], "scene_tags": ["日常"]}
+    ],
+    "collars": [
+      {"id": "MCL1", "name": "前低后高小立领（前领高 2.5cm）", "family": "立领", "sources": ["sim"], "traits": ["中式", "适合脖子短", "显脖子长", "不卡脖子"], "style_tags": ["中式", "端庄"], "scene_tags": ["正式场合"]},
+      {"id": "MCL2", "name": "V 形交叠领，领口开深", "family": "交领", "sources": ["sim"], "traits": ["显脖子长", "窄领", "中式", "拉长颈部"], "style_tags": ["中式", "优雅"], "scene_tags": ["正式场合", "节庆"]},
+      {"id": "MCL3", "name": "无领圆领口，滚边收口", "family": "圆领", "sources": ["sim"], "traits": ["干净", "简约", "适合脖子短"], "style_tags": ["简约", "新中式"], "scene_tags": ["日常"]},
+      {"id": "MCL4", "name": "窄驳头西装领（驳头宽 6cm 以内）", "family": "翻领", "sources": ["sim"], "traits": ["窄领", "利落", "正式"], "style_tags": ["正式", "利落"], "scene_tags": ["商务"]},
+      {"id": "MCL5", "name": "右衽斜襟小立领", "family": "立领", "sources": ["sim"], "traits": ["中式", "传统", "端庄"], "style_tags": ["中式", "传统"], "scene_tags": ["节庆", "正式场合"]}
+    ],
+    "fabrics": [
+      {"id": "MF1", "name": "云纹提花织锦缎", "sources": ["sim"], "traits": ["提花", "光泽", "中式", "正式", "挺括", "云纹"], "style_tags": ["中式", "正式", "喜庆"], "scene_tags": ["节庆", "正式场合"]},
+      {"id": "MF2", "name": "重磅真丝缎", "sources": ["sim"], "traits": ["光泽", "垂感", "柔滑", "高级"], "style_tags": ["优雅", "高级"], "scene_tags": ["晚宴", "正式场合"]},
+      {"id": "MF3", "name": "暗花提花醋酸缎", "sources": ["sim"], "traits": ["暗纹", "暗花", "提花", "垂感", "柔和光泽"], "style_tags": ["含蓄", "优雅"], "scene_tags": ["正式场合"]},
+      {"id": "MF4", "name": "羊毛混纺精纺呢", "sources": ["sim"], "traits": ["挺括", "保暖", "哑光", "正式", "骨感"], "style_tags": ["正式", "稳重"], "scene_tags": ["商务", "冬季"]},
+      {"id": "MF5", "name": "棉麻混纺平纹", "sources": ["sim"], "traits": ["透气", "哑光", "舒适", "自然肌理"], "style_tags": ["松弛", "自然"], "scene_tags": ["日常", "夏季"]},
+      {"id": "MF6", "name": "天丝弹力斜纹", "sources": ["sim"], "traits": ["弹力", "活动方便", "垂感", "柔和光泽"], "style_tags": ["舒适", "简约"], "scene_tags": ["日常", "通勤"]},
+      {"id": "MF7", "name": "羊绒双面呢", "sources": ["sim"], "traits": ["保暖", "挺括", "柔软", "哑光"], "style_tags": ["高级", "稳重"], "scene_tags": ["冬季", "正式场合"]},
+      {"id": "MF8", "name": "真丝丝绒", "sources": ["sim"], "traits": ["光泽", "厚实", "高级", "上镜"], "style_tags": ["华丽", "高级"], "scene_tags": ["晚宴", "演出", "节庆"]}
+    ],
+    "patterns": [
+      {"id": "MP1", "name": "祥云暗纹", "sources": ["sim"], "traits": ["云纹", "祥云", "暗纹", "中式", "吉祥"], "style_tags": ["中式", "吉祥"], "scene_tags": ["节庆"]},
+      {"id": "MP2", "name": "梅花暗纹", "sources": ["sim"], "traits": ["梅花", "暗纹", "中式", "含蓄"], "style_tags": ["中式", "含蓄"], "scene_tags": ["正式场合", "冬季"]},
+      {"id": "MP3", "name": "回纹滚边", "sources": ["sim"], "traits": ["回纹", "中式", "规整"], "style_tags": ["中式", "规整"], "scene_tags": []},
+      {"id": "MP4", "name": "缠枝牡丹提花", "sources": ["sim"], "traits": ["牡丹", "提花", "富贵", "中式"], "style_tags": ["华丽", "中式"], "scene_tags": ["节庆", "晚宴"]},
+      {"id": "MP5", "name": "竹叶暗纹", "sources": ["sim"], "traits": ["竹叶", "竹纹", "暗纹", "清雅"], "style_tags": ["清雅", "中式"], "scene_tags": []},
+      {"id": "MP6", "name": "仙鹤局部刺绣", "sources": ["sim"], "traits": ["仙鹤", "鹤纹", "刺绣", "中式"], "style_tags": ["中式", "精致"], "scene_tags": ["节庆", "正式场合"]},
+      {"id": "MP7", "name": "细格纹", "sources": ["sim"], "traits": ["格纹", "利落", "西式"], "style_tags": ["利落", "西式"], "scene_tags": ["通勤"]},
+      {"id": "MP8", "name": "莲花暗纹", "sources": ["sim"], "traits": ["莲花", "荷花", "暗纹", "清雅"], "style_tags": ["清雅", "中式"], "scene_tags": []}
+    ],
+    "colors": [
+      {"id": "MCO1", "name": "枣红（低饱和红）", "sources": ["sim"], "traits": ["红色", "枣红", "低饱和", "不艳", "喜庆", "稳重"], "style_tags": ["稳重", "喜庆"], "scene_tags": ["节庆", "见长辈"]},
+      {"id": "MCO2", "name": "正红", "sources": ["sim"], "traits": ["红色", "正红", "中国红", "喜庆", "鲜亮"], "style_tags": ["喜庆", "鲜亮"], "scene_tags": ["节庆", "婚礼"]},
+      {"id": "MCO3", "name": "酒红", "sources": ["sim"], "traits": ["红色", "酒红", "深沉", "优雅"], "style_tags": ["优雅", "成熟"], "scene_tags": ["晚宴"]},
+      {"id": "MCO4", "name": "藏青", "sources": ["sim"], "traits": ["蓝色", "深蓝", "藏青", "稳重", "正式"], "style_tags": ["稳重", "正式"], "scene_tags": ["商务", "正式场合"]},
+      {"id": "MCO5", "name": "墨绿", "sources": ["sim"], "traits": ["绿色", "墨绿", "沉稳", "中式"], "style_tags": ["沉稳", "中式"], "scene_tags": []},
+      {"id": "MCO6", "name": "驼色", "sources": ["sim"], "traits": ["驼色", "卡其", "温和", "百搭"], "style_tags": ["温和", "百搭"], "scene_tags": ["日常", "通勤"]},
+      {"id": "MCO7", "name": "象牙白", "sources": ["sim"], "traits": ["白色", "米白", "奶白", "象牙白", "干净"], "style_tags": ["干净", "柔和"], "scene_tags": []},
+      {"id": "MCO8", "name": "墨黑", "sources": ["sim"], "traits": ["黑色", "稳重", "显瘦"], "style_tags": ["稳重", "简约"], "scene_tags": ["正式场合"]},
+      {"id": "MCO9", "name": "炭灰", "sources": ["sim"], "traits": ["灰色", "深灰", "低调", "正式"], "style_tags": ["低调", "正式"], "scene_tags": ["商务"]},
+      {"id": "MCO10", "name": "香槟金", "sources": ["sim"], "traits": ["金色", "香槟", "喜庆", "柔和光泽"], "style_tags": ["喜庆", "华丽"], "scene_tags": ["节庆", "晚宴"]}
+    ],
+    "lengths": [
+      {"id": "ML1", "name": "衣长至腰线（短款）", "garment": "外套", "sources": ["sim"], "traits": ["短款", "到腰", "显高"], "style_tags": ["利落"], "scene_tags": []},
+      {"id": "ML2", "name": "衣长过臀（中长款）", "garment": "外套", "sources": ["sim"], "traits": ["中长", "过臀", "遮臀"], "style_tags": ["稳重"], "scene_tags": []},
+      {"id": "ML3", "name": "衣长及膝（长款）", "garment": "外套", "sources": ["sim"], "traits": ["长款", "过膝", "膝上"], "style_tags": ["大气"], "scene_tags": ["冬季"]}
+    ],
+    "crafts": [
+      {"id": "MCR1", "name": "隐形暗扣门襟", "sources": ["sim"], "traits": ["无外露扣", "干净", "简约"], "style_tags": ["简约"], "scene_tags": []},
+      {"id": "MCR2", "name": "手工盘扣", "sources": ["sim"], "traits": ["盘扣", "中式", "传统"], "style_tags": ["中式"], "scene_tags": ["节庆"]},
+      {"id": "MCR3", "name": "一字扣", "sources": ["sim"], "traits": ["一字扣", "中式", "精致"], "style_tags": ["中式"], "scene_tags": []},
+      {"id": "MCR4", "name": "前中隐形拉链", "sources": ["sim"], "traits": ["无外露扣", "穿脱方便"], "style_tags": ["简约"], "scene_tags": []},
+      {"id": "MCR5", "name": "腰部同料系带", "sources": ["sim"], "traits": ["系带", "可调腰围", "收腰"], "style_tags": ["优雅"], "scene_tags": []},
+      {"id": "MCR6", "name": "领口、门襟手工滚边", "sources": ["sim"], "traits": ["滚边", "精致", "中式"], "style_tags": ["中式", "精致"], "scene_tags": []}
+    ]
+  },
+  "attrs": {
+    "MS1": {"收腰": "收", "松量": "合体", "遮腹部": true},
+    "MS2": {"收腰": "微", "松量": "适中", "遮腹部": true},
+    "MS3": {"收腰": "无", "松量": "宽松", "遮腹部": true},
+    "MS4": {"收腰": "微", "松量": "合体"},
+    "MS5": {"收腰": "收", "摆型": "A字"},
+    "MSH1": {"肩型": "窄肩", "压肩": false},
+    "MSH2": {"肩型": "插肩", "压肩": false},
+    "MCL1": {"领高": "低", "风格": "中式", "脖子短": "适合"},
+    "MCL2": {"领型": "交领", "领口": "V形", "风格": "中式"},
+    "MCL3": {"领型": "圆领", "风格": "中式"},
+    "MCL4": {"领型": "翻领", "风格": "偏西式"},
+    "MCL5": {"领高": "低", "领型": "斜襟", "风格": "中式"},
+    "MF1": {"暗纹": false, "风格": "中式"},
+    "MF2": {"垂坠": true},
+    "MF3": {"暗纹": true},
+    "MF4": {"哑光": true, "骨感": "适度", "正式": true},
+    "MF5": {"哑光": true},
+    "MF6": {"弹力": true},
+    "MF7": {"哑光": true},
+    "MF8": {"上镜": true},
+    "MP1": {"梅花": false},
+    "MP3": {"梅花": false},
+    "MP5": {"梅花": false},
+    "MP8": {"梅花": false}
+  },
+  "match_keywords": {
+    "MS1": ["X 型修身", "X型修身", "腰部收省"],
+    "MS3": ["茧型"],
+    "MCL1": ["前低后高小立领"],
+    "MCL2": ["V 形交叠领", "V形交叠领"],
+    "MF1": ["云纹提花织锦缎", "织锦缎"],
+    "MF2": ["重磅真丝缎"],
+    "MF4": ["精纺呢"],
+    "MF7": ["双面呢"],
+    "MF8": ["丝绒"],
+    "MP1": ["祥云暗纹", "云纹"],
+    "MP2": ["梅花暗纹"],
+    "MP4": ["缠枝牡丹"],
+    "MP6": ["仙鹤"],
+    "MCO1": ["枣红"],
+    "MCO3": ["酒红"],
+    "MCO4": ["藏青"],
+    "MCO5": ["墨绿"],
+    "MCO6": ["驼色"],
+    "MCO7": ["象牙白"],
+    "MCO10": ["香槟金"]
+  },
+  "inventory": [
+    {"sku": "SIM-0101", "name": "云纹提花织锦缎", "fabric": "MF1", "pattern": "MP1", "color": "MCO1", "colorway": "枣红", "stock_m": 86, "status": "有货", "lead_days": 0, "location": "模拟仓 A-03"},
+    {"sku": "SIM-0102", "name": "云纹提花织锦缎", "fabric": "MF1", "pattern": "MP1", "color": "MCO2", "colorway": "正红", "stock_m": 12, "status": "少量", "lead_days": 0, "location": "模拟仓 A-03"},
+    {"sku": "SIM-0103", "name": "云纹提花织锦缎", "fabric": "MF1", "pattern": "MP1", "color": "MCO4", "colorway": "藏青", "stock_m": 0, "status": "需订货", "lead_days": 15, "location": "—"},
+    {"sku": "SIM-0201", "name": "重磅真丝缎", "fabric": "MF2", "pattern": null, "color": "MCO10", "colorway": "香槟金", "stock_m": 40, "status": "有货", "lead_days": 0, "location": "模拟仓 B-01"},
+    {"sku": "SIM-0202", "name": "重磅真丝缎", "fabric": "MF2", "pattern": null, "color": "MCO3", "colorway": "酒红", "stock_m": 25, "status": "有货", "lead_days": 0, "location": "模拟仓 B-01"},
+    {"sku": "SIM-0301", "name": "暗花提花醋酸缎", "fabric": "MF3", "pattern": "MP2", "color": "MCO8", "colorway": "墨黑·梅花暗纹", "stock_m": 60, "status": "有货", "lead_days": 0, "location": "模拟仓 A-07"},
+    {"sku": "SIM-0302", "name": "暗花提花醋酸缎", "fabric": "MF3", "pattern": "MP8", "color": "MCO7", "colorway": "象牙白·莲花暗纹", "stock_m": 18, "status": "少量", "lead_days": 0, "location": "模拟仓 A-07"},
+    {"sku": "SIM-0401", "name": "羊毛混纺精纺呢", "fabric": "MF4", "pattern": null, "color": "MCO9", "colorway": "炭灰", "stock_m": 120, "status": "有货", "lead_days": 0, "location": "模拟仓 C-02"},
+    {"sku": "SIM-0501", "name": "棉麻混纺平纹", "fabric": "MF5", "pattern": null, "color": "MCO6", "colorway": "驼色", "stock_m": 75, "status": "有货", "lead_days": 0, "location": "模拟仓 C-05"},
+    {"sku": "SIM-0601", "name": "天丝弹力斜纹", "fabric": "MF6", "pattern": null, "color": "MCO5", "colorway": "墨绿", "stock_m": 0, "status": "需订货", "lead_days": 10, "location": "—"},
+    {"sku": "SIM-0701", "name": "羊绒双面呢", "fabric": "MF7", "pattern": null, "color": "MCO1", "colorway": "枣红", "stock_m": 30, "status": "有货", "lead_days": 0, "location": "模拟仓 C-08"},
+    {"sku": "SIM-0801", "name": "真丝丝绒", "fabric": "MF8", "pattern": null, "color": "MCO3", "colorway": "酒红", "stock_m": 9, "status": "少量", "lead_days": 0, "location": "模拟仓 B-04"},
+    {"sku": "SIM-0901", "name": "提花宋锦", "fabric": "F3", "pattern": "P1", "color": null, "colorway": "黛青·植物暗花", "stock_m": 48, "status": "有货", "lead_days": 0, "location": "模拟仓 A-01"},
+    {"sku": "SIM-0902", "name": "提花宋锦", "fabric": "F3", "pattern": "MP4", "color": "MCO1", "colorway": "枣红·缠枝牡丹", "stock_m": 22, "status": "有货", "lead_days": 0, "location": "模拟仓 A-01"},
+    {"sku": "SIM-1001", "name": "香云纱", "fabric": "F6", "pattern": null, "color": "MCO8", "colorway": "墨黑", "stock_m": 35, "status": "有货", "lead_days": 0, "location": "模拟仓 C-01"},
+    {"sku": "SIM-1101", "name": "真丝暗纹织花", "fabric": "F8", "pattern": "P3", "color": "MCO7", "colorway": "象牙白·四瓣花", "stock_m": 16, "status": "少量", "lead_days": 0, "location": "模拟仓 B-06"},
+    {"sku": "SIM-1201", "name": "醋酸面料", "fabric": "F1", "pattern": null, "color": "MCO4", "colorway": "藏青", "stock_m": 64, "status": "有货", "lead_days": 0, "location": "模拟仓 A-05"},
+    {"sku": "SIM-1301", "name": "薄款提花锦", "fabric": "F2", "pattern": null, "color": "MCO9", "colorway": "炭灰", "stock_m": 0, "status": "需订货", "lead_days": 12, "location": "—"},
+    {"sku": "SIM-1401", "name": "高垂感亮面缎面", "fabric": "F5", "pattern": null, "color": "MCO2", "colorway": "正红", "stock_m": 27, "status": "有货", "lead_days": 0, "location": "模拟仓 B-02"}
+  ]
+}

@@ -1,0 +1,367 @@
+{
+  "unit": {
+    "lane": "yinuo",
+    "subset": "injected",
+    "case_id": "inj09",
+    "repeat": 3,
+    "gold_problem_count": 1
+  },
+  "lane": "yinuo",
+  "subset": "injected",
+  "case_id": "inj09",
+  "repeat": 3,
+  "recorded_at": "2026-11-19T00:49:33",
+  "outcome": "success",
+  "http_status": 200,
+  "elapsed_ms": 18993.5,
+  "error": null,
+  "request": {
+    "text": "想定制一件新中式外套，出席茶会穿。领子最好是立领，但不要太高，3厘米左右就行。整体宽松，版型简洁。面料用真丝暗纹织花，颜色米白。",
+    "existing_spec": {
+      "品类": "新中式外套",
+      "版型结构": "H型直身，无收腰；微落平肩",
+      "领型": "无领开襟（交领式），无立领",
+      "面料": "真丝暗纹织花",
+      "色彩": "米白",
+      "装饰纹样": "暗花小巧",
+      "长度比例": "衣长至臀中",
+      "松弛余量": "整体围度宽松"
+    }
+  },
+  "response": {
+    "id": "s7175b10bf501",
+    "title": "客户口述审计",
+    "mode": "审计已有方案",
+    "source": "llm",
+    "created_at": "2026-11-18T16:49:52+00:00",
+    "input": {
+      "text": "想定制一件新中式外套，出席茶会穿。领子最好是立领，但不要太高，3厘米左右就行。整体宽松，版型简洁。面料用真丝暗纹织花，颜色米白。",
+      "existing_spec": {
+        "品类": "新中式外套",
+        "版型结构": "H型直身，无收腰；微落平肩",
+        "领型": "无领开襟（交领式），无立领",
+        "面料": "真丝暗纹织花",
+        "色彩": "米白",
+        "装饰纹样": "暗花小巧",
+        "长度比例": "衣长至臀中",
+        "松弛余量": "整体围度宽松"
+      },
+      "sample_id": null
+    },
+    "utterances": [
+      {
+        "id": "u1",
+        "text": "想定制一件新中式外套",
+        "start": 0,
+        "end": 10,
+        "type": "品类",
+        "strength": "描述",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "品类",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案品类写明“新中式外套”，与客户要求完全对应。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u2",
+        "text": "出席茶会穿",
+        "start": 11,
+        "end": 16,
+        "type": "场景",
+        "strength": "描述",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "间接体现",
+            "note": "方案没有场景字段，真丝暗纹织花的含蓄质感可以间接体现茶会的雅致场合。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u3",
+        "text": "领子最好是立领",
+        "start": 17,
+        "end": 24,
+        "type": "领型",
+        "strength": "软偏好",
+        "status": "有冲突",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "有冲突",
+            "note": "方案写的是“无领开襟（交领式），无立领”，没有做成立领，与客户要求方向相反。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u4",
+        "text": "但不要太高，3厘米左右就行",
+        "start": 25,
+        "end": 38,
+        "type": "领型",
+        "strength": "硬约束",
+        "status": "未落实",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "未落实",
+            "note": "方案是无领开襟、没有立领，客户要求的3厘米左右领高没有对应处理。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u5",
+        "text": "整体宽松",
+        "start": 39,
+        "end": 43,
+        "type": "松量",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案写“整体围度宽松”，已落实宽松要求。",
+            "rule_id": null
+          },
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "已落实",
+            "note": "H型直身、没有收腰，符合整体宽松。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u6",
+        "text": "版型简洁",
+        "start": 44,
+        "end": 48,
+        "type": "版型",
+        "strength": "目标",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案为H型直身、没有收腰、微落平肩，线条简洁，已落实。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u7",
+        "text": "面料用真丝暗纹织花",
+        "start": 49,
+        "end": 58,
+        "type": "面料",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案面料即“真丝暗纹织花”，与客户要求完全对应。",
+            "rule_id": null
+          },
+          {
+            "field": "装饰纹样",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案“暗花小巧”与客户所说的暗纹织花同属含蓄纹样，已对应落实。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u8",
+        "text": "颜色米白",
+        "start": 59,
+        "end": 63,
+        "type": "色彩",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "色彩",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案色彩写“米白”，与客户要求一致。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      }
+    ],
+    "spec_versions": [
+      {
+        "version": 1,
+        "created_at": "2026-11-18T16:49:52+00:00",
+        "reason": "导入已有方案",
+        "fields": {
+          "品类": {
+            "value": "新中式外套",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u1"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "版型结构": {
+            "value": "H型直身，无收腰；微落平肩",
+            "resource_ids": [
+              "S1",
+              "SH1"
+            ],
+            "utterance_ids": [
+              "u5",
+              "u6"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "领型": {
+            "value": "无领开襟（交领式），无立领",
+            "resource_ids": [
+              "CL5"
+            ],
+            "utterance_ids": [
+              "u3",
+              "u4"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "面料": {
+            "value": "真丝暗纹织花",
+            "resource_ids": [
+              "F8"
+            ],
+            "utterance_ids": [
+              "u2",
+              "u7"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "色彩": {
+            "value": "米白",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u8"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "装饰纹样": {
+            "value": "暗花小巧",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u7"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "长度比例": {
+            "value": "衣长至臀中",
+            "resource_ids": [
+              "L1"
+            ],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "松弛余量": {
+            "value": "整体围度宽松",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u5"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          }
+        }
+      }
+    ],
+    "questions": [],
+    "designer_items": [],
+    "skipped": [
+      {
+        "field": "长度比例",
+        "reason": "没有原话涉及衣长；资源库里有出处的案例都是“衣长至臀中”，按资源库里最常见的取值沿用，不追问。"
+      }
+    ],
+    "ledger": [
+      {
+        "version": 1,
+        "at": "2026-11-18T16:49:52+00:00",
+        "action": "导入",
+        "summary": "导入客户口述和已有方案，由大模型拆分原话。",
+        "detail": "拆出 8 句原话，覆盖 7 个设计字段。",
+        "utterance_ids": [
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u5",
+          "u6",
+          "u7",
+          "u8"
+        ],
+        "changed_fields": [
+          "品类",
+          "版型结构",
+          "领型",
+          "面料",
+          "色彩",
+          "装饰纹样",
+          "长度比例",
+          "松弛余量"
+        ]
+      },
+      {
+        "version": 1,
+        "at": "2026-11-18T16:49:52+00:00",
+        "action": "审计",
+        "summary": "审计：逐句核对客户原话与已有方案，1 处有冲突，1 处未落实。",
+        "detail": "「领子最好是立领」→【领型】有冲突：方案写的是“无领开襟（交领式），无立领”，没有做成立领，与客户要求方向相反。\n「但不要太高，3厘米左右就行」→【领型】未落实：方案是无领开襟、没有立领，客户要求的3厘米左右领高没有对应处理。",
+        "utterance_ids": [
+          "u3",
+          "u4"
+        ],
+        "changed_fields": [
+          "领型"
+        ]
+      }
+    ],
+    "reference": null,
+    "images": []
+  },
+  "model_returned": null,
+  "api_key_present": false,
+  "raw_truncated": false
+}

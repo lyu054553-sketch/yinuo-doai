@@ -1,0 +1,75 @@
+{
+  "base_url": "http://127.0.0.1:8101",
+  "mock_mode": false,
+  "health_model": "auto/deepseek-v4.1-flash",
+  "model": "auto/deepseek-v4.1-flash",
+  "model_matches": true,
+  "image_provider": "none",
+  "vision_ok": true,
+  "baseline_endpoint": "http://127.0.0.1:3425/v1/chat/completions",
+  "api_key_env": null,
+  "api_key_present": false,
+  "api_key_checked": [
+    "MAGPIE_API_KEY",
+    "OPENAI_API_KEY"
+  ],
+  "repeats": 3,
+  "concurrency": 3,
+  "timeout": 210.0,
+  "dataset_sha256": "d737d46e288eee907a27ba04ed5a4b23cdb3e65b1277dc487b02acbb9e0ebc4f",
+  "approval_path": "/Users/liuyang/Documents/ChatGPT/DOAI大赛/orchestration/approvals/d1.json",
+  "approval_recorded_at": "2026-11-18T16:03:23.383685+00:00",
+  "approval_sha256_match": true,
+  "scheme_frozen": false,
+  "holdout_authorized": false,
+  "dev_case_ids": [
+    "c1",
+    "c2",
+    "c3",
+    "c4",
+    "c6"
+  ],
+  "dev_issue_count": 6,
+  "injected_group_count": 20,
+  "injected_issue_count": 18,
+  "injected_clean_groups": [
+    "inj05",
+    "inj06",
+    "inj10",
+    "inj14",
+    "inj18"
+  ],
+  "injected_group_ids": [
+    "inj01",
+    "inj02",
+    "inj03",
+    "inj04",
+    "inj05",
+    "inj06",
+    "inj07",
+    "inj08",
+    "inj09",
+    "inj10",
+    "inj11",
+    "inj12",
+    "inj13",
+    "inj14",
+    "inj15",
+    "inj16",
+    "inj17",
+    "inj18",
+    "inj19",
+    "inj20"
+  ],
+  "script_version": "eval-d2-1.0",
+  "session_sources": [
+    "llm"
+  ],
+  "session_created_range": [
+    "2026-11-18T16:45:03+00:00",
+    "2026-11-18T16:54:59+00:00"
+  ],
+  "baseline_models_returned": [
+    "group/auto-deepseek-v4-1-flash"
+  ]
+}

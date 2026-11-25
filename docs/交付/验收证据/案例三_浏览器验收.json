@@ -1,0 +1,28 @@
+{
+  "title": "案例三：团体职业服模拟验收（最终修复版）",
+  "session_id": "sdf98336cda7e",
+  "resource_catalog_rows": 40,
+  "structured_report_copied": true,
+  "proposal_sections": 6,
+  "archive_format": "衣诺业务专题台账 v2",
+  "model_categories": 9,
+  "semantic_review": "已人工核对",
+  "archive_notes": 10,
+  "visual_prompts": 3,
+  "visual_prompt_headers": [
+    "成衣挂拍照片：成套服装正面展示，所有件同框，纯白无缝背景，无模特、无衣架以外的道具。",
+    "面料细节照片：近景特写成套服装的面料、织纹与纹样，均匀柔光，能看清肌理与光泽。",
+    "上身效果照片：模特穿着成套服装自然站立，正面全身/半身，室内素色背景，服装轮廓完整露出。"
+  ],
+  "pattern_check": "应无明显纹样",
+  "color_alternatives": "蓝色或灰色（资源库中暂无对应色彩参考，需客户确认并另找面料）",
+  "ledger_entries": 17,
+  "downloads": [
+    "资源分类清单.csv",
+    "方案初稿.md",
+    "完整台账.json",
+    "完整台账.csv"
+  ],
+  "horizontal_overflow_390": false,
+  "console_errors": []
+}

@@ -1,0 +1,7 @@
+{
+  "baseline_max_tokens": 8192,
+  "baseline_temperature": 0,
+  "baseline_response_format": false,
+  "backend_snapshot": "backend_snapshot.json",
+  "note": "固定本轮候选版本；并非用户方案冻结。失败不剔除。"
+}

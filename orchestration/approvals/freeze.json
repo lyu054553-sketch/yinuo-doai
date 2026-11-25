@@ -1,0 +1,10 @@
+{
+  "decision": "approved",
+  "scope": "scheme_freeze_and_single_holdout",
+  "scheme_frozen": true,
+  "holdout_authorized": true,
+  "user_message": "好的，只运行一次 Case 5，原始输出原样保存，不回头针对它调参；继续这些任务。",
+  "backend_aggregate_sha256": "7b4d0edb74aceff48a21b75555f0e56593a8619fce6bb7ce06e4a8f93947af44",
+  "model": "auto/deepseek-v4.1-flash",
+  "recorded_at": "2026-11-19T07:11:08+00:00"
+}

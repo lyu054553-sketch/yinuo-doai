@@ -1,0 +1,380 @@
+{
+  "unit": {
+    "lane": "yinuo",
+    "subset": "injected",
+    "case_id": "inj16",
+    "repeat": 1,
+    "gold_problem_count": 1
+  },
+  "lane": "yinuo",
+  "subset": "injected",
+  "case_id": "inj16",
+  "repeat": 1,
+  "recorded_at": "2026-11-19T00:52:33",
+  "outcome": "success",
+  "http_status": 200,
+  "elapsed_ms": 22260.8,
+  "error": null,
+  "request": {
+    "text": "想要一件新中式外套，参加晚宴。我脖子比较粗，领子要窄一点，显脖子细。领子不要太高。整体宽松。面料用提花宋锦。",
+    "existing_spec": {
+      "品类": "新中式外套",
+      "版型结构": "H型直身，无收腰；微落平肩",
+      "领型": "青果西装领，线条柔和舒展",
+      "面料": "提花宋锦",
+      "色彩": "无特殊需求",
+      "装饰纹样": "无特殊需求",
+      "长度比例": "衣长至臀中",
+      "松弛余量": "整体围度宽松"
+    }
+  },
+  "response": {
+    "id": "s7bc4563f811c",
+    "title": "客户口述审计",
+    "mode": "审计已有方案",
+    "source": "llm",
+    "created_at": "2026-11-18T16:52:55+00:00",
+    "input": {
+      "text": "想要一件新中式外套，参加晚宴。我脖子比较粗，领子要窄一点，显脖子细。领子不要太高。整体宽松。面料用提花宋锦。",
+      "existing_spec": {
+        "品类": "新中式外套",
+        "版型结构": "H型直身，无收腰；微落平肩",
+        "领型": "青果西装领，线条柔和舒展",
+        "面料": "提花宋锦",
+        "色彩": "无特殊需求",
+        "装饰纹样": "无特殊需求",
+        "长度比例": "衣长至臀中",
+        "松弛余量": "整体围度宽松"
+      },
+      "sample_id": null
+    },
+    "utterances": [
+      {
+        "id": "u1",
+        "text": "想要一件新中式外套",
+        "start": 0,
+        "end": 9,
+        "type": "品类",
+        "strength": "描述",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "品类",
+            "garment": null,
+            "status": "已落实",
+            "note": "品类写为新中式外套，与客户要求一致",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u2",
+        "text": "参加晚宴",
+        "start": 10,
+        "end": 14,
+        "type": "场景",
+        "strength": "描述",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "间接体现",
+            "note": "方案没有场景字段，提花宋锦可用于晚宴正式场合",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u3",
+        "text": "我脖子比较粗",
+        "start": 15,
+        "end": 21,
+        "type": "身形",
+        "strength": "描述",
+        "status": "需设计师判断",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "需设计师判断",
+            "note": "方案只有青果西装领，未说明对粗颈的修饰效果，是否到位需设计师判断",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u4",
+        "text": "领子要窄一点",
+        "start": 22,
+        "end": 28,
+        "type": "领型",
+        "strength": "软偏好",
+        "status": "需设计师判断",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "需设计师判断",
+            "note": "方案写青果西装领，但未明确领宽，是否足够窄需设计师判断",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u5",
+        "text": "显脖子细",
+        "start": 29,
+        "end": 33,
+        "type": "目标",
+        "strength": "目标",
+        "status": "需设计师判断",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "需设计师判断",
+            "note": "方案没有明确领宽与领深，能否显脖子细需设计师判断",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u6",
+        "text": "领子不要太高",
+        "start": 34,
+        "end": 40,
+        "type": "领型",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "已落实",
+            "note": "青果西装领为翻领结构，不是高领",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u7",
+        "text": "整体宽松",
+        "start": 41,
+        "end": 45,
+        "type": "松量",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "松弛余量写整体围度宽松，与需求一致",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u8",
+        "text": "面料用提花宋锦",
+        "start": 46,
+        "end": 53,
+        "type": "面料",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "已落实",
+            "note": "面料明确写为提花宋锦",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      }
+    ],
+    "spec_versions": [
+      {
+        "version": 1,
+        "created_at": "2026-11-18T16:52:55+00:00",
+        "reason": "导入已有方案",
+        "fields": {
+          "品类": {
+            "value": "新中式外套",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u1"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "版型结构": {
+            "value": "H型直身，无收腰；微落平肩",
+            "resource_ids": [
+              "S1",
+              "SH1"
+            ],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "领型": {
+            "value": "青果西装领，线条柔和舒展",
+            "resource_ids": [
+              "CL2"
+            ],
+            "utterance_ids": [
+              "u3",
+              "u4",
+              "u5",
+              "u6"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "面料": {
+            "value": "提花宋锦",
+            "resource_ids": [
+              "F3"
+            ],
+            "utterance_ids": [
+              "u2",
+              "u8"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "色彩": {
+            "value": "无特殊需求",
+            "resource_ids": [],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "装饰纹样": {
+            "value": "无特殊需求",
+            "resource_ids": [],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "长度比例": {
+            "value": "衣长至臀中",
+            "resource_ids": [
+              "L1"
+            ],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "松弛余量": {
+            "value": "整体围度宽松",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u7"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          }
+        }
+      }
+    ],
+    "questions": [],
+    "designer_items": [
+      {
+        "id": "d1",
+        "utterance_ids": [
+          "u3"
+        ],
+        "field": "领型",
+        "text": "客户原话「我脖子比较粗」，方案只写了「青果西装领，线条柔和舒展」，没有写领宽。请设计师确定领宽尺寸，并判断是否达到“显脖子细”的效果。"
+      },
+      {
+        "id": "d2",
+        "utterance_ids": [
+          "u4"
+        ],
+        "field": "领型",
+        "text": "客户原话「领子要窄一点」，方案只写了「青果西装领，线条柔和舒展」，没有写领宽。请设计师确定领宽尺寸，并判断是否达到“显脖子细”的效果。"
+      },
+      {
+        "id": "d3",
+        "utterance_ids": [
+          "u5"
+        ],
+        "field": "领型",
+        "text": "客户原话「显脖子细」，方案只写了「青果西装领，线条柔和舒展」，没有写领宽。请设计师确定领宽尺寸，并判断是否达到“显脖子细”的效果。"
+      }
+    ],
+    "skipped": [
+      {
+        "field": "版型结构",
+        "reason": "没有原话单独涉及这一栏，按方案现有取值处理，不追问。"
+      },
+      {
+        "field": "色彩",
+        "reason": "客户没有提到颜色，就不写色彩要求，也不硬套资源库里唯一的色彩参考，追问不会改变方案。"
+      },
+      {
+        "field": "装饰纹样",
+        "reason": "没有原话单独涉及这一栏，按方案现有取值处理，不追问。"
+      },
+      {
+        "field": "长度比例",
+        "reason": "没有原话涉及衣长；资源库里有出处的案例都是“衣长至臀中”，按资源库里最常见的取值沿用，不追问。"
+      }
+    ],
+    "ledger": [
+      {
+        "version": 1,
+        "at": "2026-11-18T16:52:55+00:00",
+        "action": "导入",
+        "summary": "导入客户口述和已有方案，由大模型拆分原话。",
+        "detail": "拆出 8 句原话，覆盖 4 个设计字段。",
+        "utterance_ids": [
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u5",
+          "u6",
+          "u7",
+          "u8"
+        ],
+        "changed_fields": [
+          "品类",
+          "版型结构",
+          "领型",
+          "面料",
+          "色彩",
+          "装饰纹样",
+          "长度比例",
+          "松弛余量"
+        ]
+      },
+      {
+        "version": 1,
+        "at": "2026-11-18T16:52:55+00:00",
+        "action": "审计",
+        "summary": "审计：逐句核对客户原话与已有方案，3 处需设计师判断。",
+        "detail": "所有原话都能在方案里找到对应处理。",
+        "utterance_ids": [],
+        "changed_fields": []
+      }
+    ],
+    "reference": null,
+    "images": []
+  },
+  "model_returned": null,
+  "api_key_present": false,
+  "raw_truncated": false
+}

@@ -1,0 +1,375 @@
+/* 衣诺 v4：精修外观，只改样式不改结构。
+   参考 Linear / Notion 这类工作台的克制：导航栏和画布同色系、发丝线代替粗边框、
+   一种强调色、大号衬线标题；再加两处“裁缝铺”细节——打版纸网格底、软尺刻度。 */
+
+:root {
+  --canvas: #f4f0e8;
+  --paper: #fffdf9;
+  --warm: #faf6ef;
+  --line: rgba(74, 52, 30, 0.12);
+  --line-soft: rgba(74, 52, 30, 0.07);
+  --hover: rgba(120, 90, 50, 0.06);
+  --selected: rgba(163, 38, 42, 0.06);
+  --ink: #1f1b17;
+  --ink-2: #4f4840;
+  --muted: #8a8075;
+
+  --rail: #ece6db;
+  --rail-2: rgba(74, 52, 30, 0.07);
+  --rail-text: #2a241e;
+  --rail-muted: #8a8075;
+
+  --shadow-card: 0 1px 0 rgba(74, 52, 30, 0.04), 0 12px 32px -20px rgba(74, 52, 30, 0.28);
+  --shadow-lift: 0 1px 0 rgba(74, 52, 30, 0.05), 0 18px 40px -22px rgba(74, 52, 30, 0.38);
+  --radius-card: 14px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+html,
+body {
+  background: var(--canvas);
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- 画布：极淡的打版纸网格 ---------- */
+.v3-main {
+  background-color: var(--canvas);
+  background-image:
+    linear-gradient(rgba(163, 38, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(163, 38, 42, 0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: -1px -1px;
+}
+
+/* ---------- 导航栏：和画布同色系，发丝线分隔 ---------- */
+.v3-rail {
+  background: var(--rail);
+  border-right: 1px solid var(--line);
+  padding: 18px 12px 14px;
+}
+.v3-rail-brand {
+  padding: 6px 8px 10px;
+}
+.v3-rail-brand .v3-mascot {
+  background: var(--paper);
+  box-shadow: 0 0 0 1px var(--line), 0 4px 10px -4px rgba(74, 52, 30, 0.3);
+}
+.v3-rail-brand-text b {
+  color: var(--ink);
+  letter-spacing: 0.18em;
+}
+.v3-rail-item {
+  min-height: 36px;
+  font-size: 13.5px;
+  color: var(--ink-2);
+  transition: background 0.18s var(--ease), color 0.18s var(--ease);
+}
+.v3-rail-item:hover {
+  background: var(--rail-2);
+  color: var(--ink);
+}
+.v3-rail-item[aria-current="page"] {
+  background: var(--paper);
+  color: var(--brand);
+  font-weight: 600;
+  box-shadow: 0 0 0 1px var(--line), 0 2px 6px -3px rgba(74, 52, 30, 0.25);
+}
+.v3-rail-section {
+  border-top: 1px solid var(--line);
+}
+.v3-rail-section h2 {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+}
+.v3-rail-session {
+  color: var(--ink-2);
+  transition: background 0.18s var(--ease);
+}
+.v3-rail-session:hover {
+  background: var(--rail-2);
+  color: var(--ink);
+}
+.v3-rail-session[aria-current="page"] {
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 0 0 1px var(--line), inset 2px 0 0 var(--brand);
+}
+.v3-rail-foot {
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+.v3-rail-foot p {
+  color: var(--ink-2);
+}
+
+/* ---------- 顶栏：半透明磨砂 ---------- */
+.v2-topbar {
+  background: rgba(250, 247, 241, 0.82);
+  backdrop-filter: saturate(1.4) blur(14px);
+  -webkit-backdrop-filter: saturate(1.4) blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.v2-session-title h1 {
+  letter-spacing: 0.02em;
+}
+
+/* ---------- 标题：衬线 + 菱形小印代替竖条 ---------- */
+.v2-section-title h2,
+.v2-stage-head h2,
+.v2-card-title h3,
+.v3-peek-head h2,
+.v3-guide h2 {
+  padding-left: 16px;
+  letter-spacing: 0.04em;
+}
+.v2-section-title h2::before,
+.v2-stage-head h2::before,
+.v2-card-title h3::before,
+.v3-peek-head h2::before,
+.v3-guide h2::before {
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
+  background: var(--brand);
+  transform: translateY(-50%) rotate(45deg);
+}
+.v2-stage-head h2 {
+  font-size: 26px;
+  line-height: 34px;
+}
+
+/* ---------- 卡片：发丝线 + 柔和投影 ---------- */
+.v2-card,
+.v2-words,
+.v2-composer,
+.v2-doc,
+.v3-peek,
+.v3-guide,
+.v2-stat {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+.v2-doc-head {
+  background: linear-gradient(180deg, var(--warm), var(--paper));
+  border-bottom: 1px solid var(--line-soft);
+}
+.v2-row {
+  border-top: 1px solid var(--line-soft);
+}
+
+/* ---------- 统计：大号衬线数字 ---------- */
+.v2-summary {
+  gap: 14px;
+}
+.v2-stat {
+  position: relative;
+  padding: 18px 20px 16px;
+  gap: 6px;
+  overflow: hidden;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.v2-stat:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lift);
+}
+.v2-stat strong {
+  font-family: var(--serif);
+  font-size: 44px;
+  line-height: 48px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.v2-stat span {
+  font-size: 13px;
+  color: var(--muted);
+}
+.v2-stat[data-tone="alert"] {
+  border-color: rgba(163, 38, 42, 0.28);
+  box-shadow: var(--shadow-card);
+  background: linear-gradient(180deg, #fff6f3, var(--paper) 70%);
+}
+.v2-stat[data-tone="alert"]::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--brand);
+}
+
+/* ---------- 墨色行动条：金色发丝 + 暖光 ---------- */
+.v2-cta {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  padding: 22px 26px;
+  background:
+    radial-gradient(120% 140% at 100% 0%, rgba(184, 137, 59, 0.22), transparent 55%),
+    linear-gradient(135deg, #24201b, #171411);
+  box-shadow: inset 0 0 0 1px rgba(184, 137, 59, 0.28), 0 18px 40px -24px rgba(23, 20, 17, 0.7);
+}
+.v2-cta p {
+  color: #f3ece0;
+}
+
+/* ---------- 按钮 ---------- */
+.v2-btn-primary {
+  border-radius: 10px;
+  background: linear-gradient(180deg, #b12d31, var(--brand));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 6px 16px -8px rgba(163, 38, 42, 0.7);
+  transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease), background 0.15s var(--ease);
+}
+.v2-btn-primary:hover:not(:disabled) {
+  background: linear-gradient(180deg, #a3262a, var(--brand-strong));
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 10px 20px -10px rgba(163, 38, 42, 0.8);
+}
+.v2-btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+.v2-btn-secondary {
+  border-radius: 10px;
+  border-color: var(--line);
+  background: var(--paper);
+  box-shadow: 0 1px 2px rgba(74, 52, 30, 0.06);
+  transition: border-color 0.15s var(--ease), color 0.15s var(--ease);
+}
+.v2-btn-secondary:hover:not(:disabled) {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+/* ---------- 列表行：轻悬停 ---------- */
+.v2-issue {
+  border-radius: 10px;
+  transition: background 0.15s var(--ease);
+}
+.v2-issue[aria-pressed="true"] {
+  background: var(--selected);
+  box-shadow: inset 2px 0 0 var(--brand);
+}
+
+/* ---------- 首页 hero：杂志式大标题 + 软尺刻度 ---------- */
+.v2-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 40px 36px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-card);
+  background:
+    radial-gradient(60% 90% at 88% 40%, rgba(184, 137, 59, 0.18), transparent 60%),
+    radial-gradient(40% 60% at 70% 110%, rgba(163, 38, 42, 0.08), transparent 70%),
+    linear-gradient(135deg, var(--paper), var(--warm));
+}
+/* 顶边软尺：每 8px 一短刻，每 40px 一长刻 */
+.v2-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 14px;
+  background:
+    repeating-linear-gradient(90deg, rgba(184, 137, 59, 0.55) 0 1px, transparent 1px 40px),
+    repeating-linear-gradient(90deg, rgba(184, 137, 59, 0.35) 0 1px, transparent 1px 8px);
+  background-size: 100% 14px, 100% 7px;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgba(184, 137, 59, 0.25);
+  pointer-events: none;
+}
+.v3-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 0.24em;
+}
+.v3-eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--brand);
+}
+.v2-hero h1 {
+  font-size: 46px;
+  line-height: 58px;
+  letter-spacing: 0.04em;
+  margin: 6px 0 4px;
+}
+.v2-hero > .v3-hero-mascot {
+  filter: drop-shadow(0 18px 22px rgba(74, 52, 30, 0.22));
+}
+
+/* 输入框 */
+.v2-input,
+.v2-composer textarea {
+  border-radius: 12px;
+  border-color: var(--line);
+  background: var(--warm);
+  transition: border-color 0.15s var(--ease), box-shadow 0.15s var(--ease), background 0.15s var(--ease);
+}
+.v2-input:focus,
+.v2-composer textarea:focus {
+  background: var(--paper);
+  border-color: rgba(163, 38, 42, 0.45);
+}
+
+/* 示例芯片 */
+.v2-chip {
+  border-radius: 999px;
+  border-color: var(--line);
+  background: var(--paper);
+  transition: border-color 0.15s var(--ease), color 0.15s var(--ease), background 0.15s var(--ease);
+}
+.v2-chip:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+/* 方案速览 */
+.v3-peek-list {
+  border-radius: 10px;
+  border-color: var(--line-soft);
+}
+.v3-peek-row {
+  border-color: var(--line-soft);
+}
+
+/* 入场：内容轻轻浮上来 */
+@media (prefers-reduced-motion: no-preference) {
+  .v2-stage,
+  .v2-home-main {
+    animation: v4-rise 0.42s var(--ease) both;
+  }
+}
+@keyframes v4-rise {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- 窄屏 ---------- */
+@media (max-width: 760px) {
+  .v3-rail {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .v2-hero {
+    padding: 28px 18px 22px;
+  }
+  .v2-hero h1 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  .v2-stat strong {
+    font-size: 34px;
+    line-height: 40px;
+  }
+}

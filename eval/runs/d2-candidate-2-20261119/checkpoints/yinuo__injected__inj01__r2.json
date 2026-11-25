@@ -1,0 +1,498 @@
+{
+  "unit": {
+    "lane": "yinuo",
+    "subset": "injected",
+    "case_id": "inj01",
+    "repeat": 2,
+    "gold_problem_count": 1
+  },
+  "lane": "yinuo",
+  "subset": "injected",
+  "case_id": "inj01",
+  "repeat": 2,
+  "recorded_at": "2026-11-19T00:46:47",
+  "outcome": "success",
+  "http_status": 200,
+  "elapsed_ms": 15156.5,
+  "error": null,
+  "request": {
+    "text": "想定做一件新中式外套，平时上班穿，正式一点。我个子中等，肩膀有点宽，版型不要太紧，整体宽松一点。领子不要太高，最好是小朵梅花暗纹，低调一些，面料要有点垂感。",
+    "existing_spec": {
+      "品类": "新中式外套",
+      "版型结构": "H型直身，无收腰；微落平肩",
+      "领型": "低立领，3cm以内",
+      "面料": "提花宋锦，垂感顺滑",
+      "色彩": "无特殊需求",
+      "装饰纹样": "大面积缠枝莲，纹样醒目铺满",
+      "长度比例": "衣长至臀中",
+      "松弛余量": "整体围度宽松"
+    }
+  },
+  "response": {
+    "id": "sf7b8c15cf069",
+    "title": "客户口述审计",
+    "mode": "审计已有方案",
+    "source": "llm",
+    "created_at": "2026-11-18T16:47:02+00:00",
+    "input": {
+      "text": "想定做一件新中式外套，平时上班穿，正式一点。我个子中等，肩膀有点宽，版型不要太紧，整体宽松一点。领子不要太高，最好是小朵梅花暗纹，低调一些，面料要有点垂感。",
+      "existing_spec": {
+        "品类": "新中式外套",
+        "版型结构": "H型直身，无收腰；微落平肩",
+        "领型": "低立领，3cm以内",
+        "面料": "提花宋锦，垂感顺滑",
+        "色彩": "无特殊需求",
+        "装饰纹样": "大面积缠枝莲，纹样醒目铺满",
+        "长度比例": "衣长至臀中",
+        "松弛余量": "整体围度宽松"
+      },
+      "sample_id": null
+    },
+    "utterances": [
+      {
+        "id": "u1",
+        "text": "想定做一件新中式外套",
+        "start": 0,
+        "end": 10,
+        "type": "品类",
+        "strength": "描述",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "品类",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案品类写明“新中式外套”，与客户要求一致。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u2",
+        "text": "平时上班穿",
+        "start": 11,
+        "end": 16,
+        "type": "场景",
+        "strength": "描述",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "间接体现",
+            "note": "规格表没有场景字段，通勤正式感由提花宋锦面料间接体现。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u3",
+        "text": "正式一点",
+        "start": 17,
+        "end": 21,
+        "type": "风格",
+        "strength": "目标",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "间接体现",
+            "note": "提花宋锦本身偏正式，样式感由面料间接落实。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u4",
+        "text": "我个子中等",
+        "start": 22,
+        "end": 27,
+        "type": "身形",
+        "strength": "描述",
+        "status": "需设计师判断",
+        "mappings": [
+          {
+            "field": "长度比例",
+            "garment": null,
+            "status": "需设计师判断",
+            "note": "方案衣长至臀中，对中等身高是否恰当需设计师判断。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u5",
+        "text": "肩膀有点宽",
+        "start": 28,
+        "end": 33,
+        "type": "身形",
+        "strength": "描述",
+        "status": "需设计师判断",
+        "mappings": [
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "需设计师判断",
+            "note": "方案写微落平肩，但是否足以柔化宽肩、肩宽是否要调整，方案未说明，需设计师判断。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u6",
+        "text": "版型不要太紧",
+        "start": 34,
+        "end": 40,
+        "type": "松量",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案为H型直身、无收腰，不紧身。",
+            "rule_id": null
+          },
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案整体围度宽松，与“不要太紧”一致。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u7",
+        "text": "整体宽松一点",
+        "start": 41,
+        "end": 47,
+        "type": "松量",
+        "strength": "软偏好",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案明确整体围度宽松。",
+            "rule_id": null
+          },
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "已落实",
+            "note": "H型直身无收腰，整体呈宽松直身。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u8",
+        "text": "领子不要太高",
+        "start": 48,
+        "end": 54,
+        "type": "领型",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案为低立领、领高3cm以内，符合“不要太高”。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u9",
+        "text": "最好是小朵梅花暗纹",
+        "start": 55,
+        "end": 64,
+        "type": "纹样",
+        "strength": "软偏好",
+        "status": "有冲突",
+        "mappings": [
+          {
+            "field": "装饰纹样",
+            "garment": null,
+            "status": "有冲突",
+            "note": "方案写大面积缠枝莲、纹样醒目铺满；纹样内容和尺度都与“小朵梅花暗纹”相反。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u10",
+        "text": "低调一些",
+        "start": 65,
+        "end": 69,
+        "type": "风格",
+        "strength": "软偏好",
+        "status": "有冲突",
+        "mappings": [
+          {
+            "field": "装饰纹样",
+            "garment": null,
+            "status": "有冲突",
+            "note": "方案写纹样醒目铺满，与“低调”方向相反。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u11",
+        "text": "面料要有点垂感",
+        "start": 70,
+        "end": 77,
+        "type": "面料",
+        "strength": "软偏好",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案写提花宋锦、垂感顺滑。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      }
+    ],
+    "spec_versions": [
+      {
+        "version": 1,
+        "created_at": "2026-11-18T16:47:02+00:00",
+        "reason": "导入已有方案",
+        "fields": {
+          "品类": {
+            "value": "新中式外套",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u1"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "版型结构": {
+            "value": "H型直身，无收腰；微落平肩",
+            "resource_ids": [
+              "S1",
+              "SH1"
+            ],
+            "utterance_ids": [
+              "u5",
+              "u6",
+              "u7"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "领型": {
+            "value": "低立领，3cm以内",
+            "resource_ids": [
+              "CL1"
+            ],
+            "utterance_ids": [
+              "u8"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "面料": {
+            "value": "提花宋锦，垂感顺滑",
+            "resource_ids": [
+              "F3"
+            ],
+            "utterance_ids": [
+              "u2",
+              "u3",
+              "u11"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "色彩": {
+            "value": "无特殊需求",
+            "resource_ids": [],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "装饰纹样": {
+            "value": "大面积缠枝莲，纹样醒目铺满",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u9",
+              "u10"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "长度比例": {
+            "value": "衣长至臀中",
+            "resource_ids": [
+              "L1"
+            ],
+            "utterance_ids": [
+              "u4"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "松弛余量": {
+            "value": "整体围度宽松",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u6",
+              "u7"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          }
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "utterance_ids": [
+          "u9"
+        ],
+        "field": "装饰纹样",
+        "title": "梅花暗纹怎么落实？",
+        "context": "客户原话「最好是小朵梅花暗纹」，当前方案这一栏是「大面积缠枝莲，纹样醒目铺满」。",
+        "why": "答案会改变【装饰纹样】这一栏；选“坚持原话要求”还会留下一条待办。",
+        "options": [
+          {
+            "id": "o1",
+            "label": "植物暗花＋点状星光",
+            "detail": "P1 · 来源案例二",
+            "resource_ids": [
+              "P1"
+            ],
+            "patch": {
+              "装饰纹样": "衣身植物暗花＋点状星光纹样"
+            },
+            "note": "采用资源 P1「植物暗花＋点状星光」（参考案例二）。",
+            "todo": null
+          },
+          {
+            "id": "o2",
+            "label": "小巧暗花，四瓣花形散点",
+            "detail": "P3 · 来源案例六",
+            "resource_ids": [
+              "P3"
+            ],
+            "patch": {
+              "装饰纹样": "衣身小巧暗花，四瓣花形散点纹样"
+            },
+            "note": "采用资源 P3「小巧暗花，四瓣花形散点」（参考案例六）。",
+            "todo": null
+          },
+          {
+            "id": "o3",
+            "label": "坚持原话要求：梅花",
+            "detail": "无资源出处",
+            "resource_ids": [],
+            "patch": {
+              "装饰纹样": "衣身梅花纹样，含蓄点缀"
+            },
+            "note": "客户原话提到「梅花」，资源库里找不到可辨认的梅花，坚持原话就要另找面料。",
+            "todo": "寻找梅花纹样面料，并与客户确认能否做出可辨认的梅花图案"
+          }
+        ],
+        "answer": null
+      }
+    ],
+    "designer_items": [
+      {
+        "id": "d1",
+        "utterance_ids": [
+          "u4"
+        ],
+        "field": "长度比例",
+        "text": "客户原话「我个子中等」，方案在【长度比例】上的处理是「衣长至臀中」，是否到位需要设计师判断。"
+      },
+      {
+        "id": "d2",
+        "utterance_ids": [
+          "u5"
+        ],
+        "field": "版型结构",
+        "text": "客户原话「肩膀有点宽」，方案在【版型结构】上的处理是「H型直身，无收腰；微落平肩」，是否到位需要设计师判断。"
+      }
+    ],
+    "skipped": [
+      {
+        "field": "色彩",
+        "reason": "客户没有提到颜色，就不写色彩要求，也不硬套资源库里唯一的色彩参考，追问不会改变方案。"
+      }
+    ],
+    "ledger": [
+      {
+        "version": 1,
+        "at": "2026-11-18T16:47:02+00:00",
+        "action": "导入",
+        "summary": "导入客户口述和已有方案，由大模型拆分原话。",
+        "detail": "拆出 11 句原话，覆盖 7 个设计字段。",
+        "utterance_ids": [
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u5",
+          "u6",
+          "u7",
+          "u8",
+          "u9",
+          "u10",
+          "u11"
+        ],
+        "changed_fields": [
+          "品类",
+          "版型结构",
+          "领型",
+          "面料",
+          "色彩",
+          "装饰纹样",
+          "长度比例",
+          "松弛余量"
+        ]
+      },
+      {
+        "version": 1,
+        "at": "2026-11-18T16:47:02+00:00",
+        "action": "审计",
+        "summary": "审计：逐句核对客户原话与已有方案，2 处有冲突，2 处需设计师判断。",
+        "detail": "「最好是小朵梅花暗纹」→【装饰纹样】有冲突：方案写大面积缠枝莲、纹样醒目铺满；纹样内容和尺度都与“小朵梅花暗纹”相反。\n「低调一些」→【装饰纹样】有冲突：方案写纹样醒目铺满，与“低调”方向相反。",
+        "utterance_ids": [
+          "u9",
+          "u10"
+        ],
+        "changed_fields": [
+          "装饰纹样"
+        ]
+      }
+    ],
+    "reference": null,
+    "images": []
+  },
+  "model_returned": null,
+  "api_key_present": false,
+  "raw_truncated": false
+}

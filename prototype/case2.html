@@ -1,0 +1,724 @@
+<meta charset="utf-8">
+<title>衣诺 案例二样稿</title>
+<link rel="icon" href="data:,">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: three working columns, left to right = what the customer said → audit and questions → the proposal the designer receives */
+:root {
+  --bg: #F1F3F2;
+  --surface: #FFFFFF;
+  --surface-2: #F7F8F8;
+  --ink: #1B1F24;
+  --muted: #5D646C;
+  --line: #D9DDDC;
+  --accent: #24365E;
+  --accent-soft: #E2E7F1;
+  --ok: #2E7650;      --ok-bg: #E1F0E7;
+  --plain: #56606B;   --plain-bg: #ECEEF0;
+  --warn: #8F5B00;    --warn-bg: #FAEED3;
+  --bad: #B0261F;     --bad-bg: #FBE2DF;
+  --alt: #74399A;     --alt-bg: #F0E5F6;
+  --done: #24365E;    --done-bg: #E2E7F1;
+  --flash: #FFF3BF;
+  --font-display: "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-body: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121417; --surface: #1A1D21; --surface-2: #20242A; --ink: #E7E9EB; --muted: #A1A8B0; --line: #2E333A;
+    --accent: #9DB3E3; --accent-soft: #233150;
+    --ok: #7FCB9F; --ok-bg: #1C3327; --plain: #AAB3BD; --plain-bg: #262B31;
+    --warn: #F0BF62; --warn-bg: #3A2D12; --bad: #F2948C; --bad-bg: #3D1E1C;
+    --alt: #D3A4F0; --alt-bg: #33233F; --done: #9DB3E3; --done-bg: #233150; --flash: #3F3815;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121417; --surface: #1A1D21; --surface-2: #20242A; --ink: #E7E9EB; --muted: #A1A8B0; --line: #2E333A;
+  --accent: #9DB3E3; --accent-soft: #233150;
+  --ok: #7FCB9F; --ok-bg: #1C3327; --plain: #AAB3BD; --plain-bg: #262B31;
+  --warn: #F0BF62; --warn-bg: #3A2D12; --bad: #F2948C; --bad-bg: #3D1E1C;
+  --alt: #D3A4F0; --alt-bg: #33233F; --done: #9DB3E3; --done-bg: #233150; --flash: #3F3815;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 14px; line-height: 1.6;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 24px 48px;
+}
+.wrap { max-width: 1440px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+h1 { font-family: var(--font-display); font-size: 26px; font-weight: 700; letter-spacing: .02em; }
+h2 { font-family: var(--font-display); font-size: 17px; font-weight: 600; }
+h3 { font-size: 14px; font-weight: 700; }
+p { margin: 0; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Header */
+.top { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: flex-end; justify-content: space-between; }
+.eyebrow { font-size: 12px; letter-spacing: .08em; color: var(--muted); }
+.top .lead { color: var(--muted); max-width: 64ch; margin-top: 6px; }
+.top-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn {
+  border: 1px solid var(--line); background: var(--surface); border-radius: 6px;
+  padding: 6px 12px; cursor: pointer; font-size: 13px;
+}
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); color: var(--surface); border-color: var(--accent); }
+.btn:disabled { opacity: .55; cursor: not-allowed; }
+
+.steps { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0; padding: 0; }
+.steps li {
+  display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted);
+  padding: 4px 10px 4px 6px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line);
+}
+.steps li b { font-family: var(--font-mono); font-weight: 500; font-size: 11px; width: 18px; height: 18px; border-radius: 50%; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); }
+
+.note {
+  font-size: 12.5px; color: var(--muted); background: var(--surface-2);
+  border: 1px dashed var(--line); border-radius: 6px; padding: 8px 12px;
+}
+
+/* Grid */
+.grid { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 1180px) {
+  .grid { grid-template-columns: minmax(0, .85fr) minmax(0, 1.1fr) minmax(0, 1.15fr); align-items: start; }
+}
+.col { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.panel-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.panel-head .meta { font-size: 12px; color: var(--muted); }
+
+/* Status pills */
+.pill { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 500; padding: 1px 8px; border-radius: 999px; white-space: nowrap; }
+.s-已落实 { color: var(--ok); background: var(--ok-bg); }
+.s-间接体现 { color: var(--plain); background: var(--plain-bg); }
+.s-需设计师判断 { color: var(--warn); background: var(--warn-bg); }
+.s-有冲突 { color: var(--bad); background: var(--bad-bg); }
+.s-被改写 { color: var(--alt); background: var(--alt-bg); }
+.s-已与客户确认 { color: var(--done); background: var(--done-bg); }
+.tag { font-size: 11.5px; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 6px; white-space: nowrap; }
+.mono { font-family: var(--font-mono); font-size: 11.5px; }
+
+/* Customer quote */
+.quote { font-size: 16px; line-height: 2.05; }
+.seg {
+  cursor: pointer; border-radius: 3px; padding: 1px 0;
+  text-decoration-line: underline; text-decoration-thickness: 2px; text-underline-offset: 5px;
+}
+.seg.u-已落实 { text-decoration-color: var(--ok); }
+.seg.u-间接体现 { text-decoration-color: var(--line); }
+.seg.u-需设计师判断 { text-decoration-color: var(--warn); }
+.seg.u-有冲突 { text-decoration-color: var(--bad); }
+.seg.u-被改写 { text-decoration-color: var(--alt); }
+.seg.u-已与客户确认 { text-decoration-color: var(--done); }
+.seg:hover, .seg.sel { background: var(--accent-soft); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.refs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.refs figure { margin: 0; display: flex; flex-direction: column; gap: 4px; }
+.refs img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 6px; border: 1px solid var(--line); background: var(--surface-2); }
+.refs figcaption { font-size: 12px; color: var(--muted); }
+
+.tool-link {
+  display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;
+  border-top: 1px solid var(--line); padding-top: 10px;
+}
+.tool-link .small { max-width: 28ch; }
+
+/* Audit */
+.counts { display: flex; flex-wrap: wrap; gap: 6px; }
+.audit { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.audit li { border-top: 1px solid var(--line); }
+.audit li:first-child { border-top: 0; }
+.audit button {
+  all: unset; box-sizing: border-box; width: 100%; cursor: pointer; display: grid;
+  grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; padding: 10px 8px; border-radius: 6px;
+}
+.audit button:hover { background: var(--surface-2); }
+.audit button:focus-visible { outline: 2px solid var(--accent); }
+.audit li.sel button { background: var(--accent-soft); }
+.audit .q { font-weight: 500; }
+.audit .q::before { content: "“"; color: var(--muted); }
+.audit .q::after { content: "”"; color: var(--muted); }
+.audit .sub { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 12.5px; color: var(--muted); }
+.audit .why { grid-column: 1 / -1; font-size: 12.5px; color: var(--muted); }
+
+/* Questions */
+.qcard { border: 1px solid var(--line); border-radius: 8px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.qcard.answered { border-color: var(--accent); }
+.qcard .ctx { font-size: 13px; }
+.qcard .why { font-size: 12.5px; color: var(--muted); }
+.qcard .why b { color: var(--ink); font-weight: 500; }
+.opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.opt {
+  border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 6px 10px; cursor: pointer;
+  display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 0; min-width: 0;
+}
+.opt:hover { border-color: var(--accent); }
+.opt[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.opt .d { font-size: 11.5px; color: var(--muted); }
+.skip { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.skip li { font-size: 12.5px; color: var(--muted); display: grid; grid-template-columns: 4.5em minmax(0, 1fr); gap: 8px; }
+.skip li b { color: var(--ink); font-weight: 500; }
+
+/* Tabs */
+.tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--line); overflow-x: auto; }
+.tab { border: 0; background: none; padding: 6px 12px 8px; cursor: pointer; color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; }
+.tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); font-weight: 500; }
+
+/* Spec */
+.spec { display: flex; flex-direction: column; }
+.row { display: grid; grid-template-columns: 6.5em minmax(0, 1fr); gap: 4px 12px; padding: 10px 6px; border-top: 1px solid var(--line); border-radius: 4px; }
+.row:first-child { border-top: 0; }
+.row .k { font-family: var(--font-display); font-weight: 600; font-size: 13.5px; }
+.row .v { min-width: 0; }
+.row .src { grid-column: 2; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 12px; color: var(--muted); }
+.row.linked { background: var(--accent-soft); }
+.row.flash { animation: flash 1.6s ease-out; }
+@keyframes flash { from { background: var(--flash); } to { background: transparent; } }
+.row.linked.flash { animation: none; }
+.lock { font-size: 11.5px; color: var(--done); border: 1px solid var(--done); border-radius: 4px; padding: 0 5px; }
+.ver { font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
+
+/* Prompts, log, handoff */
+.prompt { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; display: flex; flex-direction: column; gap: 6px; }
+.prompt-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.prompt p { font-size: 13px; }
+.checks { margin: 0; padding-left: 1.2em; font-size: 13px; display: flex; flex-direction: column; gap: 2px; }
+.log { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.log li { display: grid; grid-template-columns: 2.6em minmax(0, 1fr); gap: 10px; font-size: 13px; }
+.log .ver { padding-top: 1px; }
+.log .detail { color: var(--muted); font-size: 12.5px; }
+pre.handoff {
+  margin: 0; white-space: pre-wrap; word-break: break-word; font-family: var(--font-body); font-size: 13px; line-height: 1.75;
+  background: var(--surface-2); border: 1px solid var(--line); border-radius: 8px; padding: 12px;
+}
+.small { font-size: 12px; color: var(--muted); }
+@media (prefers-reduced-motion: reduce) { .row.flash { animation: none; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">衣诺 · 海派定制需求解构与可视化 Agent</div>
+      <h1>案例二 · 首次洽谈</h1>
+      <p class="lead">点客户原话里的任意一句，看它落到了方案的哪一栏。回答中间的三个问题，右边的方案、效果图提示词和台账会一起更新。</p>
+    </div>
+    <div class="top-actions">
+      <button class="btn" id="reset" type="button">重新开始</button>
+    </div>
+  </header>
+
+  <ol class="steps" aria-label="洽谈流程">
+    <li><b>1</b>听需求</li>
+    <li><b>2</b>找资源</li>
+    <li><b>3</b>和客户一起改</li>
+    <li><b>4</b>交接给设计师</li>
+  </ol>
+
+  <p class="note">样稿说明：需求审计和问题来自对上服案例二的人工整理；资源均为上服案例中出现过的处理，不代表集团库存或货号。</p>
+
+  <div class="grid">
+    <!-- Column 1: what the customer said -->
+    <section class="col" aria-label="客户需求">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>客户原话</h2>
+          <span class="meta">共 10 句</span>
+        </div>
+        <p class="quote" id="quote"></p>
+        <div class="legend" id="legend"></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head">
+          <h2>原案例参考图</h2>
+          <span class="meta">用于对照</span>
+        </div>
+        <div class="refs">
+          <figure>
+            <img src="img/c2_garment.jpeg" alt="案例二成衣挂拍：黑色青果领外套，带细碎闪点暗花">
+            <figcaption>成衣挂拍</figcaption>
+          </figure>
+          <figure>
+            <img src="img/c2_model.jpeg" alt="案例二上身效果：黑色外套搭白色内搭">
+            <figcaption>上身效果，可见白色内搭</figcaption>
+          </figure>
+        </div>
+        <p class="small">图中看不出可辨认的梅花纹样。</p>
+        <div class="tool-link">
+          <span class="small">需要核对自己的图？可以另开一个看图页，不会改动本页方案。</span>
+          <a class="btn" href="vision-check.html" target="_blank" rel="noopener">打开看图核对</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Column 2: audit and questions -->
+    <section class="col" aria-label="需求落实审计">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>需求落实审计</h2>
+          <span class="meta" id="pending"></span>
+        </div>
+        <div class="counts" id="counts"></div>
+        <ul class="audit" id="audit"></ul>
+      </div>
+      <div class="panel">
+        <div class="panel-head">
+          <h2>需要向客户确认</h2>
+          <span class="meta">只问会改变方案的点</span>
+        </div>
+        <div id="questions" class="col"></div>
+        <h3>不问客户的</h3>
+        <ul class="skip" id="skip"></ul>
+      </div>
+    </section>
+
+    <!-- Column 3: the proposal -->
+    <section class="col" aria-label="方案">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>定制方案 <span class="ver" id="ver"></span></h2>
+          <span class="meta">每一栏都注明来源</span>
+        </div>
+        <div class="tabs" role="tablist">
+          <button class="tab" role="tab" id="tab-spec" aria-controls="view-spec" aria-selected="true" type="button">方案</button>
+          <button class="tab" role="tab" id="tab-prompt" aria-controls="view-prompt" aria-selected="false" type="button">效果图提示词</button>
+          <button class="tab" role="tab" id="tab-log" aria-controls="view-log" aria-selected="false" type="button">台账</button>
+          <button class="tab" role="tab" id="tab-hand" aria-controls="view-hand" aria-selected="false" type="button">交接单</button>
+        </div>
+        <div id="view-spec" role="tabpanel" aria-labelledby="tab-spec"><div class="spec" id="spec"></div></div>
+        <div id="view-prompt" role="tabpanel" aria-labelledby="tab-prompt" hidden></div>
+        <div id="view-log" role="tabpanel" aria-labelledby="tab-log" hidden><ol class="log" id="log"></ol></div>
+        <div id="view-hand" role="tabpanel" aria-labelledby="tab-hand" hidden></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- Data (from data/cases.json and data/resources.json, case c2) ---------- */
+  var STATUS_ORDER = ["有冲突", "被改写", "需设计师判断", "间接体现", "已落实", "已与客户确认"];
+
+  var UTT = [
+    { id: "c2-u1", text: "想要定制一件外套", sep: "，", strength: "描述", status: "已落实", fields: ["品类"], note: "品类：外套" },
+    { id: "c2-u2", text: "风格偏中式一些", sep: "，", strength: "软偏好", status: "间接体现", fields: ["面料", "装饰纹样"], note: "领型是青果西装领，偏西式；中式感主要靠宋锦和暗花体现" },
+    { id: "c2-u3", text: "适合正式场合穿着", sep: "，", strength: "描述", status: "间接体现", fields: ["面料"], note: "规格表没有场景字段，靠宋锦的挺括和光泽体现" },
+    { id: "c2-u4", text: "领子不要太高", sep: "，", strength: "硬约束", status: "已落实", fields: ["领型"], note: "青果领是翻领，没有立领高度" },
+    { id: "c2-u5", text: "要窄一点，显得脖子细一些", sep: "。", strength: "硬约束", status: "需设计师判断", fields: ["领型"], note: "方案没写领宽。青果领的 V 形领口可能有修饰作用，但“窄”没有落到具体处理上" },
+    { id: "c2-u6", text: "整体宽松舒展一点", sep: "，", strength: "软偏好", status: "有冲突", fields: ["版型结构", "松弛余量"], note: "松量写了“整体围度宽松”，版型却写了“微微收腰”，方向相反" },
+    { id: "c2-u7", text: "我里面要搭配一件内搭", sep: "，", strength: "硬约束", status: "间接体现", fields: ["松弛余量"], note: "只写了整体宽松，没有明确为内搭预留放量" },
+    { id: "c2-u8", text: "面料要带一些暗纹", sep: "，", strength: "硬约束", status: "已落实", fields: ["面料", "装饰纹样"], note: "提花宋锦＋植物暗花" },
+    { id: "c2-u9", text: "最好是梅花", sep: "，", strength: "软偏好", status: "被改写", fields: ["装饰纹样"], note: "方案写成“植物暗花＋点状星光”，梅花没有保留，参考图里也看不出梅花" },
+    { id: "c2-u10", text: "要显得优雅一些", sep: "。", strength: "目标", status: "间接体现", fields: ["面料"], note: "柔和光泽、纹样含蓄" }
+  ];
+
+  var RES = {
+    S1: "S1 H 型直身无收腰 · 案例一、四、五、六",
+    S2: "S2 H 型直身微收腰 · 案例二",
+    SH1: "SH1 微落平肩 · 案例一、二、五、六",
+    CL2: "CL2 青果西装领 · 案例二",
+    F3: "F3 提花宋锦 · 案例二、三",
+    P1: "P1 植物暗花＋点状星光 · 案例二",
+    P3: "P3 小巧四瓣花散点 · 案例六",
+    L1: "L1 衣长至臀中 · 六个案例",
+    R8: "R8 内搭预留放量 · 案例二，待设计师确认"
+  };
+
+  var BASE_SPEC = [
+    { key: "品类", value: "外套", src: [], utt: ["c2-u1"] },
+    { key: "版型结构", value: "H 型直身结构，微微收腰；肩型采用微落平肩，线条简约利落", src: ["S2", "SH1"], utt: ["c2-u6"] },
+    { key: "领型", value: "青果西装领，领型线条柔和舒展", src: ["CL2"], utt: ["c2-u4", "c2-u5"] },
+    { key: "面料", value: "提花宋锦，垂感顺滑，自带柔和光泽，挺而不硬", src: ["F3"], utt: ["c2-u2", "c2-u3", "c2-u8", "c2-u10"] },
+    { key: "色彩", value: "客户未提（参考图为黑色）", src: [], utt: [] },
+    { key: "装饰纹样", value: "衣身植物暗花纹样，点缀细碎点状星光装饰", src: ["P1"], utt: ["c2-u2", "c2-u8", "c2-u9"] },
+    { key: "长度比例", value: "衣长至臀中位置", src: ["L1"], utt: [] },
+    { key: "松弛余量", value: "整体围度宽松，活动自在，上身无束缚紧绷感", src: [], utt: ["c2-u6", "c2-u7"] }
+  ];
+
+  var QS = [
+    {
+      id: "q1", utt: "c2-u9", field: "装饰纹样", title: "暗纹选哪一种？",
+      ctx: "客户说“最好是梅花”，原方案改成了植物暗花。资源库里没有梅花纹样。",
+      why: "答案决定【装饰纹样】，也关系到面料能不能现成采购。",
+      options: [
+        { id: "plum", label: "坚持梅花", d: "资源库暂无，需设计师开发或寻找面料",
+          value: "梅花暗纹，含蓄低调", src: [], note: "客户坚持梅花", todo: "寻找梅花暗纹提花面料，或由设计师开发纹样" },
+        { id: "p1", label: "植物暗花＋点状星光", d: "P1 · 来源案例二",
+          value: "衣身植物暗花纹样，点缀细碎点状星光装饰", src: ["P1"], note: "客户接受植物暗花替代梅花" },
+        { id: "p3", label: "小巧四瓣花散点", d: "P3 · 来源案例六",
+          value: "小巧四瓣花形散点暗纹，低调含蓄", src: ["P3"], note: "客户接受四瓣花散点替代梅花" }
+      ]
+    },
+    {
+      id: "q2", utt: "c2-u6", field: "版型结构", title: "腰身要不要收？",
+      ctx: "客户说“整体宽松舒展”，原方案却写了“微微收腰”。",
+      why: "答案决定【版型结构】，收不收腰对应不同的版型。",
+      options: [
+        { id: "h", label: "不收腰，H 型直身", d: "S1 · 来源案例一、四、五、六",
+          value: "H 型直身结构，无收腰；肩型采用微落平肩，线条简约利落", src: ["S1", "SH1"], note: "客户选择不收腰" },
+        { id: "keep", label: "保留微微收腰", d: "S2 · 来源案例二",
+          value: "H 型直身结构，微微收腰；肩型采用微落平肩，线条简约利落", src: ["S2", "SH1"], note: "客户确认保留微微收腰" }
+      ]
+    },
+    {
+      id: "q3", utt: "c2-u7", field: "松弛余量", title: "里面一般穿什么？",
+      ctx: "客户说要搭内搭，原方案只写了“整体宽松”。",
+      why: "内搭的薄厚决定【松弛余量】要预留多少，制版时直接用得上。",
+      options: [
+        { id: "thin", label: "衬衫、薄 T 恤", d: "R8 · 常规放量",
+          value: "整体围度宽松，活动自在；为衬衫、薄 T 恤类内搭预留放量（数值由制版师定）", src: ["R8"], note: "客户内搭为衬衫、薄 T 恤", inner: "白色衬衫" },
+        { id: "thick", label: "毛衣、较厚针织", d: "R8 · 预留更多放量",
+          value: "整体围度宽松，活动自在；为毛衣等较厚内搭预留较多放量（数值由制版师定）", src: ["R8"], note: "客户内搭为毛衣、较厚针织", inner: "浅色薄毛衣" }
+      ]
+    }
+  ];
+
+  var SKIP = [
+    { k: "领宽", t: "“领子要窄”是专业判断，交给设计师定，不问客户。" },
+    { k: "色彩", t: "客户没提，也不影响版型和面料，放到交接时再确认。" },
+    { k: "衣长", t: "客户没提，沿用上服六个案例都用的“衣长至臀中”。" }
+  ];
+
+  /* ---------- State ---------- */
+  var state;
+  function freshState() {
+    return {
+      answers: { q1: null, q2: null, q3: null },
+      version: 1,
+      selected: null,
+      tab: "spec",
+      flash: [],
+      log: [
+        { v: 1, t: "导入客户原话 10 句，按上服八个字段生成初稿", d: "初稿来源：案例二原有的设计语言转化" },
+        { v: 1, t: "需求落实审计：1 处冲突、1 处被改写、1 处需设计师判断", d: "生成 3 个客户问题；领宽转交设计师，色彩和衣长不问客户" }
+      ]
+    };
+  }
+
+  /* ---------- Derived ---------- */
+  function optionOf(q) {
+    var a = state.answers[q.id];
+    for (var i = 0; i < q.options.length; i++) if (q.options[i].id === a) return q.options[i];
+    return null;
+  }
+  function spec() {
+    var out = BASE_SPEC.map(function (r) { return { key: r.key, value: r.value, src: r.src.slice(), utt: r.utt.slice(), locked: false }; });
+    QS.forEach(function (q) {
+      var o = optionOf(q);
+      if (!o) return;
+      out.forEach(function (r) {
+        if (r.key === q.field) { r.value = o.value; r.src = o.src.slice(); r.locked = true; }
+      });
+    });
+    return out;
+  }
+  function savePlanContext() {
+    try {
+      localStorage.setItem("yinuo:case2:plan-context", JSON.stringify({ version: state.version, fields: spec() }));
+    } catch (error) {}
+  }
+  function field(sp, key) { for (var i = 0; i < sp.length; i++) if (sp[i].key === key) return sp[i]; return null; }
+  function uttStatus(u) {
+    for (var i = 0; i < QS.length; i++) {
+      if (QS[i].utt === u.id && state.answers[QS[i].id]) return "已与客户确认";
+    }
+    return u.status;
+  }
+  function uttNote(u) {
+    for (var i = 0; i < QS.length; i++) {
+      if (QS[i].utt === u.id) { var o = optionOf(QS[i]); if (o) return o.note; }
+    }
+    return u.note;
+  }
+  function uttById(id) { for (var i = 0; i < UTT.length; i++) if (UTT[i].id === id) return UTT[i]; return null; }
+
+  /* ---------- Helpers ---------- */
+  function el(tag, attrs, children) {
+    var n = document.createElement(tag);
+    if (attrs) for (var k in attrs) {
+      if (k === "class") n.className = attrs[k];
+      else if (k === "text") n.textContent = attrs[k];
+      else if (k.indexOf("on") === 0) n.addEventListener(k.slice(2), attrs[k]);
+      else n.setAttribute(k, attrs[k]);
+    }
+    (children || []).forEach(function (c) { if (c != null) n.appendChild(typeof c === "string" ? document.createTextNode(c) : c); });
+    return n;
+  }
+  function pill(s) { return el("span", { class: "pill s-" + s, text: s }); }
+  function clear(n) { while (n.firstChild) n.removeChild(n.firstChild); }
+  function copyText(text, btn) {
+    function done(ok) { var old = btn.textContent; btn.textContent = ok ? "已复制" : "请手动复制"; setTimeout(function () { btn.textContent = old; }, 1400); }
+    try {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
+    } catch (e) { done(false); }
+  }
+
+  /* ---------- Render ---------- */
+  function renderQuote() {
+    var q = document.getElementById("quote");
+    clear(q);
+    UTT.forEach(function (u) {
+      var s = uttStatus(u);
+      var span = el("span", {
+        class: "seg u-" + s + (state.selected === u.id ? " sel" : ""),
+        tabindex: "0", role: "button", title: s + "：" + uttNote(u),
+        onclick: function () { select(u.id); },
+        onkeydown: function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(u.id); } }
+      }, [u.text]);
+      q.appendChild(span);
+      q.appendChild(document.createTextNode(u.sep));
+    });
+    var lg = document.getElementById("legend");
+    clear(lg);
+    STATUS_ORDER.forEach(function (s) { lg.appendChild(pill(s)); });
+  }
+
+  function renderAudit() {
+    var counts = {};
+    UTT.forEach(function (u) { var s = uttStatus(u); counts[s] = (counts[s] || 0) + 1; });
+    var c = document.getElementById("counts");
+    clear(c);
+    STATUS_ORDER.forEach(function (s) {
+      if (counts[s]) c.appendChild(el("span", { class: "pill s-" + s, text: s + " " + counts[s] }));
+    });
+    var open = QS.filter(function (q) { return !state.answers[q.id]; }).length;
+    document.getElementById("pending").textContent = open ? "待客户确认 " + open + " 项" : "客户问题已全部确认";
+
+    var list = document.getElementById("audit");
+    clear(list);
+    var sorted = UTT.slice().sort(function (a, b) {
+      return STATUS_ORDER.indexOf(uttStatus(a)) - STATUS_ORDER.indexOf(uttStatus(b));
+    });
+    sorted.forEach(function (u) {
+      var s = uttStatus(u);
+      var li = el("li", { class: state.selected === u.id ? "sel" : "" }, [
+        el("button", { type: "button", "aria-pressed": state.selected === u.id ? "true" : "false", onclick: function () { select(u.id); } }, [
+          el("span", { class: "q", text: u.text }),
+          pill(s),
+          el("span", { class: "sub" }, [
+            el("span", { class: "tag", text: u.strength }),
+            el("span", { text: "→ " + u.fields.map(function (f) { return "【" + f + "】"; }).join("") })
+          ]),
+          el("span", { class: "why", text: uttNote(u) })
+        ])
+      ]);
+      list.appendChild(li);
+    });
+  }
+
+  function renderQuestions() {
+    var box = document.getElementById("questions");
+    clear(box);
+    QS.forEach(function (q) {
+      var answered = !!state.answers[q.id];
+      var opts = el("div", { class: "opts" });
+      q.options.forEach(function (o) {
+        opts.appendChild(el("button", {
+          class: "opt", type: "button", "aria-pressed": state.answers[q.id] === o.id ? "true" : "false",
+          onclick: function () { answer(q, o); }
+        }, [el("span", { text: o.label }), el("span", { class: "d", text: o.d })]));
+      });
+      box.appendChild(el("div", { class: "qcard" + (answered ? " answered" : "") }, [
+        el("div", { class: "panel-head" }, [el("h3", { text: q.title }), answered ? pill("已与客户确认") : el("span", { class: "tag", text: "原话 “" + uttById(q.utt).text + "”" })]),
+        el("p", { class: "ctx", text: q.ctx }),
+        el("p", { class: "why" }, [el("b", { text: "为什么问：" }), q.why]),
+        opts
+      ]));
+    });
+    var sk = document.getElementById("skip");
+    clear(sk);
+    SKIP.forEach(function (s) { sk.appendChild(el("li", {}, [el("b", { text: s.k }), el("span", { text: s.t })])); });
+  }
+
+  function renderSpec() {
+    document.getElementById("ver").textContent = "v" + state.version;
+    var sp = spec();
+    var linked = [];
+    if (state.selected) linked = uttById(state.selected).fields;
+    var box = document.getElementById("spec");
+    clear(box);
+    sp.forEach(function (r) {
+      var src = el("div", { class: "src" });
+      if (r.locked) src.appendChild(el("span", { class: "lock", text: "客户已确认" }));
+      r.src.forEach(function (id) { src.appendChild(el("span", { class: "tag mono", text: RES[id] })); });
+      if (!r.src.length && !r.locked) src.appendChild(el("span", { text: r.key === "色彩" ? "待交接时确认" : (r.key === "品类" ? "客户原话" : "原转化，无单独资源") }));
+      var cls = "row" + (linked.indexOf(r.key) >= 0 ? " linked" : "") + (state.flash.indexOf(r.key) >= 0 ? " flash" : "");
+      box.appendChild(el("div", { class: cls }, [
+        el("div", { class: "k", text: "【" + r.key + "】" }),
+        el("div", { class: "v", text: r.value }),
+        src
+      ]));
+    });
+  }
+
+  function prompts() {
+    var sp = spec();
+    var sil = field(sp, "版型结构").value.split("；")[0].replace("结构，", "、");
+    var collar = field(sp, "领型").value.split("，")[0];
+    var fab = field(sp, "面料").value.split("，")[0];
+    var pat = field(sp, "装饰纹样").value.split("，")[0];
+    var q3 = optionOf(QS[2]);
+    var inner = q3 ? q3.inner : "白色内搭";
+    return [
+      { name: "成衣挂拍", text: "新中式女士外套，单品挂拍，正面，" + sil + "，微落平肩，" + collar + "，" + fab + "面料，" + pat + "，衣长至臀中，整体宽松，黑色（颜色待确认），浅灰墙面背景，柔和自然光，真实面料质感" },
+      { name: "面料细节", text: fab + "面料特写，" + pat + "清晰可见，领口与门襟细节，微距，柔和侧光，真实织物纹理" },
+      { name: "上身效果", text: "亚洲女性，身穿" + sil + "的新中式外套，" + collar + "，" + fab + "面料带" + pat + "，内搭" + inner + "，衣长至臀中，整体宽松舒展，正式场合，站姿全身，浅色背景" }
+    ];
+  }
+  function checks() {
+    var sp = spec();
+    var q2 = optionOf(QS[1]);
+    return [
+      "领型：" + field(sp, "领型").value.split("，")[0] + "，没有立领",
+      "腰身：" + (q2 ? (q2.id === "h" ? "不收腰" : "微微收腰") : "待客户确认，暂按原方案微微收腰"),
+      "纹样：" + field(sp, "装饰纹样").value.split("，")[0],
+      "衣长：至臀中",
+      "上身图可见内搭，外套不紧绷"
+    ];
+  }
+  function renderPrompts() {
+    var box = document.getElementById("view-prompt");
+    clear(box);
+    var wrap = el("div", { class: "col" });
+    wrap.appendChild(el("p", { class: "small", text: "三组提示词都由当前方案 v" + state.version + " 生成，参数相同，改方案时一起更新。" }));
+    prompts().forEach(function (p) {
+      var btn = el("button", { class: "btn", type: "button", text: "复制" });
+      btn.addEventListener("click", function () { copyText(p.text, btn); });
+      wrap.appendChild(el("div", { class: "prompt" }, [
+        el("div", { class: "prompt-head" }, [el("h3", { text: p.name }), btn]),
+        el("p", { text: p.text })
+      ]));
+    });
+    var ol = el("ol", { class: "checks" });
+    checks().forEach(function (c) { ol.appendChild(el("li", { text: c })); });
+    wrap.appendChild(el("div", { class: "prompt" }, [
+      el("h3", { text: "出图后自动核对" }),
+      el("p", { class: "small", text: "以后接上看图工具后，会逐项检查生成图是否符合方案，不符合就重画。" }),
+      ol
+    ]));
+    box.appendChild(wrap);
+  }
+
+  function renderLog() {
+    var box = document.getElementById("log");
+    clear(box);
+    state.log.slice().reverse().forEach(function (e) {
+      box.appendChild(el("li", {}, [
+        el("span", { class: "ver", text: "v" + e.v }),
+        el("div", {}, [el("div", { text: e.t }), e.d ? el("div", { class: "detail", text: e.d }) : null])
+      ]));
+    });
+  }
+
+  function handoffText() {
+    var sp = spec();
+    var lines = [];
+    lines.push("【交接单】案例二 · 方案 v" + state.version);
+    lines.push("");
+    lines.push("一、方案");
+    sp.forEach(function (r) { lines.push("【" + r.key + "】" + r.value + (r.locked ? "（客户已确认）" : "")); });
+    lines.push("");
+    lines.push("二、和客户确认的结果");
+    QS.forEach(function (q) {
+      var o = optionOf(q);
+      lines.push("- " + q.title.replace("？", "") + "：" + (o ? o.label : "尚未确认") + "（原话：“" + uttById(q.utt).text + "”）");
+    });
+    lines.push("");
+    lines.push("三、请设计师判断");
+    lines.push("- 领口宽窄：客户要“窄一点，显得脖子细”，方案为青果西装领，领宽未定。");
+    lines.push("- 放量数值：方案只写了要预留放量，具体数值由制版师定。");
+    lines.push("");
+    lines.push("四、待办");
+    lines.push("- 色彩：客户未提，参考图为黑色，需与客户确认。");
+    var o1 = optionOf(QS[0]);
+    if (o1 && o1.todo) lines.push("- " + o1.todo + "。");
+    QS.forEach(function (q) { if (!state.answers[q.id]) lines.push("- 向客户确认：" + q.title); });
+    lines.push("");
+    lines.push("五、打样核对项");
+    lines.push("- 领口宽窄是否达到“显脖子细”");
+    lines.push("- 穿上内搭后是否仍然宽松舒展");
+    lines.push("- 肩位是否压肩，袖笼活动量是否足够");
+    lines.push("- 衣长比例、暗纹呈现效果");
+    lines.push("");
+    lines.push("六、不由电脑决定");
+    lines.push("- 最终定稿、报价、制版和下单由业务人员与设计师完成。");
+    return lines.join("\n");
+  }
+  function renderHandoff() {
+    var box = document.getElementById("view-hand");
+    clear(box);
+    var text = handoffText();
+    var btn = el("button", { class: "btn primary", type: "button", text: "复制交接单" });
+    btn.addEventListener("click", function () { copyText(text, btn); });
+    box.appendChild(el("div", { class: "col" }, [
+      el("div", { class: "prompt-head" }, [el("p", { class: "small", text: "设计师拿到这一页就能接手；没确认的项会列在待办里。" }), btn]),
+      el("pre", { class: "handoff", text: text })
+    ]));
+  }
+
+  function renderTabs() {
+    ["spec", "prompt", "log", "hand"].forEach(function (t) {
+      document.getElementById("tab-" + t).setAttribute("aria-selected", state.tab === t ? "true" : "false");
+      document.getElementById("view-" + t).hidden = state.tab !== t;
+    });
+  }
+
+  function render() {
+    renderQuote(); renderAudit(); renderQuestions(); renderSpec(); renderPrompts(); renderLog(); renderHandoff(); renderTabs();
+    savePlanContext();
+  }
+
+  /* ---------- Actions ---------- */
+  function select(id) {
+    state.selected = state.selected === id ? null : id;
+    state.flash = [];
+    state.tab = "spec";
+    render();
+  }
+
+  function answer(q, o) {
+    if (state.answers[q.id] === o.id) return;
+    var before = spec();
+    state.answers[q.id] = o.id;
+    state.version += 1;
+    var after = spec();
+    var changed = [];
+    after.forEach(function (r, i) { if (r.value !== before[i].value || r.src.join() !== before[i].src.join()) changed.push(r.key); });
+    var unchanged = after.filter(function (r) { return changed.indexOf(r.key) < 0; }).map(function (r) { return r.key; });
+    var from = field(before, q.field).value, to = field(after, q.field).value;
+    if (from.split("；")[0] !== to.split("；")[0]) { from = from.split("；")[0]; to = to.split("；")[0]; }
+    state.log.push({
+      v: state.version,
+      t: "【" + q.field + "】" + (from === to ? "维持“" + to + "”" : "“" + from + "” → “" + to + "”"),
+      d: "原因：" + o.note + "（原话：“" + uttById(q.utt).text + "”）。其余 " + unchanged.length + " 栏未变动。"
+    });
+    state.flash = changed.length ? changed : [q.field];
+    state.selected = null;
+    state.tab = "spec";
+    render();
+  }
+
+  document.getElementById("reset").addEventListener("click", function () {
+    state = freshState();
+    render();
+  });
+  ["spec", "prompt", "log", "hand"].forEach(function (t) {
+    document.getElementById("tab-" + t).addEventListener("click", function () { state.tab = t; state.flash = []; renderTabs(); });
+  });
+
+  state = freshState();
+  render();
+})();
+</script>

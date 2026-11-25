@@ -1,0 +1,379 @@
+{
+  "unit": {
+    "lane": "yinuo",
+    "subset": "injected",
+    "case_id": "inj04",
+    "repeat": 1,
+    "gold_problem_count": 1
+  },
+  "lane": "yinuo",
+  "subset": "injected",
+  "case_id": "inj04",
+  "repeat": 1,
+  "recorded_at": "2026-11-19T00:47:44",
+  "outcome": "success",
+  "http_status": 200,
+  "elapsed_ms": 25477.2,
+  "error": null,
+  "request": {
+    "text": "想定做一件新中式外套，参加朋友婚礼穿。领子用交领，不要立领。整体要宽松，不要贴身。面料要哑光、不要太亮，最好有点肌理感。",
+    "existing_spec": {
+      "品类": "新中式外套",
+      "版型结构": "H型直身，无收腰；微落平肩",
+      "领型": "交领开襟，无立领",
+      "面料": "云锦绒面料，哑光有肌理",
+      "色彩": "无特殊需求",
+      "装饰纹样": "无特殊需求",
+      "长度比例": "衣长至臀中",
+      "松弛余量": "整体围度宽松"
+    }
+  },
+  "response": {
+    "id": "s12dc3cfd07b4",
+    "title": "客户口述审计",
+    "mode": "审计已有方案",
+    "source": "llm",
+    "created_at": "2026-11-18T16:48:09+00:00",
+    "input": {
+      "text": "想定做一件新中式外套，参加朋友婚礼穿。领子用交领，不要立领。整体要宽松，不要贴身。面料要哑光、不要太亮，最好有点肌理感。",
+      "existing_spec": {
+        "品类": "新中式外套",
+        "版型结构": "H型直身，无收腰；微落平肩",
+        "领型": "交领开襟，无立领",
+        "面料": "云锦绒面料，哑光有肌理",
+        "色彩": "无特殊需求",
+        "装饰纹样": "无特殊需求",
+        "长度比例": "衣长至臀中",
+        "松弛余量": "整体围度宽松"
+      },
+      "sample_id": null
+    },
+    "utterances": [
+      {
+        "id": "u1",
+        "text": "想定做一件新中式外套",
+        "start": 0,
+        "end": 10,
+        "type": "品类",
+        "strength": "描述",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "品类",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案品类明确写为新中式外套。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u2",
+        "text": "参加朋友婚礼穿",
+        "start": 11,
+        "end": 18,
+        "type": "场景",
+        "strength": "描述",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "间接体现",
+            "note": "规格表无场景字段，方案以云锦绒哑光面料承接婚礼外套的穿着质感。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u3",
+        "text": "领子用交领",
+        "start": 19,
+        "end": 24,
+        "type": "领型",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案领型为交领开襟。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u4",
+        "text": "不要立领",
+        "start": 25,
+        "end": 29,
+        "type": "领型",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案明确写无立领。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u5",
+        "text": "整体要宽松",
+        "start": 30,
+        "end": 35,
+        "type": "松量",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案写明整体围度宽松。",
+            "rule_id": null
+          },
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案为H型直身、无收腰，符合整体宽松方向。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u6",
+        "text": "不要贴身",
+        "start": 36,
+        "end": 40,
+        "type": "松量",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案整体围度宽松，未采用贴身处理。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u7",
+        "text": "面料要哑光",
+        "start": 41,
+        "end": 46,
+        "type": "面料",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案面料写明云锦绒哑光。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u8",
+        "text": "不要太亮",
+        "start": 47,
+        "end": 51,
+        "type": "面料",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案面料为哑光，不是亮面。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u9",
+        "text": "最好有点肌理感",
+        "start": 52,
+        "end": 59,
+        "type": "面料",
+        "strength": "软偏好",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案面料写明有肌理。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      }
+    ],
+    "spec_versions": [
+      {
+        "version": 1,
+        "created_at": "2026-11-18T16:48:09+00:00",
+        "reason": "导入已有方案",
+        "fields": {
+          "品类": {
+            "value": "新中式外套",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u1"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "版型结构": {
+            "value": "H型直身，无收腰；微落平肩",
+            "resource_ids": [
+              "S1",
+              "SH1"
+            ],
+            "utterance_ids": [
+              "u5"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "领型": {
+            "value": "交领开襟，无立领",
+            "resource_ids": [
+              "CL5"
+            ],
+            "utterance_ids": [
+              "u3",
+              "u4"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "面料": {
+            "value": "云锦绒面料，哑光有肌理",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u2",
+              "u7",
+              "u8",
+              "u9"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "色彩": {
+            "value": "无特殊需求",
+            "resource_ids": [],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "装饰纹样": {
+            "value": "无特殊需求",
+            "resource_ids": [],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "长度比例": {
+            "value": "衣长至臀中",
+            "resource_ids": [
+              "L1"
+            ],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "松弛余量": {
+            "value": "整体围度宽松",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u5",
+              "u6"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          }
+        }
+      }
+    ],
+    "questions": [],
+    "designer_items": [],
+    "skipped": [
+      {
+        "field": "色彩",
+        "reason": "客户没有提到颜色，就不写色彩要求，也不硬套资源库里唯一的色彩参考，追问不会改变方案。"
+      },
+      {
+        "field": "装饰纹样",
+        "reason": "没有原话单独涉及这一栏，按方案现有取值处理，不追问。"
+      },
+      {
+        "field": "长度比例",
+        "reason": "没有原话涉及衣长；资源库里有出处的案例都是“衣长至臀中”，按资源库里最常见的取值沿用，不追问。"
+      }
+    ],
+    "ledger": [
+      {
+        "version": 1,
+        "at": "2026-11-18T16:48:09+00:00",
+        "action": "导入",
+        "summary": "导入客户口述和已有方案，由大模型拆分原话。",
+        "detail": "拆出 9 句原话，覆盖 5 个设计字段。",
+        "utterance_ids": [
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u5",
+          "u6",
+          "u7",
+          "u8",
+          "u9"
+        ],
+        "changed_fields": [
+          "品类",
+          "版型结构",
+          "领型",
+          "面料",
+          "色彩",
+          "装饰纹样",
+          "长度比例",
+          "松弛余量"
+        ]
+      },
+      {
+        "version": 1,
+        "at": "2026-11-18T16:48:09+00:00",
+        "action": "审计",
+        "summary": "审计：逐句核对客户原话与已有方案，没有发现问题。",
+        "detail": "所有原话都能在方案里找到对应处理。",
+        "utterance_ids": [],
+        "changed_fields": []
+      }
+    ],
+    "reference": null,
+    "images": []
+  },
+  "model_returned": null,
+  "api_key_present": false,
+  "raw_truncated": false
+}

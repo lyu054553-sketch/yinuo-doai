@@ -1,0 +1,42 @@
+{
+  "verified_at": "2026-11-19T13:49:09.414655+00:00",
+  "url": "https://limousines-government-throughout-singles.trycloudflare.com",
+  "unauthenticated_status": 401,
+  "authenticated_health": {
+    "ok": true,
+    "mock_mode": false,
+    "llm_model": "auto/deepseek-v4.1-flash",
+    "image_provider": "none",
+    "vision_ok": true
+  },
+  "preloaded_cases": [
+    "案例三：团体职业服模拟验收（最终修复版）",
+    "案例二：高端海派私定完整验收"
+  ],
+  "resource_catalog": {
+    "total": 43,
+    "recommendable": 40
+  },
+  "team_case_version": 4,
+  "team_semantic_review": "已人工核对",
+  "team_visual_prompts": 3,
+  "cross_origin_write_status": 403,
+  "fresh_session": {
+    "id": "s3845696598f4",
+    "source": "llm",
+    "utterances": 5,
+    "create_seconds": 28.9,
+    "semantic_categories": 9,
+    "semantic_seconds": 16.1,
+    "note_write": true,
+    "visual_prompts": 3
+  },
+  "browser_authenticated": true,
+  "elapsed_seconds": 61.5,
+  "limits": [
+    "临时 Cloudflare 快速隧道，无固定网址或高可用承诺。",
+    "测试者共用同一存储和凭据，没有多用户账号隔离。",
+    "视觉服务可用，但视觉模型仍只提供疑似结果并要求人工复核。",
+    "付费生图保持关闭。"
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "case_id": "c6",
+  "seg": {
+    "gold": 10,
+    "pred": 10,
+    "paired": 10,
+    "recall_num": 10,
+    "recall_den": 10,
+    "precision_num": 10,
+    "precision_den": 10
+  },
+  "field": {
+    "gold_fields": 12,
+    "pred_fields": 12,
+    "match": 12,
+    "recall_num": 12,
+    "recall_den": 12,
+    "precision_num": 12,
+    "precision_den": 12
+  },
+  "status": {
+    "paired": 10,
+    "agree": 10,
+    "loose_agree": 10,
+    "confusion": {
+      "已落实 → 已落实": 7,
+      "间接体现 → 间接体现": 2,
+      "需设计师判断 → 需设计师判断": 1
+    }
+  },
+  "problem": {
+    "gold_problem_count": 1,
+    "detected": 1,
+    "fp_count": 0,
+    "rows": [
+      {
+        "gold_index": 3,
+        "gold_utterance_id": "c6-u4",
+        "gold_text": "我身形偏高",
+        "gold_status": "需设计师判断",
+        "gold_fields": [
+          "长度比例"
+        ],
+        "paired": true,
+        "match_ratio": 1.0,
+        "pred_utterance_id": "u4",
+        "pred_status": "需设计师判断",
+        "detected": true
+      }
+    ],
+    "false_positives": []
+  },
+  "fabrication": {
+    "violations": [],
+    "ungrounded_fields": [],
+    "latest_version": 1
+  },
+  "pairs": [
+    {
+      "gold_utterance_id": "c6-u1",
+      "pred_utterance_id": "u1",
+      "ratio": 1.0,
+      "gold_fields": [
+        "品类"
+      ],
+      "pred_fields": [
+        "品类"
+      ]
+    },
+    {
+      "gold_utterance_id": "c6-u2",
+      "pred_utterance_id": "u2",
+      "ratio": 1.0,
+      "gold_fields": [
+        "领型",
+        "装饰纹样"
+      ],
+      "pred_fields": [
+        "领型",
+        "装饰纹样"
+      ]
+    },
+    {
+      "gold_utterance_id": "c6-u3",
+      "pred_utterance_id": "u3",
+      "ratio": 1.0,
+      "gold_fields": [
+        "面料"
+      ],
+      "pred_fields": [
+        "面料"
+      ]
+    },
+    {
+      "gold_utterance_id": "c6-u4",
+      "pred_utterance_id": "u4",
+      "ratio": 1.0,
+      "gold_fields": [
+        "长度比例"
+      ],
+      "pred_fields": [
+        "长度比例"
+      ]
+    },
+    {
+      "gold_utterance_id": "c6-u5",
+      "pred_utterance_id": "u5",
+      "ratio": 1.0,
+      "gold_fields": [
+        "松弛余量",
+        "面料"
+      ],
+      "pred_fields": [
+        "松弛余量",
+        "面料"
+      ]
+    },
+    {
+      "gold_utterance_id": "c6-u6",
+      "pred_utterance_id": "u6",
+      "ratio": 1.0,
+      "gold_fields": [
+        "版型结构"
+      ],
+      "pred_fields": [
+        "版型结构"
+      ]
+    },
+    {
+      "gold_utterance_id": "c6-u7",
+      "pred_utterance_id": "u7",
+      "ratio": 1.0,
+      "gold_fields": [
+        "松弛余量"
+      ],
+      "pred_fields": [
+        "松弛余量"
+      ]
+    },
+    {
+      "gold_utterance_id": "c6-u8",
+      "pred_utterance_id": "u8",
+      "ratio": 1.0,
+      "gold_fields": [
+        "松弛余量"
+      ],
+      "pred_fields": [
+        "松弛余量"
+      ]
+    },
+    {
+      "gold_utterance_id": "c6-u9",
+      "pred_utterance_id": "u9",
+      "ratio": 1.0,
+      "gold_fields": [
+        "面料"
+      ],
+      "pred_fields": [
+        "面料"
+      ]
+    },
+    {
+      "gold_utterance_id": "c6-u10",
+      "pred_utterance_id": "u10",
+      "ratio": 1.0,
+      "gold_fields": [
+        "面料"
+      ],
+      "pred_fields": [
+        "面料"
+      ]
+    }
+  ],
+  "repeat": 1,
+  "post_ms": 1.2,
+  "session_meta": {
+    "session_id": "s37d7107e3e3a",
+    "source": "mock",
+    "mode": "审计已有方案",
+    "created_at": "2026-11-18T15:41:17+00:00",
+    "sample_id": "c6",
+    "version": 1
+  }
+}

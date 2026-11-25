@@ -1,0 +1,71 @@
+{
+  "work_active": true,
+  "recorded_at": "2026-11-19T08:52:31+00:00",
+  "d1_approved": true,
+  "scheme_frozen": true,
+  "holdout_run": true,
+  "services": {
+    "backend_llm_8101": 37948,
+    "frontend_5173": "running",
+    "frontend_mock_5174": "running",
+    "vision_8001": 29161,
+    "backend_llm_8100": 23908
+  },
+  "d2": {
+    "status": "completed",
+    "run_id": "d2-candidate-2-20261119",
+    "planned_calls": 150,
+    "successful_calls": 150,
+    "failed_calls": 0,
+    "session_id": null,
+    "report": "eval/reports/d2_正式评测报告.md",
+    "snapshot_sha256": "dabd800116d805998a8f767706cf7f2626378b066f104fdced446c878eb6c2eb"
+  },
+  "validation": {
+    "backend": "286 passed, 3 skipped (real-time vision scenarios); post-refinement targeted checks only",
+    "formal_eval_tests": "31 passed",
+    "m2_real": "Post-refinement: 32.873s, F1/S1/CL1, hard plum ungrounded; synthetic audit 12.679s passed alternatives, negation and garment scopes",
+    "frontend": "Final build and two modes v5 flow passed with client modes recorded as 连接后端 and 示例数据; real F2 from-zero llm passed; real F3 media uploads passed; no console errors or global overflow.",
+    "worker_boundaries": "8 unittest checks passed",
+    "evaluation_offline": "56 passed, 7 subtests passed",
+    "mock_linkage": "Passed confirmation notes, repeated-answer idempotence, manual patch linkage, six required handoff sections",
+    "real_c2_flow": "32.714s to v4 with three answers and idempotence; merged collar designer item verified in a separate 41.720s real check",
+    "current_dev_regression": "5/5 c1,c2,c3,c4,c6 successful; spans and resource ids valid; c2 three questions and key detections passed; evidence orchestration/runs/refinement-m1-current-20261119T064452Z/"
+  },
+  "next": [
+    "Continue next-version implementation against docs/交付/下一阶段开发地图.md; verify six-dimensional report, export, cases, delivery and protected test access."
+  ],
+  "known_limitation": "Frozen vision misrecognized c6 crossing collar as standing collar; raw evidence preserved, human review needed.",
+  "d2_results": {
+    "yinuo_dev": "18/18",
+    "yinuo_injected": "32/54",
+    "baseline_dev": "8/18",
+    "baseline_injected": "33/54",
+    "yinuo_fp_implemented_dev": "11/69",
+    "yinuo_fp_implemented_injected": "6/261",
+    "yinuo_injected_misses": {
+      "unpaired": 16,
+      "paired_nonproblem": 6
+    },
+    "severe_violations_yinuo": "0/75 outputs under the specified checks"
+  },
+  "d3": {
+    "status": "completed_once",
+    "real_holdout_calls": 1,
+    "report": "eval/reports/d3_留出集报告.md",
+    "frozen_snapshot_sha256": "7b4d0edb74aceff48a21b75555f0e56593a8619fce6bb7ce06e4a8f93947af44",
+    "note": "Historical frozen version; c5 cannot be reused as unseen evaluation."
+  },
+  "d4": {
+    "status": "prepared_and_coordinator_reviewed",
+    "path": "eval/reports/d4_对外口径.md",
+    "external_publication": false
+  },
+  "running_workers": {},
+  "milestones": {
+    "backend": "M0–M3 implemented; specified checks passed",
+    "frontend": "F0–F4 implemented and tested flows passed",
+    "media": "C0/C1/C3/C4 implemented; C2 real collar positive still unmet",
+    "evaluation": "D0–D3 completed on historical versions; D4 updated; next version needs independent evaluation"
+  }
+}

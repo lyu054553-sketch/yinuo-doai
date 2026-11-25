@@ -1,0 +1,524 @@
+{
+  "unit": {
+    "lane": "yinuo",
+    "subset": "injected",
+    "case_id": "inj02",
+    "repeat": 1,
+    "gold_problem_count": 1
+  },
+  "lane": "yinuo",
+  "subset": "injected",
+  "case_id": "inj02",
+  "repeat": 1,
+  "recorded_at": "2026-11-19T00:47:17",
+  "outcome": "success",
+  "http_status": 200,
+  "elapsed_ms": 11909.3,
+  "error": null,
+  "request": {
+    "text": "想定制一件新中式外套，过年走亲戚穿，要得体一些。我有点小肚腩，衣服整体要宽松，不能勒着。领子做中式立领，但别太高。面料用香云纱，颜色素净一点就好。",
+    "existing_spec": {
+      "品类": "新中式外套",
+      "版型结构": "X型收腰，腰部收进强调腰线；自然落肩",
+      "领型": "低立领，3cm以内",
+      "面料": "香云纱，哑光温润",
+      "色彩": "米白",
+      "装饰纹样": "无特殊需求",
+      "长度比例": "衣长至臀中",
+      "松弛余量": "腰部收紧，整体合体"
+    }
+  },
+  "response": {
+    "id": "s50bcb1b2daae",
+    "title": "客户口述审计",
+    "mode": "审计已有方案",
+    "source": "llm",
+    "created_at": "2026-11-18T16:47:28+00:00",
+    "input": {
+      "text": "想定制一件新中式外套，过年走亲戚穿，要得体一些。我有点小肚腩，衣服整体要宽松，不能勒着。领子做中式立领，但别太高。面料用香云纱，颜色素净一点就好。",
+      "existing_spec": {
+        "品类": "新中式外套",
+        "版型结构": "X型收腰，腰部收进强调腰线；自然落肩",
+        "领型": "低立领，3cm以内",
+        "面料": "香云纱，哑光温润",
+        "色彩": "米白",
+        "装饰纹样": "无特殊需求",
+        "长度比例": "衣长至臀中",
+        "松弛余量": "腰部收紧，整体合体"
+      },
+      "sample_id": null
+    },
+    "utterances": [
+      {
+        "id": "u1",
+        "text": "想定制一件新中式外套",
+        "start": 0,
+        "end": 10,
+        "type": "品类",
+        "strength": "描述",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "品类",
+            "garment": null,
+            "status": "已落实",
+            "note": "品类栏明确写“新中式外套”，与客户需求一致",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u2",
+        "text": "过年走亲戚穿",
+        "start": 11,
+        "end": 17,
+        "type": "场景",
+        "strength": "描述",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "色彩",
+            "garment": null,
+            "status": "间接体现",
+            "note": "方案没有场景字段，素净的米白色适合过年走亲戚的场合",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u3",
+        "text": "要得体一些",
+        "start": 18,
+        "end": 23,
+        "type": "风格",
+        "strength": "目标",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "间接体现",
+            "note": "方案没有风格字段，中式低立领克制含蓄，体现得体感",
+            "rule_id": null
+          },
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "间接体现",
+            "note": "香云纱哑光温润，体现得体的正式感",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u4",
+        "text": "我有点小肚腩",
+        "start": 24,
+        "end": 30,
+        "type": "身形",
+        "strength": "描述",
+        "status": "有冲突",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "有冲突",
+            "note": "客户有肚腩，需要腹部宽松；方案却写“腰部收紧，整体合体”，方向相反",
+            "rule_id": "R1"
+          },
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "有冲突",
+            "note": "客户有肚腩，需避开腰部收紧；方案却写“X型收腰，腰部收进强调腰线”，方向相反",
+            "rule_id": "R1"
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u5",
+        "text": "衣服整体要宽松",
+        "start": 31,
+        "end": 38,
+        "type": "松量",
+        "strength": "硬约束",
+        "status": "有冲突",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "有冲突",
+            "note": "客户要整体宽松，方案写“腰部收紧，整体合体”，未按需求放宽",
+            "rule_id": null
+          },
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "有冲突",
+            "note": "客户要宽松，方案为“X型收腰”，与宽松方向相反",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u6",
+        "text": "不能勒着",
+        "start": 39,
+        "end": 43,
+        "type": "松量",
+        "strength": "硬约束",
+        "status": "有冲突",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "有冲突",
+            "note": "客户要求不能勒着，方案写“腰部收紧”，会形成束缚感",
+            "rule_id": null
+          },
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "有冲突",
+            "note": "客户要求不勒着，方案“腰部收进强调腰线”与这一要求相矛盾",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u7",
+        "text": "领子做中式立领",
+        "start": 44,
+        "end": 51,
+        "type": "领型",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案领型为低立领，属于中式立领",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u8",
+        "text": "但别太高",
+        "start": 52,
+        "end": 56,
+        "type": "领型",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案明确领高控制在3cm以内，符合“别太高”",
+            "rule_id": "R2"
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u9",
+        "text": "面料用香云纱",
+        "start": 57,
+        "end": 63,
+        "type": "面料",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "已落实",
+            "note": "面料栏明确写“香云纱，哑光温润”，与客户指定一致",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u10",
+        "text": "颜色素净一点就好",
+        "start": 64,
+        "end": 72,
+        "type": "色彩",
+        "strength": "软偏好",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "色彩",
+            "garment": null,
+            "status": "已落实",
+            "note": "色彩栏为米白，属于素净色调，符合客户偏好",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      }
+    ],
+    "spec_versions": [
+      {
+        "version": 1,
+        "created_at": "2026-11-18T16:47:28+00:00",
+        "reason": "导入已有方案",
+        "fields": {
+          "品类": {
+            "value": "新中式外套",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u1"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "版型结构": {
+            "value": "X型收腰，腰部收进强调腰线；自然落肩",
+            "resource_ids": [
+              "SH2"
+            ],
+            "utterance_ids": [
+              "u4",
+              "u5",
+              "u6"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "领型": {
+            "value": "低立领，3cm以内",
+            "resource_ids": [
+              "CL1"
+            ],
+            "utterance_ids": [
+              "u3",
+              "u7",
+              "u8"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "面料": {
+            "value": "香云纱，哑光温润",
+            "resource_ids": [
+              "F6"
+            ],
+            "utterance_ids": [
+              "u3",
+              "u9"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "色彩": {
+            "value": "米白",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u2",
+              "u10"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "装饰纹样": {
+            "value": "无特殊需求",
+            "resource_ids": [],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "长度比例": {
+            "value": "衣长至臀中",
+            "resource_ids": [
+              "L1"
+            ],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "松弛余量": {
+            "value": "腰部收紧，整体合体",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u4",
+              "u5",
+              "u6"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          }
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "utterance_ids": [
+          "u4"
+        ],
+        "field": "版型结构",
+        "title": "腰身：微微收腰还是整体宽松？",
+        "context": "客户原话「我有点小肚腩」，当前方案这一栏是「X型收腰，腰部收进强调腰线；自然落肩」。",
+        "why": "答案会改变【版型结构】这一栏；选“坚持原话要求”还会留下一条待办。",
+        "options": [
+          {
+            "id": "o1",
+            "label": "H 型直身，无收腰",
+            "detail": "S1 · 来源案例一、案例四、案例五、案例六",
+            "resource_ids": [
+              "S1",
+              "SH2"
+            ],
+            "patch": {
+              "版型结构": "H 型直身，无收腰"
+            },
+            "note": "采用资源 S1「H 型直身，无收腰」（参考案例一、案例四、案例五、案例六）。",
+            "todo": null
+          },
+          {
+            "id": "o2",
+            "label": "H 型直身，微微收腰",
+            "detail": "S2 · 来源案例二",
+            "resource_ids": [
+              "S2",
+              "SH2"
+            ],
+            "patch": {
+              "版型结构": "H 型直身，微微收腰"
+            },
+            "note": "采用资源 S2「H 型直身，微微收腰」（参考案例二）。注意：案例二中与客户“整体宽松”的要求有冲突",
+            "todo": null
+          },
+          {
+            "id": "o3",
+            "label": "短款微 H 型",
+            "detail": "S3 · 来源案例三",
+            "resource_ids": [
+              "S3",
+              "SH2"
+            ],
+            "patch": {
+              "版型结构": "短款微 H 型"
+            },
+            "note": "采用资源 S3「短款微 H 型」（参考案例三）。",
+            "todo": null
+          },
+          {
+            "id": "o4",
+            "label": "微落平肩，线条简约利落",
+            "detail": "SH1 · 来源案例一、案例二、案例五、案例六",
+            "resource_ids": [
+              "SH1",
+              "SH2"
+            ],
+            "patch": {
+              "版型结构": "微落平肩，线条简约利落"
+            },
+            "note": "采用资源 SH1「微落平肩，线条简约利落」（参考案例一、案例二、案例五、案例六）。",
+            "todo": null
+          },
+          {
+            "id": "o5",
+            "label": "自然平肩，不压肩",
+            "detail": "SH3 · 来源案例三",
+            "resource_ids": [
+              "SH3",
+              "SH2"
+            ],
+            "patch": {
+              "版型结构": "自然平肩，不压肩"
+            },
+            "note": "采用资源 SH3「自然平肩，不压肩」（参考案例三）。",
+            "todo": null
+          },
+          {
+            "id": "o6",
+            "label": "坚持原话要求：整体宽松、不收紧腰身",
+            "detail": "无资源出处",
+            "resource_ids": [],
+            "patch": {
+              "版型结构": "整体宽松舒展，腰部不收紧"
+            },
+            "note": "按客户原话保持整体宽松，不在腰部收紧；与案例里的微微收腰做法不同。",
+            "todo": "打样时核对腰部松量是否足够，避免版型又回到收腰"
+          }
+        ],
+        "answer": null
+      }
+    ],
+    "designer_items": [],
+    "skipped": [
+      {
+        "field": "装饰纹样",
+        "reason": "没有原话单独涉及这一栏，按方案现有取值处理，不追问。"
+      },
+      {
+        "field": "长度比例",
+        "reason": "没有原话涉及衣长；资源库里有出处的案例都是“衣长至臀中”，按资源库里最常见的取值沿用，不追问。"
+      }
+    ],
+    "ledger": [
+      {
+        "version": 1,
+        "at": "2026-11-18T16:47:28+00:00",
+        "action": "导入",
+        "summary": "导入客户口述和已有方案，由大模型拆分原话。",
+        "detail": "拆出 10 句原话，覆盖 6 个设计字段。",
+        "utterance_ids": [
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u5",
+          "u6",
+          "u7",
+          "u8",
+          "u9",
+          "u10"
+        ],
+        "changed_fields": [
+          "品类",
+          "版型结构",
+          "领型",
+          "面料",
+          "色彩",
+          "装饰纹样",
+          "长度比例",
+          "松弛余量"
+        ]
+      },
+      {
+        "version": 1,
+        "at": "2026-11-18T16:47:28+00:00",
+        "action": "审计",
+        "summary": "审计：逐句核对客户原话与已有方案，6 处有冲突。",
+        "detail": "「我有点小肚腩」→【松弛余量】有冲突：客户有肚腩，需要腹部宽松；方案却写“腰部收紧，整体合体”，方向相反\n「我有点小肚腩」→【版型结构】有冲突：客户有肚腩，需避开腰部收紧；方案却写“X型收腰，腰部收进强调腰线”，方向相反\n「衣服整体要宽松」→【松弛余量】有冲突：客户要整体宽松，方案写“腰部收紧，整体合体”，未按需求放宽\n「衣服整体要宽松」→【版型结构】有冲突：客户要宽松，方案为“X型收腰”，与宽松方向相反\n「不能勒着」→【松弛余量】有冲突：客户要求不能勒着，方案写“腰部收紧”，会形成束缚感\n「不能勒着」→【版型结构】有冲突：客户要求不勒着，方案“腰部收进强调腰线”与这一要求相矛盾",
+        "utterance_ids": [
+          "u4",
+          "u5",
+          "u6"
+        ],
+        "changed_fields": [
+          "松弛余量",
+          "版型结构"
+        ]
+      }
+    ],
+    "reference": null,
+    "images": []
+  },
+  "model_returned": null,
+  "api_key_present": false,
+  "raw_truncated": false
+}

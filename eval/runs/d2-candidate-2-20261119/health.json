@@ -1,0 +1,7 @@
+{
+  "ok": true,
+  "mock_mode": false,
+  "llm_model": "auto/deepseek-v4.1-flash",
+  "image_provider": "none",
+  "vision_ok": true
+}

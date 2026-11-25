@@ -1,0 +1,363 @@
+{
+  "unit": {
+    "lane": "yinuo",
+    "subset": "injected",
+    "case_id": "inj12",
+    "repeat": 1,
+    "gold_problem_count": 1
+  },
+  "lane": "yinuo",
+  "subset": "injected",
+  "case_id": "inj12",
+  "repeat": 1,
+  "recorded_at": "2026-11-19T00:50:26",
+  "outcome": "success",
+  "http_status": 200,
+  "elapsed_ms": 20754.7,
+  "error": null,
+  "request": {
+    "text": "想要一件新中式外套，个子不高，衣长做到膝盖上面一点，显腿长。版型H型直身，宽松一些。领子用低立领。面料选薄款提花锦。",
+    "existing_spec": {
+      "品类": "新中式外套",
+      "版型结构": "H型直身，无收腰；微落平肩",
+      "领型": "低立领，3cm以内",
+      "面料": "薄款提花锦",
+      "色彩": "无特殊需求",
+      "装饰纹样": "无特殊需求",
+      "长度比例": "衣长至臀中",
+      "松弛余量": "整体围度宽松"
+    }
+  },
+  "response": {
+    "id": "sf344d35e4d24",
+    "title": "客户口述审计",
+    "mode": "审计已有方案",
+    "source": "llm",
+    "created_at": "2026-11-18T16:50:47+00:00",
+    "input": {
+      "text": "想要一件新中式外套，个子不高，衣长做到膝盖上面一点，显腿长。版型H型直身，宽松一些。领子用低立领。面料选薄款提花锦。",
+      "existing_spec": {
+        "品类": "新中式外套",
+        "版型结构": "H型直身，无收腰；微落平肩",
+        "领型": "低立领，3cm以内",
+        "面料": "薄款提花锦",
+        "色彩": "无特殊需求",
+        "装饰纹样": "无特殊需求",
+        "长度比例": "衣长至臀中",
+        "松弛余量": "整体围度宽松"
+      },
+      "sample_id": null
+    },
+    "utterances": [
+      {
+        "id": "u1",
+        "text": "想要一件新中式外套",
+        "start": 0,
+        "end": 9,
+        "type": "品类",
+        "strength": "描述",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "品类",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案品类明确为新中式外套。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u2",
+        "text": "个子不高",
+        "start": 10,
+        "end": 14,
+        "type": "身形",
+        "strength": "描述",
+        "status": "需设计师判断",
+        "mappings": [
+          {
+            "field": "长度比例",
+            "garment": null,
+            "status": "需设计师判断",
+            "note": "方案衣长至臀中，未结合身高说明比例处理，是否显高需设计师判断。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u3",
+        "text": "衣长做到膝盖上面一点",
+        "start": 15,
+        "end": 25,
+        "type": "长度",
+        "strength": "硬约束",
+        "status": "有冲突",
+        "mappings": [
+          {
+            "field": "长度比例",
+            "garment": null,
+            "status": "有冲突",
+            "note": "方案写衣长至臀中，与膝盖上面一点的要求不符。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u4",
+        "text": "显腿长",
+        "start": 26,
+        "end": 29,
+        "type": "目标",
+        "strength": "目标",
+        "status": "未落实",
+        "mappings": [
+          {
+            "field": "长度比例",
+            "garment": null,
+            "status": "未落实",
+            "note": "方案衣长至臀中，未体现拉长腿部比例的处理。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u5",
+        "text": "版型H型直身",
+        "start": 30,
+        "end": 36,
+        "type": "版型",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案版型结构明确为H型直身、无收腰。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u6",
+        "text": "宽松一些",
+        "start": 37,
+        "end": 41,
+        "type": "松量",
+        "strength": "软偏好",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案松弛余量明确为整体围度宽松。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u7",
+        "text": "领子用低立领",
+        "start": 42,
+        "end": 48,
+        "type": "领型",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案领型明确为低立领，3cm以内。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u8",
+        "text": "面料选薄款提花锦",
+        "start": 49,
+        "end": 57,
+        "type": "面料",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案面料明确为薄款提花锦。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      }
+    ],
+    "spec_versions": [
+      {
+        "version": 1,
+        "created_at": "2026-11-18T16:50:47+00:00",
+        "reason": "导入已有方案",
+        "fields": {
+          "品类": {
+            "value": "新中式外套",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u1"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "版型结构": {
+            "value": "H型直身，无收腰；微落平肩",
+            "resource_ids": [
+              "S1",
+              "SH1"
+            ],
+            "utterance_ids": [
+              "u5"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "领型": {
+            "value": "低立领，3cm以内",
+            "resource_ids": [
+              "CL1"
+            ],
+            "utterance_ids": [
+              "u7"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "面料": {
+            "value": "薄款提花锦",
+            "resource_ids": [
+              "F2"
+            ],
+            "utterance_ids": [
+              "u8"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "色彩": {
+            "value": "无特殊需求",
+            "resource_ids": [],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "装饰纹样": {
+            "value": "无特殊需求",
+            "resource_ids": [],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "长度比例": {
+            "value": "衣长至臀中",
+            "resource_ids": [
+              "L1"
+            ],
+            "utterance_ids": [
+              "u2",
+              "u3",
+              "u4"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "松弛余量": {
+            "value": "整体围度宽松",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u6"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          }
+        }
+      }
+    ],
+    "questions": [],
+    "designer_items": [
+      {
+        "id": "d1",
+        "utterance_ids": [
+          "u2"
+        ],
+        "field": "长度比例",
+        "text": "客户原话「个子不高」，方案在【长度比例】上的处理是「衣长至臀中」，是否到位需要设计师判断。"
+      }
+    ],
+    "skipped": [
+      {
+        "field": "色彩",
+        "reason": "客户没有提到颜色，就不写色彩要求，也不硬套资源库里唯一的色彩参考，追问不会改变方案。"
+      },
+      {
+        "field": "装饰纹样",
+        "reason": "没有原话单独涉及这一栏，按方案现有取值处理，不追问。"
+      }
+    ],
+    "ledger": [
+      {
+        "version": 1,
+        "at": "2026-11-18T16:50:47+00:00",
+        "action": "导入",
+        "summary": "导入客户口述和已有方案，由大模型拆分原话。",
+        "detail": "拆出 8 句原话，覆盖 6 个设计字段。",
+        "utterance_ids": [
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u5",
+          "u6",
+          "u7",
+          "u8"
+        ],
+        "changed_fields": [
+          "品类",
+          "版型结构",
+          "领型",
+          "面料",
+          "色彩",
+          "装饰纹样",
+          "长度比例",
+          "松弛余量"
+        ]
+      },
+      {
+        "version": 1,
+        "at": "2026-11-18T16:50:47+00:00",
+        "action": "审计",
+        "summary": "审计：逐句核对客户原话与已有方案，1 处有冲突，1 处未落实，1 处需设计师判断。",
+        "detail": "「衣长做到膝盖上面一点」→【长度比例】有冲突：方案写衣长至臀中，与膝盖上面一点的要求不符。\n「显腿长」→【长度比例】未落实：方案衣长至臀中，未体现拉长腿部比例的处理。",
+        "utterance_ids": [
+          "u3",
+          "u4"
+        ],
+        "changed_fields": [
+          "长度比例"
+        ]
+      }
+    ],
+    "reference": null,
+    "images": []
+  },
+  "model_returned": null,
+  "api_key_present": false,
+  "raw_truncated": false
+}

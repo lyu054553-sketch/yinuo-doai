@@ -1,0 +1,438 @@
+{
+  "unit": {
+    "lane": "yinuo",
+    "subset": "injected",
+    "case_id": "inj13",
+    "repeat": 1,
+    "gold_problem_count": 2
+  },
+  "lane": "yinuo",
+  "subset": "injected",
+  "case_id": "inj13",
+  "repeat": 1,
+  "recorded_at": "2026-11-19T00:50:47",
+  "outcome": "success",
+  "http_status": 200,
+  "elapsed_ms": 44030.1,
+  "error": null,
+  "request": {
+    "text": "想定制一件新中式外套，出差穿。我驼背比较明显，后背要留量。整体宽松，不要贴背。领子低立领。面料要挺括，不要太软。",
+    "existing_spec": {
+      "品类": "新中式外套",
+      "版型结构": "H型直身，无收腰；微落平肩；后片按常规松量制作",
+      "领型": "低立领，3cm以内",
+      "面料": "冰丝缎面料，挺括",
+      "色彩": "无特殊需求",
+      "装饰纹样": "无特殊需求",
+      "长度比例": "衣长至臀中",
+      "松弛余量": "整体围度宽松"
+    }
+  },
+  "response": {
+    "id": "s73b29eeeefef",
+    "title": "客户口述审计",
+    "mode": "审计已有方案",
+    "source": "llm",
+    "created_at": "2026-11-18T16:51:31+00:00",
+    "input": {
+      "text": "想定制一件新中式外套，出差穿。我驼背比较明显，后背要留量。整体宽松，不要贴背。领子低立领。面料要挺括，不要太软。",
+      "existing_spec": {
+        "品类": "新中式外套",
+        "版型结构": "H型直身，无收腰；微落平肩；后片按常规松量制作",
+        "领型": "低立领，3cm以内",
+        "面料": "冰丝缎面料，挺括",
+        "色彩": "无特殊需求",
+        "装饰纹样": "无特殊需求",
+        "长度比例": "衣长至臀中",
+        "松弛余量": "整体围度宽松"
+      },
+      "sample_id": null
+    },
+    "utterances": [
+      {
+        "id": "u1",
+        "text": "想定制一件新中式外套",
+        "start": 0,
+        "end": 10,
+        "type": "品类",
+        "strength": "描述",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "品类",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案品类明确为新中式外套",
+            "rule_id": null
+          },
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "间接体现",
+            "note": "规格表没有风格字段，新中式感由低立领体现",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u2",
+        "text": "出差穿",
+        "start": 11,
+        "end": 14,
+        "type": "场景",
+        "strength": "描述",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "间接体现",
+            "note": "规格表没有场景字段；面料挺括，可支撑出差穿着",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u3",
+        "text": "我驼背比较明显",
+        "start": 15,
+        "end": 22,
+        "type": "身形",
+        "strength": "描述",
+        "status": "需设计师判断",
+        "mappings": [
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "需设计师判断",
+            "note": "方案未明确驼背处理，仅后片按常规松量制作，是否适配明显驼背需设计师判断",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u4",
+        "text": "后背要留量",
+        "start": 23,
+        "end": 28,
+        "type": "松量",
+        "strength": "硬约束",
+        "status": "需设计师判断",
+        "mappings": [
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "需设计师判断",
+            "note": "后片按常规松量制作，是否达到后背留量需设计师判断",
+            "rule_id": null
+          },
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "需设计师判断",
+            "note": "整体围度宽松，但未单独写后背加量",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u5",
+        "text": "整体宽松",
+        "start": 29,
+        "end": 33,
+        "type": "松量",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案写明整体围度宽松",
+            "rule_id": null
+          },
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "已落实",
+            "note": "H型直身、无收腰，符合宽松方向",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u6",
+        "text": "不要贴背",
+        "start": 34,
+        "end": 38,
+        "type": "松量",
+        "strength": "硬约束",
+        "status": "需设计师判断",
+        "mappings": [
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "需设计师判断",
+            "note": "H型直身且后片常规松量，驼背处是否不贴背需设计师判断",
+            "rule_id": null
+          },
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "整体围度宽松，符合不要贴背方向",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u7",
+        "text": "领子低立领",
+        "start": 39,
+        "end": 44,
+        "type": "领型",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案为低立领，领高控制在3cm以内",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u8",
+        "text": "面料要挺括",
+        "start": 45,
+        "end": 50,
+        "type": "面料",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案面料写明冰丝缎面料，挺括",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u9",
+        "text": "不要太软",
+        "start": 51,
+        "end": 55,
+        "type": "面料",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案标注挺括，与不要太软方向一致",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      }
+    ],
+    "spec_versions": [
+      {
+        "version": 1,
+        "created_at": "2026-11-18T16:51:31+00:00",
+        "reason": "导入已有方案",
+        "fields": {
+          "品类": {
+            "value": "新中式外套",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u1"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "版型结构": {
+            "value": "H型直身，无收腰；微落平肩；后片按常规松量制作",
+            "resource_ids": [
+              "S1",
+              "SH1"
+            ],
+            "utterance_ids": [
+              "u3",
+              "u4",
+              "u5",
+              "u6"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "领型": {
+            "value": "低立领，3cm以内",
+            "resource_ids": [
+              "CL1"
+            ],
+            "utterance_ids": [
+              "u1",
+              "u7"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "面料": {
+            "value": "冰丝缎面料，挺括",
+            "resource_ids": [
+              "F5"
+            ],
+            "utterance_ids": [
+              "u2",
+              "u8",
+              "u9"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "色彩": {
+            "value": "无特殊需求",
+            "resource_ids": [],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "装饰纹样": {
+            "value": "无特殊需求",
+            "resource_ids": [],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "长度比例": {
+            "value": "衣长至臀中",
+            "resource_ids": [
+              "L1"
+            ],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "松弛余量": {
+            "value": "整体围度宽松",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u4",
+              "u5",
+              "u6"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          }
+        }
+      }
+    ],
+    "questions": [],
+    "designer_items": [
+      {
+        "id": "d1",
+        "utterance_ids": [
+          "u3"
+        ],
+        "field": "版型结构",
+        "text": "客户原话「我驼背比较明显」，方案在【版型结构】上的处理是「H型直身，无收腰；微落平肩；后片按常规松量制作」，是否到位需要设计师判断。"
+      },
+      {
+        "id": "d2",
+        "utterance_ids": [
+          "u4"
+        ],
+        "field": "版型结构",
+        "text": "客户原话「后背要留量」，方案在【版型结构】上的处理是「H型直身，无收腰；微落平肩；后片按常规松量制作」，是否到位需要设计师判断。"
+      },
+      {
+        "id": "d3",
+        "utterance_ids": [
+          "u4"
+        ],
+        "field": "松弛余量",
+        "text": "客户原话「后背要留量」，方案在【松弛余量】上的处理是「整体围度宽松」，是否到位需要设计师判断。"
+      },
+      {
+        "id": "d4",
+        "utterance_ids": [
+          "u6"
+        ],
+        "field": "版型结构",
+        "text": "客户原话「不要贴背」，方案在【版型结构】上的处理是「H型直身，无收腰；微落平肩；后片按常规松量制作」，是否到位需要设计师判断。"
+      }
+    ],
+    "skipped": [
+      {
+        "field": "色彩",
+        "reason": "客户没有提到颜色，就不写色彩要求，也不硬套资源库里唯一的色彩参考，追问不会改变方案。"
+      },
+      {
+        "field": "装饰纹样",
+        "reason": "没有原话单独涉及这一栏，按方案现有取值处理，不追问。"
+      },
+      {
+        "field": "长度比例",
+        "reason": "没有原话涉及衣长；资源库里有出处的案例都是“衣长至臀中”，按资源库里最常见的取值沿用，不追问。"
+      }
+    ],
+    "ledger": [
+      {
+        "version": 1,
+        "at": "2026-11-18T16:51:31+00:00",
+        "action": "导入",
+        "summary": "导入客户口述和已有方案，由大模型拆分原话。",
+        "detail": "拆出 9 句原话，覆盖 5 个设计字段。",
+        "utterance_ids": [
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u5",
+          "u6",
+          "u7",
+          "u8",
+          "u9"
+        ],
+        "changed_fields": [
+          "品类",
+          "版型结构",
+          "领型",
+          "面料",
+          "色彩",
+          "装饰纹样",
+          "长度比例",
+          "松弛余量"
+        ]
+      },
+      {
+        "version": 1,
+        "at": "2026-11-18T16:51:31+00:00",
+        "action": "审计",
+        "summary": "审计：逐句核对客户原话与已有方案，3 处需设计师判断。",
+        "detail": "所有原话都能在方案里找到对应处理。",
+        "utterance_ids": [],
+        "changed_fields": []
+      }
+    ],
+    "reference": null,
+    "images": []
+  },
+  "model_returned": null,
+  "api_key_present": false,
+  "raw_truncated": false
+}

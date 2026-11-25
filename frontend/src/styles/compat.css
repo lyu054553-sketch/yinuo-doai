@@ -1,0 +1,16 @@
+/* 过渡别名：早期组件里用过 .btn-ghost，统一按 DESIGN.md 的“白底墨边”次按钮呈现。 */
+.btn-ghost {
+  background: var(--paper);
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: var(--hover);
+}
+
+.btn-ghost:disabled {
+  background: var(--disabled);
+  border-color: var(--line);
+  color: var(--disabled-text);
+}

@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-24",
+  "scope": "新版工作台界面（左侧导航 + 三栏工作台 + 方案速览 + 吉祥物）",
+  "environment": {
+    "backend": "真实模式（mock_mode=false），本机 8100",
+    "frontend": "Vite 开发服务，本机 5173",
+    "vision": "本机视觉服务 8001（vision_ok=true）",
+    "session": "sfff1e4ac16c7（案例二，真实模型生成，3 个待问客户问题，截图时未作答）"
+  },
+  "checks": {
+    "typecheck": "tsc --noEmit 通过",
+    "build": "vite build 通过",
+    "backend_tests": "312 passed, 3 skipped",
+    "console_errors": 0,
+    "horizontal_overflow_390": false,
+    "holdout_case_visible": false,
+    "paid_image_generation_calls": 0
+  },
+  "reference_image": {
+    "result": "上传测试图后约 63 秒（首次加载模型）返回；模型预热后约 7 秒",
+    "frozen_policy": "只采用领型、前襟闭合、纽扣、纹样，把握最高为“疑似”；衣长、廓形、颜色交给人工确认",
+    "conflict_detected": "领型：参考图为立领，与客户原话“脖子比较短领子不能太高”冲突",
+    "note": "测试图为上服真实成衣图，仅用于测试，未写入任何交付会话或截图"
+  },
+  "screenshots": [
+    "新版_01_首页-1440.png",
+    "新版_02_核对需求-1440.png",
+    "新版_03_点选原话-1440.png",
+    "新版_04_和客户确认-1440.png",
+    "新版_05_方案-1440.png",
+    "新版_06_交接-1440.png",
+    "新版_07_资源知识库-1440.png",
+    "新版_08_核对需求-390.png"
+  ]
+}

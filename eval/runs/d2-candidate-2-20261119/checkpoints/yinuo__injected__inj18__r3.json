@@ -1,0 +1,446 @@
+{
+  "unit": {
+    "lane": "yinuo",
+    "subset": "injected",
+    "case_id": "inj18",
+    "repeat": 3,
+    "gold_problem_count": 0
+  },
+  "lane": "yinuo",
+  "subset": "injected",
+  "case_id": "inj18",
+  "repeat": 3,
+  "recorded_at": "2026-11-19T00:53:28",
+  "outcome": "success",
+  "http_status": 200,
+  "elapsed_ms": 40096.4,
+  "error": null,
+  "request": {
+    "text": "想要一件新中式外套，过年穿。我溜肩，肩部要有支撑，不要塌。整体宽松，H型直身。领子交领，不要立领。面料用真丝暗纹织花，暗花要小。",
+    "existing_spec": {
+      "品类": "新中式外套",
+      "版型结构": "H型直身，无收腰；微落平肩，肩线内加薄肩衬，肩部有支撑",
+      "领型": "交领开襟，无立领",
+      "面料": "真丝暗纹织花",
+      "色彩": "无特殊需求",
+      "装饰纹样": "暗花小巧",
+      "长度比例": "衣长至臀中",
+      "松弛余量": "整体围度宽松"
+    }
+  },
+  "response": {
+    "id": "sea921333801a",
+    "title": "客户口述审计",
+    "mode": "审计已有方案",
+    "source": "llm",
+    "created_at": "2026-11-18T16:54:09+00:00",
+    "input": {
+      "text": "想要一件新中式外套，过年穿。我溜肩，肩部要有支撑，不要塌。整体宽松，H型直身。领子交领，不要立领。面料用真丝暗纹织花，暗花要小。",
+      "existing_spec": {
+        "品类": "新中式外套",
+        "版型结构": "H型直身，无收腰；微落平肩，肩线内加薄肩衬，肩部有支撑",
+        "领型": "交领开襟，无立领",
+        "面料": "真丝暗纹织花",
+        "色彩": "无特殊需求",
+        "装饰纹样": "暗花小巧",
+        "长度比例": "衣长至臀中",
+        "松弛余量": "整体围度宽松"
+      },
+      "sample_id": null
+    },
+    "utterances": [
+      {
+        "id": "u1",
+        "text": "想要一件新中式外套",
+        "start": 0,
+        "end": 9,
+        "type": "品类",
+        "strength": "描述",
+        "status": "间接体现",
+        "mappings": [
+          {
+            "field": "品类",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案品类为“新中式外套”，与客户要求一致。",
+            "rule_id": null
+          },
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "间接体现",
+            "note": "方案没有独立风格字段，新中式感由交领开襟体现。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u2",
+        "text": "过年穿",
+        "start": 10,
+        "end": 13,
+        "type": "场景",
+        "strength": "描述",
+        "status": "未落实",
+        "mappings": [
+          {
+            "field": "色彩",
+            "garment": null,
+            "status": "未落实",
+            "note": "方案色彩栏为“无特殊需求”，没有针对过年场景的处理。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u3",
+        "text": "我溜肩",
+        "start": 14,
+        "end": 17,
+        "type": "身形",
+        "strength": "描述",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案在肩线内加薄肩衬、肩部有支撑，针对溜肩作了处理。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u4",
+        "text": "肩部要有支撑，不要塌",
+        "start": 18,
+        "end": 28,
+        "type": "身形",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案写“微落平肩，肩线内加薄肩衬，肩部有支撑”，落实了肩部支撑、不塌的要求。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u5",
+        "text": "整体宽松",
+        "start": 29,
+        "end": 33,
+        "type": "松量",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "松弛余量",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案写“整体围度宽松”。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u6",
+        "text": "H型直身",
+        "start": 34,
+        "end": 38,
+        "type": "版型",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "版型结构",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案写“H型直身，无收腰”。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u7",
+        "text": "领子交领",
+        "start": 39,
+        "end": 43,
+        "type": "领型",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案写“交领开襟”。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u8",
+        "text": "不要立领",
+        "start": 44,
+        "end": 48,
+        "type": "领型",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "领型",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案写“无立领”。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u9",
+        "text": "面料用真丝暗纹织花",
+        "start": 49,
+        "end": 58,
+        "type": "面料",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "面料",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案面料为“真丝暗纹织花”。",
+            "rule_id": null
+          },
+          {
+            "field": "装饰纹样",
+            "garment": null,
+            "status": "已落实",
+            "note": "程序复核：客户提到“暗纹”，方案这一栏有写法，需要核对是否一致。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      },
+      {
+        "id": "u10",
+        "text": "暗花要小",
+        "start": 59,
+        "end": 63,
+        "type": "纹样",
+        "strength": "硬约束",
+        "status": "已落实",
+        "mappings": [
+          {
+            "field": "装饰纹样",
+            "garment": null,
+            "status": "已落实",
+            "note": "方案装饰纹样为“暗花小巧”。",
+            "rule_id": null
+          }
+        ],
+        "resolved_by": null
+      }
+    ],
+    "spec_versions": [
+      {
+        "version": 1,
+        "created_at": "2026-11-18T16:54:09+00:00",
+        "reason": "导入已有方案",
+        "fields": {
+          "品类": {
+            "value": "新中式外套",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u1"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "版型结构": {
+            "value": "H型直身，无收腰；微落平肩，肩线内加薄肩衬，肩部有支撑",
+            "resource_ids": [
+              "S1",
+              "SH1"
+            ],
+            "utterance_ids": [
+              "u3",
+              "u4",
+              "u6"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "领型": {
+            "value": "交领开襟，无立领",
+            "resource_ids": [
+              "CL5"
+            ],
+            "utterance_ids": [
+              "u1",
+              "u7",
+              "u8"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "面料": {
+            "value": "真丝暗纹织花",
+            "resource_ids": [
+              "F8"
+            ],
+            "utterance_ids": [
+              "u9"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "色彩": {
+            "value": "无特殊需求",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u2"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "装饰纹样": {
+            "value": "暗花小巧",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u9",
+              "u10"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "长度比例": {
+            "value": "衣长至臀中",
+            "resource_ids": [
+              "L1"
+            ],
+            "utterance_ids": [],
+            "origin": "已有方案",
+            "confirmed": false
+          },
+          "松弛余量": {
+            "value": "整体围度宽松",
+            "resource_ids": [],
+            "utterance_ids": [
+              "u5"
+            ],
+            "origin": "已有方案",
+            "confirmed": false
+          }
+        }
+      }
+    ],
+    "questions": [
+      {
+        "id": "q1",
+        "utterance_ids": [
+          "u2"
+        ],
+        "field": "色彩",
+        "title": "颜色怎么定？",
+        "context": "客户原话「过年穿」，当前方案这一栏是「无特殊需求」。",
+        "why": "答案会改变【色彩】这一栏；选“坚持原话要求”还会留下一条待办。",
+        "options": [
+          {
+            "id": "o1",
+            "label": "米白底＋亮粉滚边＋撞色袖口；连衣裙亮粉",
+            "detail": "CO1 · 来源案例三",
+            "resource_ids": [
+              "CO1"
+            ],
+            "patch": {
+              "色彩": "米白底＋亮粉滚边＋撞色袖口；连衣裙亮粉"
+            },
+            "note": "采用资源 CO1「米白底＋亮粉滚边＋撞色袖口；连衣裙亮粉」（参考案例三）。",
+            "todo": null
+          },
+          {
+            "id": "o2",
+            "label": "坚持原话要求：原话中的颜色",
+            "detail": "无资源出处",
+            "resource_ids": [],
+            "patch": {
+              "色彩": "原话中的颜色"
+            },
+            "note": "客户原话提到「原话中的颜色」，资源库里没有对应色彩参考。",
+            "todo": "寻找原话中的颜色的面料或染色工艺，确认能否实现"
+          }
+        ],
+        "answer": null
+      }
+    ],
+    "designer_items": [],
+    "skipped": [
+      {
+        "field": "长度比例",
+        "reason": "没有原话涉及衣长；资源库里有出处的案例都是“衣长至臀中”，按资源库里最常见的取值沿用，不追问。"
+      }
+    ],
+    "ledger": [
+      {
+        "version": 1,
+        "at": "2026-11-18T16:54:09+00:00",
+        "action": "导入",
+        "summary": "导入客户口述和已有方案，由大模型拆分原话。",
+        "detail": "拆出 10 句原话，覆盖 7 个设计字段。",
+        "utterance_ids": [
+          "u1",
+          "u2",
+          "u3",
+          "u4",
+          "u5",
+          "u6",
+          "u7",
+          "u8",
+          "u9",
+          "u10"
+        ],
+        "changed_fields": [
+          "品类",
+          "版型结构",
+          "领型",
+          "面料",
+          "色彩",
+          "装饰纹样",
+          "长度比例",
+          "松弛余量"
+        ]
+      },
+      {
+        "version": 1,
+        "at": "2026-11-18T16:54:09+00:00",
+        "action": "审计",
+        "summary": "审计：逐句核对客户原话与已有方案，1 处未落实。",
+        "detail": "「过年穿」→【色彩】未落实：方案色彩栏为“无特殊需求”，没有针对过年场景的处理。",
+        "utterance_ids": [
+          "u2"
+        ],
+        "changed_fields": [
+          "色彩"
+        ]
+      }
+    ],
+    "reference": null,
+    "images": []
+  },
+  "model_returned": null,
+  "api_key_present": false,
+  "raw_truncated": false
+}

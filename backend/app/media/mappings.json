@@ -1,0 +1,133 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-11-18",
+  "note": "C0 独立映射数据表：方案文字 → 视觉模型词表。只读数据，不放提示词模板（模板在 prompts.py）。检查字段只用八字段词表，纽扣/闭合归“版型结构”。冻结策略依据 vision/results/benchmark_v2_report.md：领型/闭合/纽扣/纹样可用（把握程度最高“疑似”），衣长/廓形/颜色一律需人工确认。",
+  "field_order": ["品类", "版型结构", "领型", "面料", "色彩", "装饰纹样", "长度比例", "松弛余量"],
+  "vision_vocabulary": {
+    "collar_family": ["立领", "交领", "翻领", "斜襟", "圆领", "看不出"],
+    "front_closure": ["外露扣", "无扣开襟", "交叠闭合", "系带", "看不出"],
+    "buttons_visible": [true, false, "看不出"],
+    "length": ["到腰", "臀部附近", "过臀", "看不出"],
+    "silhouette": ["H 型", "收腰", "A 摆", "看不出"],
+    "pattern": "自由文本（简短纹样描述）",
+    "colors": "1-3 个中文颜色词"
+  },
+  "vision_keys": {
+    "collar_family": {
+      "label": "领型",
+      "field": "领型",
+      "source_fields": ["领型"],
+      "used": true,
+      "confidence_cap": "疑似",
+      "manual_confirm": false,
+      "note": "7B 真实图 12/15，可用但仍标“疑似”，由人确认。"
+    },
+    "front_closure": {
+      "label": "前襟闭合",
+      "field": "版型结构",
+      "source_fields": ["领型", "版型结构", "装饰纹样"],
+      "used": true,
+      "confidence_cap": "疑似",
+      "manual_confirm": false,
+      "note": "7B 真实图 13/15；交领常被判成“交叠闭合”，也可能被判成“无扣开襟”，后者不算不符合。"
+    },
+    "buttons_visible": {
+      "label": "纽扣",
+      "field": "版型结构",
+      "source_fields": ["领型", "版型结构", "装饰纹样"],
+      "used": true,
+      "confidence_cap": "疑似",
+      "manual_confirm": false,
+      "note": "7B 真实图 13/15；方案里的纽扣信息可能写在“装饰纹样”一栏，所以要合并取词。"
+    },
+    "pattern": {
+      "label": "纹样",
+      "field": "装饰纹样",
+      "source_fields": ["装饰纹样"],
+      "used": true,
+      "confidence_cap": "疑似",
+      "manual_confirm": false,
+      "strict": false,
+      "note": "只看“有暗纹/无纹样”，不核对具体花名；单独问花纹时 14/15。"
+    },
+    "length": {
+      "label": "衣长",
+      "field": "长度比例",
+      "source_fields": ["长度比例"],
+      "used": false,
+      "confidence_cap": null,
+      "manual_confirm": true,
+      "note": "模型衣长 1/15，低于“永远猜”；只列清单，由人确认。"
+    },
+    "silhouette": {
+      "label": "廓形",
+      "field": "版型结构",
+      "source_fields": ["版型结构"],
+      "used": false,
+      "confidence_cap": null,
+      "manual_confirm": true,
+      "note": "模型与“永远猜 H 型”持平，没有判别力证据；只列清单，由人确认。"
+    },
+    "colors": {
+      "label": "颜色",
+      "field": "色彩",
+      "source_fields": ["色彩"],
+      "used": false,
+      "confidence_cap": null,
+      "manual_confirm": true,
+      "note": "模型主色未超过“永远猜黑色”；只列清单，由人确认。"
+    }
+  },
+  "check_order": ["collar_family", "front_closure", "buttons_visible", "pattern", "length", "silhouette", "colors"],
+  "negation": {
+    "prefixes": ["无", "非", "不", "没", "勿", "免", "不要", "不加", "不做", "没有"],
+    "window": 2
+  },
+  "unspecified_tokens": ["无特殊需求", "无要求", "未指定", "无", "不限", ""],
+  "manual_confirm_label": "需人工确认",
+  "rules": {
+    "collar_rules": [
+      {"id": "CL-翻领", "keywords": ["青果", "西装领", "西服领", "驳领", "翻领"], "vision": "翻领", "note": "青果领、西装领、驳领都按视觉词表的“翻领”核对"},
+      {"id": "CL-交领", "keywords": ["交领"], "vision": "交领"},
+      {"id": "CL-斜襟", "keywords": ["斜襟"], "vision": "斜襟"},
+      {"id": "CL-圆领", "keywords": ["圆领"], "vision": "圆领"},
+      {"id": "CL-立领", "keywords": ["立领", "立式领", "高立领"], "vision": "立领"}
+    ],
+    "collar_low_markers": ["低立领", "领高控制", "领高上限", "领高不超过"],
+    "closure_rules": [
+      {"id": "FCA-系带", "keywords": ["系带", "打结"], "vision": "系带"},
+      {"id": "FCA-交叠", "keywords": ["交领", "交叠", "交襟", "斜襟"], "vision": "交叠闭合", "alternatives": ["无扣开襟"]},
+      {"id": "FCA-无扣开襟", "keywords": ["无扣开襟", "对襟", "开襟", "无外露纽扣", "无纽扣", "无扣"], "vision": "无扣开襟"},
+      {"id": "FCA-外露扣", "keywords": ["外露扣", "单排扣", "双排扣", "明扣", "纽扣"], "vision": "外露扣"}
+    ],
+    "button_rules": {
+      "absent": ["无外露纽扣", "无纽扣", "无扣子", "不设扣", "无明扣", "暗扣", "隐藏扣", "不要扣子"],
+      "present": ["外露扣", "单排扣", "双排扣", "明扣", "纽扣", "扣子"]
+    },
+    "pattern_rules": {
+      "none": [
+        "无纹样",
+        "无花纹",
+        "无明显纹样",
+        "无独立图案",
+        "无独立纹样",
+        "不另加独立具象纹样",
+        "纯色",
+        "素色",
+        "无装饰"
+      ],
+      "present": ["暗纹", "暗花", "提花", "纹样", "花纹", "织花", "印花", "刺绣"]
+    },
+    "length_rules": [
+      {"id": "L-过臀", "keywords": ["过臀", "过膝", "及膝", "膝下", "脚踝", "踝骨", "小腿"], "vision": "过臀"},
+      {"id": "L-臀部", "keywords": ["臀中", "臀部中", "臀围中", "臀部附近", "臀"], "vision": "臀部附近"},
+      {"id": "L-到腰", "keywords": ["到腰", "齐腰", "及腰", "腰线", "短款", "腰节"], "vision": "到腰"}
+    ],
+    "silhouette_rules": [
+      {"id": "S-A摆", "keywords": ["A 摆", "A摆", "A 字", "A字", "大摆", "伞摆"], "vision": "A 摆"},
+      {"id": "S-H型", "keywords": ["H 型", "H型", "直身", "直筒"], "vision": "H 型"},
+      {"id": "S-收腰", "keywords": ["收腰", "掐腰", "收束"], "vision": "收腰"}
+    ],
+    "color_split": "[\\s，,、；;＋+／/|]+"
+  }
+}
